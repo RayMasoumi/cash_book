@@ -2,6 +2,7 @@ import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'bindings/my_binding.dart';
 import 'model/book.dart';
@@ -16,6 +17,8 @@ void main() async {
   Hive.openBox<Entry>('entryBox');
   Hive.registerAdapter(BookAdapter());
   Hive.openBox<Book>('bookBox');
+  await GetStorage.init();
+
   runApp(const MyApp());
 }
 
@@ -28,11 +31,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
-      initialRoute: '/home_screen',
+      initialRoute: GetStorage().read('isFirstRun') == 'false'
+          ? '/home_screen'
+          : '/introduction_slider_screen',
       getPages: MyRoutes.pages,
-      // theme: ThemeData(
-      //   fontFamily: 'Nunito',
-      // ),
+      theme: ThemeData(
+        fontFamily: 'Nunito',
+      ),
     );
   }
 }
