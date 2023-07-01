@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'bindings/my_binding.dart';
 import 'model/book.dart';
 import 'model/entry.dart';
 import 'model/user.dart';
@@ -21,7 +24,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      defaultTransition: Transition.downToUp,
+      initialBinding: MyBindings(),
+      initialRoute: '/home_screen',
+    );
   }
 }
