@@ -10,9 +10,9 @@ class Entry {
   @HiveField(2)
   String bookId;
   @HiveField(3)
-  int amount;
+  int entryAmount;
   @HiveField(4)
-  String description;
+  String entryDescription;
   @HiveField(5)
   String entryDate;
   @HiveField(6)
@@ -29,8 +29,8 @@ class Entry {
   Entry(
       {required this.entryId,
       required this.bookId,
-      required this.amount,
-      this.description = '',
+      required this.entryAmount,
+      this.entryDescription = '',
       required this.entryDate,
       required this.entryTime,
       required this.entryLastModified,
