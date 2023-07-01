@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
       initialBinding: MyBindings(),
       initialRoute: '/home_screen',
       getPages: MyRoutes.pages,
+      theme: ThemeData(
+        fontFamily: 'Nunito',
+      ),
     );
   }
 }
