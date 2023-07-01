@@ -1,3 +1,4 @@
+import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
       initialRoute: '/home_screen',
+      getPages: MyRoutes.pages,
     );
   }
 }
