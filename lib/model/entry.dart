@@ -3,25 +3,25 @@ import 'package:cash_book/constants/enums.dart';
 class Entry {
   String entryId;
   String bookId;
-  int amount;
-  String description;
+  int entryAmount;
+  String entryDescription;
   String entryDate;
   String entryTime;
   String entryLastModified;
   EntryType entryType;
-  PaymentMethod? paymentMethod;
-  Category? category;
+  PaymentMethod? entryPaymentMethod;
+  Category? entryCategory;
 
   Entry(
       {required this.entryId,
       required this.bookId,
-      required this.amount,
-      this.description = '',
+      required this.entryAmount,
+      this.entryDescription = '',
       required this.entryDate,
       required this.entryTime,
       required this.entryLastModified,
       required this.entryType,
-      this.paymentMethod,
-      this.category});
+      this.entryPaymentMethod,
+      this.entryCategory});
 //TODO image
 }
