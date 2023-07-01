@@ -1,5 +1,4 @@
-import 'package:cash_book/constants/colors.dart';
-import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,18 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: SizedBox(
-        width: kFABWidth,
-        height: kFABHeight,
-        child: FloatingActionButton(
-          onPressed: () {},
-          elevation: 10.0,
-          backgroundColor: kPrimaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-          ),
-        ),
-      ),
+      floatingActionButton: const SizedFABWidget(),
       body: SafeArea(
         child: Container(
           width: Get.width,
