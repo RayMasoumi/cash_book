@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
 import 'bindings/my_binding.dart';
 import 'model/book.dart';
 import 'model/entry.dart';
@@ -31,9 +30,9 @@ class MyApp extends StatelessWidget {
       initialBinding: MyBindings(),
       initialRoute: '/home_screen',
       getPages: MyRoutes.pages,
-      theme: ThemeData(
-        fontFamily: 'Nunito',
-      ),
+      // theme: ThemeData(
+      //   fontFamily: 'Nunito',
+      // ),
     );
   }
 }
