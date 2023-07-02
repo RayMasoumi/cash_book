@@ -14,7 +14,7 @@ class SizedFABWidget extends StatelessWidget {
       height: kFABHeight,
       child: FloatingActionButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: kBorderRadius45,
         ),
         onPressed: () {},
         elevation: 10.0,
