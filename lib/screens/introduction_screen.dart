@@ -32,11 +32,10 @@ class IntroductionSliderScreen extends StatelessWidget {
           imagePath: kIntroImagePath3,
         ),
       ],
-      //TODO check if language is persian and set rtl = true
       showSkipButton: true,
       showNextButton: false,
-      skip: const Text(kSkipButtonText, style: kIntroButtonTextStyle),
-      done: const Text(
+      skip: Text(kSkipButtonText, style: kIntroButtonTextStyle),
+      done: Text(
         kDoneButtonText,
         style: kIntroButtonTextStyle,
       ),
