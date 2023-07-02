@@ -6,12 +6,15 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import '../methods/introduction_page_method.dart';
+
 class IntroductionSliderScreen extends StatelessWidget {
   const IntroductionSliderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return IntroductionScreen(
+      // * introduction screen pages
       pages: [
         introductionPageViewModel(
           title: kIntroTitle1,
@@ -32,39 +35,18 @@ class IntroductionSliderScreen extends StatelessWidget {
       //TODO check if language is persian and set rtl = true
       showSkipButton: true,
       showNextButton: false,
-      skip: const Text("Skip", style: kIntroButtonTextStyle),
+      skip: const Text(kSkipButtonText, style: kIntroButtonTextStyle),
       done: const Text(
-        "Done",
+        kDoneButtonText,
         style: kIntroButtonTextStyle,
       ),
       onDone: () {
+        // * Only show this page once
         GetStorage().write('isFirstRun', 'false');
-        Get.toNamed('/home_screen');
+        Get.toNamed(kHomeScreenRoute);
       },
       dotsDecorator: const DotsDecorator(
         activeColor: kPrimaryColor,
-      ),
-    );
-  }
-
-  PageViewModel introductionPageViewModel({
-    required String title,
-    required String subtitle,
-    required String imagePath,
-  }) {
-    return PageViewModel(
-      title: title,
-      body: subtitle,
-      image: SizedBox(
-        width: kWidth,
-        child: Image.asset(imagePath),
-      ),
-      decoration: PageDecoration(
-        bodyAlignment: Alignment.bottomCenter,
-        titleTextStyle: kIntroTitleStyle,
-        bodyTextStyle: kIntroSubtitleStyle,
-        imageFlex: 2,
-        imagePadding: EdgeInsets.only(top: k60Height),
       ),
     );
   }
