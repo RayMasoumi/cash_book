@@ -10,9 +10,9 @@ class Entry {
   @HiveField(2)
   String bookId;
   @HiveField(3)
-  int entryAmount;
+  double entryAmount;
   @HiveField(4)
-  String entryDescription;
+  String? entryDescription;
   @HiveField(5)
   String entryDate;
   @HiveField(6)
@@ -25,17 +25,25 @@ class Entry {
   PaymentMethod? paymentMethod;
   @HiveField(10)
   Category? category;
+  @HiveField(11)
+  String entryUserId;
+  @HiveField(12)
+  String? entryImagePath;
+  @HiveField(13)
+  bool activeEntry;
 
-  Entry(
-      {required this.entryId,
-      required this.bookId,
-      required this.entryAmount,
-      this.entryDescription = '',
-      required this.entryDate,
-      required this.entryTime,
-      required this.entryLastModified,
-      required this.entryType,
-      this.paymentMethod,
-      this.category});
+  Entry({
+    required this.entryId,
+    required this.bookId,
+    required this.entryAmount,
+    required this.entryDate,
+    required this.entryTime,
+    required this.entryLastModified,
+    required this.entryType,
+    required this.entryUserId,
+    this.paymentMethod,
+    this.category,
+    this.activeEntry = true,
+  });
 //TODO image
 }

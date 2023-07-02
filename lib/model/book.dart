@@ -14,10 +14,29 @@ class Book {
   List<User> bookMembers;
   @HiveField(4)
   List<Entry> bookRecords;
+  @HiveField(5)
+  bool privateBook;
+  @HiveField(6)
+  bool activeBook;
+  @HiveField(7)
+  double bookBalance =
+      0; //TODO: a function for calculating balance from bookRecords
+  @HiveField(8)
+  DateTime bookCreationDate = DateTime
+      .now(); // ! just a default, should be modified later into jalali and ...
+  @HiveField(9)
+  String bookLastModified;
+  @HiveField(10)
+  String bookOwnerUserId;
 
-  Book(
-      {required this.bookId,
-      required this.bookName,
-      this.bookMembers = const [],
-      this.bookRecords = const []});
+  Book({
+    required this.bookId,
+    required this.bookName,
+    required this.privateBook,
+    required this.bookLastModified,
+    required this.bookOwnerUserId,
+    this.bookMembers = const [],
+    this.bookRecords = const [],
+    this.activeBook = true,
+  });
 }

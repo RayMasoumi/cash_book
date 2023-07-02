@@ -19,15 +19,21 @@ class BookAdapter extends TypeAdapter<Book> {
     return Book(
       bookId: fields[1] as String,
       bookName: fields[2] as String,
+      privateBook: fields[5] as bool,
+      bookLastModified: fields[9] as String,
+      bookOwnerUserId: fields[10] as String,
       bookMembers: (fields[3] as List).cast<User>(),
       bookRecords: (fields[4] as List).cast<Entry>(),
-    );
+      activeBook: fields[6] as bool,
+    )
+      ..bookBalance = fields[7] as double
+      ..bookCreationDate = fields[8] as DateTime;
   }
 
   @override
   void write(BinaryWriter writer, Book obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(10)
       ..writeByte(1)
       ..write(obj.bookId)
       ..writeByte(2)
@@ -35,7 +41,19 @@ class BookAdapter extends TypeAdapter<Book> {
       ..writeByte(3)
       ..write(obj.bookMembers)
       ..writeByte(4)
-      ..write(obj.bookRecords);
+      ..write(obj.bookRecords)
+      ..writeByte(5)
+      ..write(obj.privateBook)
+      ..writeByte(6)
+      ..write(obj.activeBook)
+      ..writeByte(7)
+      ..write(obj.bookBalance)
+      ..writeByte(8)
+      ..write(obj.bookCreationDate)
+      ..writeByte(9)
+      ..write(obj.bookLastModified)
+      ..writeByte(10)
+      ..write(obj.bookOwnerUserId);
   }
 
   @override

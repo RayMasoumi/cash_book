@@ -15,12 +15,28 @@ class User {
   String userEmail;
   @HiveField(5)
   List<Book> userBooks;
+  @HiveField(6)
+  String? userCompany;
+  @HiveField(7)
+  String? userCompanyAddress;
+  @HiveField(8)
+  String? userCompanyCategory;
+  @HiveField(9)
+  String lastSyncDate;
+  @HiveField(10)
+  String userCreationDate;
+  @HiveField(11)
+  bool isDisabled;
+  // ? a list of user's all entries
 
   User({
     required this.userId,
     required this.userName,
     required this.userPhoneNumber,
     required this.userEmail,
+    required this.lastSyncDate,
+    required this.userCreationDate,
     this.userBooks = const [],
+    this.isDisabled = false,
   });
 }

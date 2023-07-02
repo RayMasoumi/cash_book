@@ -19,21 +19,24 @@ class EntryAdapter extends TypeAdapter<Entry> {
     return Entry(
       entryId: fields[1] as String,
       bookId: fields[2] as String,
-      entryAmount: fields[3] as int,
-      entryDescription: fields[4] as String,
+      entryAmount: fields[3] as double,
       entryDate: fields[5] as String,
       entryTime: fields[6] as String,
       entryLastModified: fields[7] as String,
       entryType: fields[8] as EntryType,
+      entryUserId: fields[11] as String,
       paymentMethod: fields[9] as PaymentMethod?,
       category: fields[10] as Category?,
-    );
+      activeEntry: fields[13] as bool,
+    )
+      ..entryDescription = fields[4] as String?
+      ..entryImagePath = fields[12] as String?;
   }
 
   @override
   void write(BinaryWriter writer, Entry obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(13)
       ..writeByte(1)
       ..write(obj.entryId)
       ..writeByte(2)
@@ -53,7 +56,13 @@ class EntryAdapter extends TypeAdapter<Entry> {
       ..writeByte(9)
       ..write(obj.paymentMethod)
       ..writeByte(10)
-      ..write(obj.category);
+      ..write(obj.category)
+      ..writeByte(11)
+      ..write(obj.entryUserId)
+      ..writeByte(12)
+      ..write(obj.entryImagePath)
+      ..writeByte(13)
+      ..write(obj.activeEntry);
   }
 
   @override
