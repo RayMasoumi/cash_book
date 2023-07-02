@@ -18,7 +18,7 @@ class AlignWidget extends StatelessWidget {
         child: ListTile(
           shape: RoundedRectangleBorder(
             side: const BorderSide(color: Colors.black12),
-            borderRadius: BorderRadius.circular(45),
+            borderRadius: kBorderRadius45,
           ),
           tileColor: getColor(index),
         ),
