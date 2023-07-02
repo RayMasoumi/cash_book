@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -31,10 +32,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
+      // * checking if it is the first time the app is running
       initialRoute: GetStorage().read('isFirstRun') == 'false'
-          ? '/home_screen'
-          : '/introduction_slider_screen',
-      // initialRoute: '/introduction_slider_screen',
+          ? kHomeScreenRoute
+          : kIntroductionScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         fontFamily: 'Nunito',
