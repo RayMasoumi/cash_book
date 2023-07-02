@@ -1,0 +1,9 @@
+const String kIntroTitle1 = "Track Income & Expenses";
+const String kIntroTitle2 = "Manage Your Business with Staff";
+const String kIntroTitle3 = "Set-Up Multiple Businesses";
+const String kIntroSubtitle1 = "Stay updated on your profits";
+const String kIntroSubtitle2 = "Add team members and assign roles";
+const String kIntroSubtitle3 = "Keep multiple business records on one app";
+const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';
+const String kIntroImagePath2 = 'assets/images/introduction_page_2.png';
+const String kIntroImagePath3 = 'assets/images/introduction_page_3.png';

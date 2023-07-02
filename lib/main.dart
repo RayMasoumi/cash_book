@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
       initialRoute: GetStorage().read('isFirstRun') == 'false'
           ? '/home_screen'
           : '/introduction_slider_screen',
+      // initialRoute: '/introduction_slider_screen',
       getPages: MyRoutes.pages,
       theme: ThemeData(
         fontFamily: 'Nunito',
