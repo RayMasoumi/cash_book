@@ -1,4 +1,5 @@
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/interntionalisation/translate.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
+      translations: Translate(),
       // * checking if it is the first time the app is running
       initialRoute: GetStorage().read('isFirstRun') == 'false'
           ? kHomeScreenRoute
