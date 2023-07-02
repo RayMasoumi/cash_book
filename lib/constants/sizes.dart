@@ -8,6 +8,7 @@ final kHeight = Get.height; // * 707.4285714285714
 final kFABHeight = kHeight * 0.11;
 final kFABWidth = kWidth * 0.55;
 final kIconButtonSize = kWidth * 0.08;
+final kBottomListHeight = kHeight * 0.6;
 final k40Height = kHeight * 0.05;
 final k60Height = kHeight * 0.08;
 
