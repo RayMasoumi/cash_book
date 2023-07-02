@@ -16,16 +16,17 @@ class Translate implements Translations {
           'Done': 'Done',
         },
         'fa': {
-          "Track Income & Expenses": "ثبت دریافتی‌ها و پرداختی‌ها",
-          "Manage Your Business with Staff": "کسب‌و‌کارتان را",
+          "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
+          "Manage Your Business with Staff":
+              "کسب و کار خود را با کارکنان مدیریت کنید",
           "Set-Up Multiple Businesses": "Set-Up Multiple Businesses",
-          "Stay updated on your profits": "Stay updated on your profits",
+          "Stay updated on your profits": "از  سود دریافتی خود مطلع باشید",
           "Add team members and assign roles":
-              "Add team members and assign roles",
+              "اعضای تیم را اضافه کنید و برای هرکس نقش تعیین کنید",
           "Keep multiple business records on one app":
-              "Keep multiple business records on one app",
-          'Skip': 'Skip',
-          'Done': 'Done',
+              "چندین سوابق تجاری را در یک برنامه نگه دارید",
+          'Skip': 'رد کردن',
+          'Done': 'اتمام',
         },
       };
 }
