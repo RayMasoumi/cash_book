@@ -4,7 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CardListViewWidgetBooksList extends StatelessWidget {
-  final List<String> test = ['1', '2', '3', '4', '5', '6', '7'];
+  final List<String> test = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12'
+  ];
 
   CardListViewWidgetBooksList({super.key});
 
