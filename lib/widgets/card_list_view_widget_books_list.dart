@@ -23,6 +23,7 @@ class CardListViewWidgetBooksList extends StatelessWidget {
                 height: kHeight * 0.4,
                 child: ListTile(
                   shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: Colors.black12),
                     borderRadius: BorderRadius.circular(45),
                   ),
                   tileColor: getColor(index),
