@@ -10,7 +10,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: const SizedFABWidget(),
       body: SafeArea(
-        child: CardListViewWidgetBooksList(),
+        child: Column(
+          children: [
+            const Spacer(),
+            CardListViewWidgetBooksList(),
+          ],
+        ),
       ),
     );
   }
