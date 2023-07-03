@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SizedFABWidget extends StatelessWidget {
   final double buttonHeight;
   final double buttonWidth;
-  final Function onPressed;
+  final Function() onPressed;
   final IconData buttonIcon;
   final String buttonText;
   final Color buttonColor;
@@ -27,9 +27,7 @@ class SizedFABWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: kBorderRadius45,
         ),
-        onPressed: () {
-          onPressed;
-        },
+        onPressed: onPressed,
         elevation: 10.0,
         backgroundColor: buttonColor,
         child: Row(
@@ -38,6 +36,9 @@ class SizedFABWidget extends StatelessWidget {
             Text(
               buttonText,
               style: kIconTextStyle,
+            ),
+            SizedBox(
+              width: k10Width,
             ),
             Icon(buttonIcon, size: kIconButtonSize),
           ],

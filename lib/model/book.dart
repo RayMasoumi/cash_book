@@ -1,7 +1,6 @@
 import 'package:cash_book/model/user.dart';
 import 'package:cash_book/model/entry.dart';
 import 'package:hive/hive.dart';
-
 part 'book.g.dart';
 
 @HiveType(typeId: 2)

@@ -38,6 +38,8 @@ class CardListViewWidget extends StatelessWidget {
       width: Get.width,
       height: kBottomListHeight,
       child: ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: test.length,
           itemBuilder: (context, index) {
             return AlignWidget(

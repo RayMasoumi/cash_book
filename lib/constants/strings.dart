@@ -9,6 +9,8 @@ final String kIntroSubtitle2 = "Add team members and assign roles".tr;
 final String kIntroSubtitle3 = "Keep multiple business records on one app".tr;
 final String kSkipButtonText = 'Skip'.tr;
 final String kDoneButtonText = 'Done'.tr;
+final String kNewBookTitle = 'New Book'.tr;
+final String kAddBookText = 'ADD BOOK'.tr;
 
 // * no need to translate
 const String kEnglishTranslate = 'en';
