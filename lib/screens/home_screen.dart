@@ -22,7 +22,11 @@ class HomeScreen extends StatelessWidget {
         child: ListView.builder(
           itemCount: 15,
           itemBuilder: (context, index) {
-            return LeftIconListTileWidget();
+            return LeftIconListTileWidget(
+              lastModified: 'yesterday',
+              title: 'Business',
+              onTap: () {},
+            );
           },
         ),
       ),
