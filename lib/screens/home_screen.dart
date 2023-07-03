@@ -1,6 +1,6 @@
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
-import 'package:cash_book/screens/left_icon_list_tile_widget.dart';
+import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
 import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.builder(
-          itemCount: 5,
+          itemCount: 15,
           itemBuilder: (context, index) {
             return const LeftIconListTileWidget();
           },
