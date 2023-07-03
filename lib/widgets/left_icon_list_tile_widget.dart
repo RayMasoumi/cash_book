@@ -8,7 +8,7 @@ class LeftIconListTileWidget extends StatelessWidget {
   final String lastModified;
   final Function() onTap;
 
-  LeftIconListTileWidget({
+  const LeftIconListTileWidget({
     super.key,
     required this.title,
     required this.lastModified,
