@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             const Spacer(),
-            CardListViewWidgetBooksList(),
+            CardListViewWidget(),
           ],
         ),
       ),

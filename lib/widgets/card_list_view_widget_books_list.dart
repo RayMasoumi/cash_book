@@ -3,7 +3,7 @@ import 'package:cash_book/widgets/align_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CardListViewWidgetBooksList extends StatelessWidget {
+class CardListViewWidget extends StatelessWidget {
   final List<String> test = [
     '1',
     '2',
@@ -19,7 +19,7 @@ class CardListViewWidgetBooksList extends StatelessWidget {
     '12'
   ];
 
-  CardListViewWidgetBooksList({super.key});
+  CardListViewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,10 @@ class CardListViewWidgetBooksList extends StatelessWidget {
       child: ListView.builder(
           itemCount: test.length,
           itemBuilder: (context, index) {
-            return AlignWidget(index: index);
+            return AlignWidget(
+              list: test,
+              index: index,
+            );
           }),
     );
   }

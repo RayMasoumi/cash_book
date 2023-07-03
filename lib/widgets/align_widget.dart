@@ -5,8 +5,9 @@ import '../methods/get_color_method.dart';
 
 class AlignWidget extends StatelessWidget {
   final int index;
+  final List list;
 
-  const AlignWidget({required this.index, super.key});
+  const AlignWidget({required this.index, required this.list, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class AlignWidget extends StatelessWidget {
       child: SizedBox(
         height: kHeight * 0.4,
         child: ListTile(
+          title: Text(list[index]),
           shape: RoundedRectangleBorder(
             side: const BorderSide(color: Colors.black12),
             borderRadius: kBorderRadius45,
