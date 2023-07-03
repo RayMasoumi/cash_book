@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView.builder(
           itemCount: 15,
           itemBuilder: (context, index) {
-            return const LeftIconListTileWidget();
+            return LeftIconListTileWidget();
           },
         ),
       ),

@@ -13,9 +13,11 @@ final kBottomListHeight = kHeight * 0.6;
 final k40Height = kHeight * 0.05;
 final kTopMargin = kHeight * 0.08;
 final kIconContainerSide = kHeight * 0.1;
+final kTileBottomMargin = kHeight * 0.015;
 
 // * border radius:
 final kBorderRadius45 = BorderRadius.circular(45);
+final kBorderRadius15 = BorderRadius.circular(15);
 
 // * styles:
 final kIconTextStyle =
@@ -25,3 +27,4 @@ final kIntroTitleStyle = TextStyle(
 final kIntroSubtitleStyle =
     TextStyle(color: kMainSubtitle, fontSize: kWidth * 0.055);
 const kIntroButtonTextStyle = TextStyle(color: kPrimaryColor);
+const kDescriptionStyle = TextStyle(color: Colors.grey);
