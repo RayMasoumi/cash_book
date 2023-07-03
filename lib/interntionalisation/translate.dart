@@ -14,6 +14,8 @@ class Translate implements Translations {
               "Keep multiple business records on one app",
           'Skip': 'Skip',
           'Done': 'Done',
+          'New Book': 'New Book',
+          'ADD BOOK': 'ADD BOOK',
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -27,6 +29,8 @@ class Translate implements Translations {
               "چندین سوابق تجاری را در یک برنامه نگه دارید",
           'Skip': 'رد کردن',
           'Done': 'اتمام',
+          'New Book': 'کتاب جدید',
+          'ADD BOOK': 'اضافه کردن کتاب',
         },
       };
 }

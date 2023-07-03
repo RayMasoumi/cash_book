@@ -9,10 +9,12 @@ final kHeight = Get.height; // * 707.4285714285714
 final kFABHeight = kHeight * 0.11;
 final kFABWidth = kWidth * 0.55;
 final kIconButtonSize = kWidth * 0.08;
+final k30Width = kWidth * 0.07;
+final k10Width = kWidth * 0.024;
 final kBottomListHeight = kHeight * 0.6;
 final k40Height = kHeight * 0.05;
 final kTopMargin = kHeight * 0.08;
-final kIconContainerSide = kHeight * 0.1;
+final kIconContainerSide = kHeight * 0.13;
 final kTileBottomMargin = kHeight * 0.015;
 
 // * border radius:
@@ -20,11 +22,27 @@ final kBorderRadius45 = BorderRadius.circular(45);
 final kBorderRadius15 = BorderRadius.circular(15);
 
 // * styles:
-final kIconTextStyle =
-    TextStyle(fontSize: kWidth * 0.05, fontWeight: FontWeight.bold);
+final kIconTextStyle = TextStyle(
+  fontSize: kWidth * 0.05,
+  fontWeight: FontWeight.bold,
+);
 final kIntroTitleStyle = TextStyle(
-    color: kPrimaryColor, fontSize: kWidth * 0.07, fontWeight: FontWeight.bold);
-final kIntroSubtitleStyle =
-    TextStyle(color: kMainSubtitle, fontSize: kWidth * 0.055);
-const kIntroButtonTextStyle = TextStyle(color: kPrimaryColor);
-const kDescriptionStyle = TextStyle(color: Colors.grey);
+  color: kPrimaryColor,
+  fontSize: kWidth * 0.07,
+  fontWeight: FontWeight.bold,
+);
+final kIntroSubtitleStyle = TextStyle(
+  color: kMainSubtitle,
+  fontSize: kWidth * 0.055,
+);
+const kIntroButtonTextStyle = TextStyle(
+  color: kPrimaryColor,
+);
+const kDescriptionStyle = TextStyle(
+  color: Colors.grey,
+);
+final kTitlesStyle = TextStyle(
+  color: kPrimaryColor,
+  fontSize: kWidth * 0.07,
+  fontWeight: FontWeight.bold,
+);

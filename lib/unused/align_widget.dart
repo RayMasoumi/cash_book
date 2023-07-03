@@ -17,7 +17,6 @@ class AlignWidget extends StatelessWidget {
       child: SizedBox(
         height: kHeight * 0.4,
         child: ListTile(
-          title: Text(list[index]),
           shape: RoundedRectangleBorder(
             side: const BorderSide(color: Colors.black12),
             borderRadius: kBorderRadius45,

@@ -11,3 +11,4 @@ const kPastel4Color = Color(0xFFEFD2C9);
 const kMainTitle = Color(0xFF0C0C0C);
 const kMainSubtitle = Color(0xFF494949);
 const kBorderColor = Colors.black12;
+const kTransparentBottomSheetBackground = Color(0xFF757575);

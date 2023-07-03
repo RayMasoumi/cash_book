@@ -26,14 +26,25 @@ class LeftIconListTileWidget extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(color: kBorderColor),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: kPrimaryColor.withOpacity(0.5),
+                  blurRadius: 15.0, // soften the shadow
+                  offset: const Offset(
+                    0.0, // Move to right 5  horizontally
+                    2.0, // Move to bottom 5 Vertically
+                  ),
+                ),
+              ],
             ),
             margin: EdgeInsets.only(bottom: kTileBottomMargin),
             height: kIconContainerSide,
             child: Row(
               children: <Widget>[
-                IconWithBackGroundWidget(
+                const IconWithBackGroundWidget(
                   icon: Icons.downloading,
-                  backgroundColor: Colors.blue.shade600,
+                  backgroundColor: kPrimaryColor,
                 ),
                 const SizedBox(width: 10),
                 Expanded(
