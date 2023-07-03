@@ -1,4 +1,6 @@
-import 'package:cash_book/unused/card_list_view_widget_books_list.dart';
+import 'package:cash_book/constants/colors.dart';
+import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/screens/left_icon_list_tile_widget.dart';
 import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,13 +10,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: const SizedFABWidget(),
+      floatingActionButton: SizedFABWidget(
+        buttonColor: kPrimaryColor,
+        buttonHeight: kFABHeight,
+        buttonWidth: kFABWidth,
+        buttonIcon: Icons.add,
+        buttonText: 'ADD BOOK  ',
+        onPressed: () {},
+      ),
       body: SafeArea(
-        child: Column(
-          children: [
-            const Spacer(),
-            CardListViewWidget(),
-          ],
+        child: ListView.builder(
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return const LeftIconListTileWidget();
+          },
         ),
       ),
     );

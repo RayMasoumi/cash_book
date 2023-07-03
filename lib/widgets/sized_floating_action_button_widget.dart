@@ -1,32 +1,45 @@
-import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SizedFABWidget extends StatelessWidget {
-  const SizedFABWidget({
-    super.key,
-  });
+  final double buttonHeight;
+  final double buttonWidth;
+  final Function onPressed;
+  final IconData buttonIcon;
+  final String buttonText;
+  final Color buttonColor;
+
+  const SizedFABWidget(
+      {super.key,
+      required this.buttonHeight,
+      required this.buttonWidth,
+      required this.onPressed,
+      required this.buttonIcon,
+      required this.buttonText,
+      required this.buttonColor});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: kFABWidth,
-      height: kFABHeight,
+      width: buttonWidth,
+      height: buttonHeight,
       child: FloatingActionButton(
         shape: RoundedRectangleBorder(
           borderRadius: kBorderRadius45,
         ),
-        onPressed: () {},
+        onPressed: () {
+          onPressed;
+        },
         elevation: 10.0,
-        backgroundColor: kPrimaryColor,
+        backgroundColor: buttonColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'ADD BOOK  ',
+              buttonText,
               style: kIconTextStyle,
             ),
-            Icon(Icons.add, size: kIconButtonSize),
+            Icon(buttonIcon, size: kIconButtonSize),
           ],
         ),
       ),
