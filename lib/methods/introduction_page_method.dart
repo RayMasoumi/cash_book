@@ -20,7 +20,7 @@ PageViewModel introductionPageViewModel({
       titleTextStyle: kIntroTitleStyle,
       bodyTextStyle: kIntroSubtitleStyle,
       imageFlex: 2,
-      imagePadding: EdgeInsets.only(top: k60Height),
+      imagePadding: EdgeInsets.only(top: kTopMargin),
     ),
   );
 }

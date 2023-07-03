@@ -10,7 +10,7 @@ final kFABWidth = kWidth * 0.55;
 final kIconButtonSize = kWidth * 0.08;
 final kBottomListHeight = kHeight * 0.6;
 final k40Height = kHeight * 0.05;
-final k60Height = kHeight * 0.08;
+final kTopMargin = kHeight * 0.08;
 
 final kBorderRadius45 = BorderRadius.circular(45);
 
