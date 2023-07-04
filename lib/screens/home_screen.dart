@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.only(left: 20.0),
           child: Icon(
-            Icons.supervised_user_circle,
+            Icons.account_circle_rounded,
             color: kPrimaryColor,
             size: 40.0,
           ),
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: Icon(
-              Icons.person_add_alt_1,
+              Icons.person_add_alt_1_outlined,
               size: 30.0,
               color: kPrimaryColor,
             ),

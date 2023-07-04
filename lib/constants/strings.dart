@@ -13,6 +13,8 @@ final String kNewBookTitle = 'New Book'.tr;
 final String kAddBookText = 'ADD BOOK'.tr;
 final String kBookNameHint = 'Book Name'.tr;
 final String kAddButtonText = 'Add'.tr;
+final String kPrivateText = 'Private'.tr;
+final String kPublicText = 'Public'.tr;
 
 // * no need to translate
 const String kEnglishTranslate = 'en';
