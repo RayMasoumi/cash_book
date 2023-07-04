@@ -9,13 +9,16 @@ class RoundTextFieldWidget extends StatelessWidget {
   final TextInputType keyBoardType;
   final TextEditingController controller;
   final String title;
+  final TextAlign textAlign;
 
-  const RoundTextFieldWidget(
-      {super.key,
-      required this.title,
-      required this.hintText,
-      this.keyBoardType = TextInputType.text,
-      required this.controller});
+  const RoundTextFieldWidget({
+    super.key,
+    required this.title,
+    required this.hintText,
+    this.keyBoardType = TextInputType.text,
+    required this.controller,
+    this.textAlign = TextAlign.start,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +35,7 @@ class RoundTextFieldWidget extends StatelessWidget {
             ),
           ),
           TextField(
+            textAlign: textAlign,
             style: const TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,

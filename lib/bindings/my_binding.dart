@@ -1,6 +1,6 @@
 import 'package:cash_book/controllers/navigation_bar_controller.dart';
-import 'package:cash_book/controllers/radio_button_controller.dart';
 import 'package:cash_book/controllers/translate_controller.dart';
+import 'package:cash_book/controllers/verification_controller.dart';
 import 'package:get/get.dart';
 
 class MyBindings implements Bindings {
@@ -9,6 +9,6 @@ class MyBindings implements Bindings {
     // TODO: implement dependencies
     Get.lazyPut(() => TranslateController());
     Get.lazyPut(() => NavigationBarController());
-    Get.lazyPut(() => RadioButtonController());
+    Get.put(VerificationController());
   }
 }
