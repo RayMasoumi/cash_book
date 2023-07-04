@@ -6,6 +6,8 @@ import 'package:cash_book/screens/add_book_bottom_sheet_screen.dart';
 import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
 import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controllers/navigation_bar_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,19 +30,23 @@ class HomeScreen extends StatelessWidget {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        height: 50,
-        notchMargin: 5.0,
-        activeColor: kPrimaryColor,
-        icons: const [Icons.library_books, Icons.settings],
-        activeIndex: 0,
-        gapLocation: GapLocation.center,
-        notchSmoothness: NotchSmoothness.smoothEdge,
-        iconSize: 30,
-        gapWidth: kFABWidth,
-        onTap: (index) {},
-        //other params
-      ),
+      bottomNavigationBar: Obx(() {
+        return AnimatedBottomNavigationBar(
+          height: 50,
+          notchMargin: 5.0,
+          activeColor: kPrimaryColor,
+          icons: const [Icons.library_books, Icons.settings],
+          activeIndex: Get.find<NavigationBarController>().index.value,
+          gapLocation: GapLocation.center,
+          notchSmoothness: NotchSmoothness.smoothEdge,
+          iconSize: 30,
+          gapWidth: kFABWidth,
+          onTap: (index) {
+            Get.find<NavigationBarController>().index.value = index;
+          },
+          //other params
+        );
+      }),
       appBar: AppBar(
         leading: const Padding(
           padding: EdgeInsets.only(left: 20.0),
