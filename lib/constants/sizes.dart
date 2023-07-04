@@ -17,6 +17,7 @@ final k40Height = kHeight * 0.05;
 final kTopMargin = kHeight * 0.08;
 final kIconContainerSide = kHeight * 0.13;
 final kTileBottomMargin = kHeight * 0.015;
+final kSmallCaption = kWidth * 0.04;
 
 // * border radius:
 final kBorderRadius45 = BorderRadius.circular(45);

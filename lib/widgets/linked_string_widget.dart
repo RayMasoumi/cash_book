@@ -1,16 +1,17 @@
+import 'package:cash_book/constants/colors.dart';
+import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class LinkedStringWidget extends StatelessWidget {
   final String firstText;
   final String linkedText;
-  final String destinationRoute;
+  final Function() onTap;
 
   const LinkedStringWidget({
     super.key,
     required this.firstText,
     required this.linkedText,
-    required this.destinationRoute,
+    required this.onTap,
   });
 
   @override
@@ -18,15 +19,19 @@ class LinkedStringWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(firstText),
+        Text(
+          firstText,
+          style: TextStyle(fontSize: kSmallCaption),
+        ),
         GestureDetector(
-          onTap: () {
-            Get.toNamed(destinationRoute);
-          },
+          onTap: onTap,
           child: Text(
             linkedText,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+            style: TextStyle(
+                fontSize: kSmallCaption,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: kPrimaryColor),
           ),
         ),
       ],

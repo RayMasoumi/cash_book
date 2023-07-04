@@ -5,6 +5,7 @@ import 'package:cash_book/widgets/submit_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/verification_controller.dart';
 import '../widgets/round_text_field_widget.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -53,15 +54,22 @@ class SignUpScreen extends StatelessWidget {
                     RoundedSubmitButtonWidget(
                       text: 'Create Account',
                       onPressed: () {
-                        Get.toNamed(kHomeScreenRoute);
+                        // * must go to verification:
+                        Get.find<VerificationController>().isPressed.value =
+                            true;
+                        Get.toNamed(kLoginScreenRoute);
                       },
                     ),
                     // * log in text:
-                    const LinkedStringWidget(
-                      firstText: 'Already have an account? ',
-                      linkedText: 'log in',
-                      destinationRoute: kLoginScreenRoute,
-                    ),
+                    LinkedStringWidget(
+                        firstText: 'Already have an account? ',
+                        linkedText: ''
+                            'Log In',
+                        onTap: () {
+                          Get.find<VerificationController>().isPressed.value =
+                              false;
+                          Get.offNamed(kLoginScreenRoute);
+                        }),
                   ],
                 ),
               ),
