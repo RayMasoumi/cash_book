@@ -34,9 +34,10 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
       translations: Translate(),
+      locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
       initialRoute: GetStorage().read('isFirstRun') == 'false'
-          ? kSignUpScreenRoute
+          ? kHomeScreenRoute
           : kIntroductionScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
