@@ -39,7 +39,7 @@ class BeforeVerificationLoginWidget extends StatelessWidget {
         // * Sign up text:
         LinkedStringWidget(
           firstText: 'Don\'t have an account? ',
-          linkedText: 'Sign Up',
+          linkedText: kSignUpTitle,
           onTap: () => Get.toNamed(kSignUpScreenRoute),
         ),
       ],

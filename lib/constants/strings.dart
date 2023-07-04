@@ -1,4 +1,5 @@
 // * translatable Strings
+
 const String kIntroTitle1 = "Track Income & Expenses";
 const String kIntroTitle2 = "Manage Your Business with Staff";
 const String kIntroTitle3 = "Set-Up Multiple Businesses";
@@ -9,10 +10,10 @@ const String kSkipButtonText = 'Skip';
 const String kDoneButtonText = 'Done';
 const String kNewBookTitle = 'New Book';
 const String kAddBookText = 'ADD BOOK';
-final String kBookNameHint = 'Book Name';
-final String kAddButtonText = 'Add';
-final String kPrivateText = 'Private';
-final String kPublicText = 'Public';
+const String kBookNameHint = 'Book Name';
+const String kAddButtonText = 'Add';
+const String kPrivateText = 'Private';
+const String kPublicText = 'Public';
 const String kEnglishTranslate = 'en';
 const String kPersianTranslate = 'fa';
 const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';
@@ -23,3 +24,13 @@ const String kIntroductionScreenRoute = '/introduction_screen';
 const String kSignUpScreenRoute = '/sign_up_screen';
 const String kBookScreenRoute = '/book_screen';
 const String kLoginScreenRoute = '/login_screen';
+
+// * login screen strings:
+const String kTitleLogin = 'Login To Your Account';
+// *sign up screen strings:
+const String kSignUpTitle = 'Sign up';
+const String kUsernameTitle = 'Username';
+const String kUsernameHint = 'Type In a Username';
+const String kPhoneNumberTitle = 'Phone Number';
+const String kEmailTitle = 'E-mail';
+const String kCreateAccountText = 'Create Account';

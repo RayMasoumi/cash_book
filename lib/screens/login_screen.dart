@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../constants/strings.dart';
 import '../controllers/verification_controller.dart';
 import '../widgets/app_bar_title_widget.dart';
 
@@ -21,7 +22,7 @@ class LoginScreen extends StatelessWidget {
             const Column(
               children: [
                 AppBarTitleWidget(
-                  title: 'Login To Your Account',
+                  title: kTitleLogin,
                 ),
               ],
             ),

@@ -22,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
             const Column(
               children: [
                 AppBarTitleWidget(
-                  title: 'Sign up',
+                  title: kSignUpTitle,
                 ),
               ],
             ),
@@ -33,13 +33,13 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     // * textField and description
                     RoundTextFieldWidget(
-                      title: 'Username',
+                      title: kUsernameTitle,
                       keyBoardType: TextInputType.text,
-                      hintText: 'Type In a Username',
+                      hintText: kUsernameHint,
                       controller: TextEditingController(),
                     ),
                     RoundTextFieldWidget(
-                      title: 'Phone Number',
+                      title: kPhoneNumberTitle,
                       keyBoardType: TextInputType.number,
                       hintText: '+981234567890',
                       controller: TextEditingController(),
@@ -52,7 +52,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     // * submit button:
                     RoundedSubmitButtonWidget(
-                      text: 'Create Account',
+                      text: kCreateAccountText,
                       onPressed: () {
                         // * must go to verification:
                         Get.find<VerificationController>().isPressed.value =
