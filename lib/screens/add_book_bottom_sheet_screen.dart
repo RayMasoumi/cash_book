@@ -8,6 +8,8 @@ import 'package:cash_book/widgets/rounded_stretched_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/radio_button_controller.dart';
+
 class AddBookBottomSheet extends StatelessWidget {
   const AddBookBottomSheet({super.key});
 
@@ -37,18 +39,19 @@ class AddBookBottomSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 BoldBigTitleWidget(
-                  title: kNewBookTitle,
+                  title: kNewBookTitle.tr,
                 ),
                 CenterHintTextFieldWidget(
-                  hintText: kBookNameHint,
+                  hintText: kBookNameHint.tr,
                   controller: TextEditingController(),
                 ),
                 CustomRadioButtonWidget(
-                  buttonLabels: [kPrivateText, kPublicText],
+                  buttonLabels: [kPrivateText.tr, kPublicText.tr],
                   buttonValues: const [0, 1],
+                  controller: Get.find<RadioButtonController>().selectedValue,
                 ),
                 StretchedButtonWidget(
-                  buttonText: kAddButtonText,
+                  buttonText: kAddButtonText.tr,
                   onPressed: () {
                     Get.toNamed(kBookScreenRoute);
                   },

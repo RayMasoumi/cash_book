@@ -17,26 +17,26 @@ class IntroductionSliderScreen extends StatelessWidget {
       // * introduction screen pages
       pages: [
         introductionPageViewModel(
-          title: kIntroTitle1,
-          subtitle: kIntroSubtitle1,
+          title: kIntroTitle1.tr,
+          subtitle: kIntroSubtitle1.tr,
           imagePath: kIntroImagePath1,
         ),
         introductionPageViewModel(
-          title: kIntroTitle2,
-          subtitle: kIntroSubtitle2,
+          title: kIntroTitle2.tr,
+          subtitle: kIntroSubtitle2.tr,
           imagePath: kIntroImagePath2,
         ),
         introductionPageViewModel(
-          title: kIntroTitle3,
-          subtitle: kIntroSubtitle3,
+          title: kIntroTitle3.tr,
+          subtitle: kIntroSubtitle3.tr,
           imagePath: kIntroImagePath3,
         ),
       ],
       showSkipButton: true,
       showNextButton: false,
-      skip: Text(kSkipButtonText, style: kIntroButtonTextStyle),
+      skip: Text(kSkipButtonText.tr, style: kIntroButtonTextStyle),
       done: Text(
-        kDoneButtonText,
+        kDoneButtonText.tr,
         style: kIntroButtonTextStyle,
       ),
       onDone: () {

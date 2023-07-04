@@ -1,22 +1,18 @@
-import 'package:get/get.dart';
-
 // * translatable Strings
-final String kIntroTitle1 = "Track Income & Expenses".tr;
-final String kIntroTitle2 = "Manage Your Business with Staff".tr;
-final String kIntroTitle3 = "Set-Up Multiple Businesses".tr;
-final String kIntroSubtitle1 = "Stay updated on your profits".tr;
-final String kIntroSubtitle2 = "Add team members and assign roles".tr;
-final String kIntroSubtitle3 = "Keep multiple business records on one app".tr;
-final String kSkipButtonText = 'Skip'.tr;
-final String kDoneButtonText = 'Done'.tr;
-final String kNewBookTitle = 'New Book'.tr;
-final String kAddBookText = 'ADD BOOK'.tr;
-final String kBookNameHint = 'Book Name'.tr;
-final String kAddButtonText = 'Add'.tr;
-final String kPrivateText = 'Private'.tr;
-final String kPublicText = 'Public'.tr;
-
-// * no need to translate
+const String kIntroTitle1 = "Track Income & Expenses";
+const String kIntroTitle2 = "Manage Your Business with Staff";
+const String kIntroTitle3 = "Set-Up Multiple Businesses";
+const String kIntroSubtitle1 = "Stay updated on your profits";
+const String kIntroSubtitle2 = "Add team members and assign roles";
+const String kIntroSubtitle3 = "Keep multiple business records on one app";
+const String kSkipButtonText = 'Skip';
+const String kDoneButtonText = 'Done';
+const String kNewBookTitle = 'New Book';
+const String kAddBookText = 'ADD BOOK';
+final String kBookNameHint = 'Book Name';
+final String kAddButtonText = 'Add';
+final String kPrivateText = 'Private';
+final String kPublicText = 'Public';
 const String kEnglishTranslate = 'en';
 const String kPersianTranslate = 'fa';
 const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';

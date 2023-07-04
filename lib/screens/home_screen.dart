@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         buttonHeight: kFABHeight,
         buttonWidth: kFABWidth,
         buttonIcon: Icons.add,
-        buttonText: kAddBookText,
+        buttonText: kAddBookText.tr,
         onPressed: () {
           showModalBottomSheet(
             isScrollControlled: true,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
       }),
       appBar: AppBar(
         leading: const Padding(
-          padding: EdgeInsets.only(left: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Icon(
             Icons.account_circle_rounded,
             color: kPrimaryColor,
@@ -58,13 +58,13 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text(
+        title: Text(
           'name',
           style: TextStyle(color: kMainSubtitle),
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.only(right: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Icon(
               Icons.person_add_alt_1_outlined,
               size: 30.0,

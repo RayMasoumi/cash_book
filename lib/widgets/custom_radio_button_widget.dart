@@ -1,18 +1,18 @@
 import 'package:cash_book/constants/colors.dart';
-import 'package:cash_book/controllers/radio_button_controller.dart';
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomRadioButtonWidget extends StatelessWidget {
   const CustomRadioButtonWidget({
     required this.buttonLabels,
     required this.buttonValues,
+    required this.controller,
     super.key,
   });
 
   final List<String> buttonLabels;
   final List<int> buttonValues;
+  final controller;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class CustomRadioButtonWidget extends StatelessWidget {
             unSelectedColor: kPrimaryColor,
             textStyle: TextStyle(fontSize: 16)),
         radioButtonValue: (value) {
-          Get.find<RadioButtonController>().selectedValue.value = value;
+          controller.value = value;
         },
         selectedColor: kPrimaryColor,
         selectedBorderColor: kPrimaryColor,
