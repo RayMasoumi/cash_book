@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       translations: Translate(),
       // * checking if it is the first time the app is running
       initialRoute: GetStorage().read('isFirstRun') == 'false'
-          ? kSignUpScreenRoute
+          ? kHomeScreenRoute
           : kIntroductionScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(

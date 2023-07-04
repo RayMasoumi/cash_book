@@ -3,10 +3,12 @@ import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/screens/add_book_bottom_sheet_screen.dart';
-import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
+import 'package:cash_book/screens/books_list_screen.dart';
+import 'package:cash_book/screens/settings_screen.dart';
 import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../controllers/navigation_bar_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -32,20 +34,18 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Obx(() {
         return AnimatedBottomNavigationBar(
-          height: 50,
-          notchMargin: 5.0,
-          activeColor: kPrimaryColor,
-          icons: const [Icons.library_books, Icons.settings],
-          activeIndex: Get.find<NavigationBarController>().index.value,
-          gapLocation: GapLocation.center,
-          notchSmoothness: NotchSmoothness.smoothEdge,
-          iconSize: 30,
-          gapWidth: kFABWidth,
-          onTap: (index) {
-            Get.find<NavigationBarController>().index.value = index;
-          },
-          //other params
-        );
+            height: 50,
+            notchMargin: 5.0,
+            activeColor: kPrimaryColor,
+            icons: const [Icons.library_books, Icons.settings],
+            activeIndex: Get.find<NavigationBarController>().index.value,
+            gapLocation: GapLocation.center,
+            notchSmoothness: NotchSmoothness.smoothEdge,
+            iconSize: 30,
+            gapWidth: kFABWidth,
+            onTap: (index) {
+              Get.find<NavigationBarController>().index.value = index;
+            });
       }),
       appBar: AppBar(
         leading: const Padding(
@@ -73,31 +73,19 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: ListView.builder(
-            itemCount: 8,
-            itemBuilder: (context, index) {
-              return LeftIconListTileWidget(
-                lastModified: 'yesterday',
-                title: 'Business',
-                onTap: () {},
-              );
-            },
-          ),
-        ),
-      ),
+      body: Obx(() {
+        final int currentIndex =
+            Get.find<NavigationBarController>().index.value;
+
+        switch (currentIndex) {
+          case 0:
+            return const BooksListScreen();
+          case 1:
+            return const SettingsScreen();
+          default:
+            return const BooksListScreen();
+        }
+      }),
     );
   }
 }
-
-/**
- * * The problem with overlapping widgets happened because they kept rebuilding
- * ! this is a hack not a solution and it is NOT optimized
- * $child: SingleChildScrollView(
- * $  child: Column(
- * $    children: [for (int i = 0; i < 6; i++) CardListViewWidget()],
- * $      ),
- * $  ),
- */
