@@ -1,5 +1,10 @@
-import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/widgets/app_bar_title_widget.dart';
+import 'package:cash_book/widgets/linked_string_widget.dart';
+import 'package:cash_book/widgets/submit_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../widgets/round_text_field_widget.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -13,24 +18,21 @@ class SignUpScreen extends StatelessWidget {
         child: Flex(
           direction: Axis.vertical,
           children: [
-            Column(
+            const Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Sign up',
-                    style: kBigTitleStyle,
-                  ),
+                AppBarTitleWidget(
+                  title: 'Sign up',
                 ),
               ],
             ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // * textField and description
                     RoundTextFieldWidget(
-                      title: 'UserName',
+                      title: 'Username',
                       keyBoardType: TextInputType.text,
                       hintText: 'Type In a Username',
                       controller: TextEditingController(),
@@ -46,6 +48,19 @@ class SignUpScreen extends StatelessWidget {
                       title: 'E-mail',
                       hintText: 'cashBook@mail.com',
                       controller: TextEditingController(),
+                    ),
+                    // * submit button:
+                    RoundedSubmitButtonWidget(
+                      text: 'Create Account',
+                      onPressed: () {
+                        Get.toNamed(kHomeScreenRoute);
+                      },
+                    ),
+                    // * log in text:
+                    const LinkedStringWidget(
+                      firstText: 'Already have an account? ',
+                      linkedText: 'log in',
+                      destinationRoute: kLoginScreenRoute,
                     ),
                   ],
                 ),

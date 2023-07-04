@@ -24,3 +24,4 @@ const String kHomeScreenRoute = '/home_screen';
 const String kIntroductionScreenRoute = '/introduction_screen';
 const String kSignUpScreenRoute = '/sign_up_screen';
 const String kBookScreenRoute = '/book_screen';
+const String kLoginScreenRoute = '/login_screen';

@@ -2,8 +2,10 @@ import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/widgets/center_hint_text_field_widget.dart';
-import 'package:cash_book/widgets/stretched_button_widget.dart';
+import 'package:cash_book/widgets/rounded_stretched_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class AddBookBottomSheet extends StatelessWidget {
   const AddBookBottomSheet({super.key});
@@ -41,7 +43,12 @@ class AddBookBottomSheet extends StatelessWidget {
                 CenterHintTextFieldWidget(
                   hintText: kBookNameHint,
                 ),
-                StretchedButtonWidget(buttonText: kAddButtonText),
+                StretchedButtonWidget(
+                  buttonText: kAddButtonText,
+                  onPressed: () {
+                    Get.toNamed(kBookScreenRoute);
+                  },
+                ),
               ],
             ),
           ),

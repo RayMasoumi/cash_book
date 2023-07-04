@@ -2,6 +2,7 @@ import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/screens/book_screen.dart';
 import 'package:cash_book/screens/home_screen.dart';
 import 'package:cash_book/screens/introduction_screen.dart';
+import 'package:cash_book/screens/login_screen.dart';
 import 'package:get/get.dart';
 
 import '../screens/sign_up_screen.dart';
@@ -14,5 +15,6 @@ class MyRoutes {
             page: () => const IntroductionSliderScreen()),
         GetPage(name: '/sign_up_screen', page: () => const SignUpScreen()),
         GetPage(name: '/book_screen', page: () => const BookScreen()),
+        GetPage(name: '/login_screen', page: () => const LoginScreen()),
       ];
 }
