@@ -23,6 +23,7 @@ dependencies:
   hive: ^2.2.3
   introduction_screen: ^3.1.9
   get_storage: ^2.1.1
+  animated_bottom_navigation_bar: ^1.2.0
 
 
 dev_dependencies:

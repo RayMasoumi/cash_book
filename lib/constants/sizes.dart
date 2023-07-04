@@ -6,9 +6,9 @@ import 'colors.dart';
 // * heights and widths:
 final kWidth = Get.width; // * 411.42857142857144
 final kHeight = Get.height; // * 707.4285714285714
-final kFABHeight = kHeight * 0.11;
-final kFABWidth = kWidth * 0.55;
-final kIconButtonSize = kWidth * 0.08;
+final kFABHeight = kHeight * 0.09;
+final kFABWidth = kWidth * 0.45;
+final kIconButtonSize = kWidth * 0.085;
 final k30Width = kWidth * 0.07;
 final k3Width = kWidth * 0.007;
 final k10Width = kWidth * 0.024;
@@ -24,7 +24,7 @@ final kBorderRadius15 = BorderRadius.circular(15);
 
 // * styles:
 final kIconTextStyle = TextStyle(
-  fontSize: kWidth * 0.05,
+  fontSize: kWidth * 0.048,
   fontWeight: FontWeight.bold,
 );
 final kIntroTitleStyle = TextStyle(
