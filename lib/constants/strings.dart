@@ -11,6 +11,8 @@ final String kSkipButtonText = 'Skip'.tr;
 final String kDoneButtonText = 'Done'.tr;
 final String kNewBookTitle = 'New Book'.tr;
 final String kAddBookText = 'ADD BOOK'.tr;
+final String kBookNameHint = 'Book Name'.tr;
+final String kAddButtonText = 'Add'.tr;
 
 // * no need to translate
 const String kEnglishTranslate = 'en';
@@ -21,3 +23,4 @@ const String kIntroImagePath3 = 'assets/images/introduction_page_3.png';
 const String kHomeScreenRoute = '/home_screen';
 const String kIntroductionScreenRoute = '/introduction_screen';
 const String kSignUpScreenRoute = '/sign_up_screen';
+const String kBookScreenRoute = '/book_screen';

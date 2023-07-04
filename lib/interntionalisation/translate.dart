@@ -16,6 +16,8 @@ class Translate implements Translations {
           'Done': 'Done',
           'New Book': 'New Book',
           'ADD BOOK': 'ADD BOOK',
+          'Book Name': 'Book Name',
+          'Add': 'Add',
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -30,7 +32,9 @@ class Translate implements Translations {
           'Skip': 'رد کردن',
           'Done': 'اتمام',
           'New Book': 'کتاب جدید',
-          'ADD BOOK': 'اضافه کردن کتاب',
+          'ADD BOOK': 'افزودن کتاب',
+          'Book Name': 'نام کتاب',
+          'Add': 'افزودن'
         },
       };
 }

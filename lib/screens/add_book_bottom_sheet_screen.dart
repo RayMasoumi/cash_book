@@ -2,6 +2,8 @@ import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class AddBookBottomSheet extends StatelessWidget {
   const AddBookBottomSheet({super.key});
@@ -23,39 +25,58 @@ class AddBookBottomSheet extends StatelessWidget {
           ),
           child: Container(
             margin: EdgeInsets.only(
-                top: k30Width, left: k40Height, right: k40Height),
+                top: k30Width,
+                left: k40Height,
+                right: k40Height,
+                bottom: k30Width),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Text(
                   kNewBookTitle,
-                  style: kTitlesStyle,
+                  style: kSmallTitlesStyle,
                   textAlign: TextAlign.center,
                 ),
                 TextField(
                   textAlign: TextAlign.center,
                   onChanged: (value) {},
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
+                    hintText: kBookNameHint,
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: kSecondaryColor,
+                      ),
+                    ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide:
-                          BorderSide(color: Colors.lightBlueAccent, width: 3.0),
+                          BorderSide(color: kPrimaryColor, width: k3Width),
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
-                  child: TextButton(
-                    style: const ButtonStyle(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Colors.lightBlueAccent),
+                          const MaterialStatePropertyAll(kPrimaryColor),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: kBorderRadius15,
+                        ),
+                      ),
                     ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Add',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
+                    onPressed: () {
+                      Get.toNamed(kBookScreenRoute);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        kAddButtonText,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 25.0,
+                        ),
                       ),
                     ),
                   ),

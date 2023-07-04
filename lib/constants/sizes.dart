@@ -10,6 +10,7 @@ final kFABHeight = kHeight * 0.11;
 final kFABWidth = kWidth * 0.55;
 final kIconButtonSize = kWidth * 0.08;
 final k30Width = kWidth * 0.07;
+final k3Width = kWidth * 0.007;
 final k10Width = kWidth * 0.024;
 final kBottomListHeight = kHeight * 0.6;
 final k40Height = kHeight * 0.05;
@@ -41,8 +42,8 @@ const kIntroButtonTextStyle = TextStyle(
 const kDescriptionStyle = TextStyle(
   color: Colors.grey,
 );
-final kTitlesStyle = TextStyle(
+final kSmallTitlesStyle = TextStyle(
   color: kPrimaryColor,
   fontSize: kWidth * 0.07,
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w900,
 );
