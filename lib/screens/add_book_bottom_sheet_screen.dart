@@ -1,6 +1,7 @@
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/widgets/bold_small_title_widget.dart';
 import 'package:cash_book/widgets/center_hint_text_field_widget.dart';
 import 'package:cash_book/widgets/rounded_stretched_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -35,13 +36,12 @@ class AddBookBottomSheet extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Text(
-                  kNewBookTitle,
-                  style: kSmallTitlesStyle,
-                  textAlign: TextAlign.center,
+                BoldSmallTitleWidget(
+                  title: kNewBookTitle,
                 ),
                 CenterHintTextFieldWidget(
                   hintText: kBookNameHint,
+                  controller: TextEditingController(),
                 ),
                 StretchedButtonWidget(
                   buttonText: kAddButtonText,

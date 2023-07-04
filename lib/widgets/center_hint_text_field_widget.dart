@@ -5,16 +5,18 @@ import 'package:flutter/material.dart';
 class CenterHintTextFieldWidget extends StatelessWidget {
   const CenterHintTextFieldWidget({
     required this.hintText,
+    required this.controller,
     super.key,
   });
 
-  final hintText;
+  final String hintText;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       textAlign: TextAlign.center,
-      onChanged: (value) {},
+      controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
         focusedBorder: const UnderlineInputBorder(
