@@ -32,6 +32,15 @@ final kIntroTitleStyle = TextStyle(
   fontSize: kWidth * 0.07,
   fontWeight: FontWeight.bold,
 );
+final kBigTitleStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontSize: kWidth * 0.072,
+);
+final kSmallTitlesStyle = TextStyle(
+  color: kPrimaryColor,
+  fontSize: kWidth * 0.050,
+  fontWeight: FontWeight.w900,
+);
 final kIntroSubtitleStyle = TextStyle(
   color: kMainSubtitle,
   fontSize: kWidth * 0.055,
@@ -41,9 +50,4 @@ const kIntroButtonTextStyle = TextStyle(
 );
 const kDescriptionStyle = TextStyle(
   color: Colors.grey,
-);
-final kSmallTitlesStyle = TextStyle(
-  color: kPrimaryColor,
-  fontSize: kWidth * 0.07,
-  fontWeight: FontWeight.w900,
 );
