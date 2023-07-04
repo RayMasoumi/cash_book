@@ -1,8 +1,9 @@
+import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-class BoldSmallTitleWidget extends StatelessWidget {
-  const BoldSmallTitleWidget({
+class BoldBigTitleWidget extends StatelessWidget {
+  const BoldBigTitleWidget({
     required this.title,
     super.key,
   });
@@ -13,7 +14,7 @@ class BoldSmallTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: kSmallTitlesStyle,
+      style: kBigTitleStyle.copyWith(color: kPrimaryColor),
       textAlign: TextAlign.center,
     );
   }

@@ -18,6 +18,8 @@ class Translate implements Translations {
           'ADD BOOK': 'ADD BOOK',
           'Book Name': 'Book Name',
           'Add': 'Add',
+          'Private': 'Private',
+          'Public': 'Public',
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -34,7 +36,9 @@ class Translate implements Translations {
           'New Book': 'کتاب جدید',
           'ADD BOOK': 'افزودن کتاب',
           'Book Name': 'نام کتاب',
-          'Add': 'افزودن'
+          'Add': 'افزودن',
+          'Private': 'خصوصی',
+          'Public': 'عمومی',
         },
       };
 }
