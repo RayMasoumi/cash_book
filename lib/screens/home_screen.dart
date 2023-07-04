@@ -1,3 +1,4 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
@@ -26,16 +27,59 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        height: 50,
+        notchMargin: 5.0,
+        activeColor: kPrimaryColor,
+        icons: const [Icons.library_books, Icons.settings],
+        activeIndex: 0,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.smoothEdge,
+        iconSize: 30,
+        gapWidth: kFABWidth,
+        onTap: (index) {},
+        //other params
+      ),
+      appBar: AppBar(
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Icon(
+            Icons.supervised_user_circle,
+            color: kPrimaryColor,
+            size: 40.0,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: const Text(
+          'name',
+          style: TextStyle(color: kMainSubtitle),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Icon(
+              Icons.person_add_alt_1,
+              size: 30.0,
+              color: kPrimaryColor,
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return LeftIconListTileWidget(
-              lastModified: 'yesterday',
-              title: 'Business',
-              onTap: () {},
-            );
-          },
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 20.0),
+          child: ListView.builder(
+            itemCount: 8,
+            itemBuilder: (context, index) {
+              return LeftIconListTileWidget(
+                lastModified: 'yesterday',
+                title: 'Business',
+                onTap: () {},
+              );
+            },
+          ),
         ),
       ),
     );

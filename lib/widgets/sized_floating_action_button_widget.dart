@@ -37,8 +37,8 @@ class SizedFABWidget extends StatelessWidget {
               buttonText,
               style: kIconTextStyle,
             ),
-            SizedBox(
-              width: k10Width,
+            const SizedBox(
+              width: 5.0,
             ),
             Icon(buttonIcon, size: kIconButtonSize),
           ],
