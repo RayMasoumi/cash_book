@@ -1,5 +1,6 @@
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/interntionalisation/translate.dart';
+import 'package:cash_book/methods/user_route_method.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -40,9 +41,7 @@ class MyApp extends StatelessWidget {
       translations: Translate(),
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
-      initialRoute: GetStorage().read('isFirstRun') == 'false'
-          ? kHomeScreenRoute
-          : kIntroductionScreenRoute,
+      initialRoute: userRoute(),
       getPages: MyRoutes.pages,
       theme: ThemeData(
         fontFamily: 'Nunito',

@@ -13,6 +13,6 @@ class MyBindings implements Bindings {
     Get.lazyPut(() => NavigationBarController());
     Get.put(VerificationController());
     Get.lazyPut(() => RadioButtonController());
-    Get.lazyPut(() => CurrentUserController());
+    Get.put(CurrentUserController());
   }
 }
