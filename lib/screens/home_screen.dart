@@ -2,7 +2,6 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
-import 'package:cash_book/controllers/current_user_controller.dart';
 import 'package:cash_book/screens/add_book_bottom_sheet_screen.dart';
 import 'package:cash_book/screens/books_list_screen.dart';
 import 'package:cash_book/screens/settings_screen.dart';
@@ -64,9 +63,10 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Text(
-          Get.find<CurrentUserController>().currentUser.value!.userName,
-          style: const TextStyle(color: kMainSubtitle),
+        title: const Text(
+          'name',
+          //Get.find<CurrentUserController>().currentUser.value!.userName,
+          style: TextStyle(color: kMainSubtitle),
         ),
         actions: const [
           Padding(
