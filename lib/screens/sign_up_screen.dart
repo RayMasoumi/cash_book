@@ -46,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     RoundTextFieldWidget(
                       keyBoardType: TextInputType.emailAddress,
-                      title: 'E-mail',
+                      title: 'E-mail'.tr,
                       hintText: 'cashBook@mail.com',
                       controller: TextEditingController(),
                     ),
@@ -62,9 +62,10 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     // * log in text:
                     LinkedStringWidget(
-                        firstText: 'Already have an account? ',
+                        firstText: 'Already have an account? '.tr,
                         linkedText: ''
-                            'Log In',
+                                'Log In'
+                            .tr,
                         onTap: () {
                           Get.find<VerificationController>().isPressed.value =
                               false;

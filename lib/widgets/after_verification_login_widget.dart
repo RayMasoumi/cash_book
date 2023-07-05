@@ -20,7 +20,7 @@ class AfterVerificationLoginWidget extends StatelessWidget {
         // * textField and description
         RoundTextFieldWidget(
           textAlign: TextAlign.center,
-          title: 'Enter The 4-Digit Code You Received',
+          title: 'Enter The 4-Digit Code You Received'.tr,
           keyBoardType: TextInputType.number,
           hintText: '_    _    _    _',
           controller: TextEditingController(),
@@ -30,14 +30,14 @@ class AfterVerificationLoginWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           child: RoundedSubmitButtonWidget(
-            text: 'Submit',
+            text: 'Submit'.tr,
             onPressed: () {},
           ),
         ),
         // * log in text:
         LinkedStringWidget(
-          firstText: 'Not sure about your number? ',
-          linkedText: 'Change it here',
+          firstText: 'Not sure about your number? '.tr,
+          linkedText: 'Change it here'.tr,
           onTap: () {
             Get.find<VerificationController>().isPressed.value = false;
             Get.offNamed(kLoginScreenRoute);

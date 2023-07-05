@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           'name',
           style: TextStyle(color: kMainSubtitle),
         ),

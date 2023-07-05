@@ -20,7 +20,7 @@ class BeforeVerificationLoginWidget extends StatelessWidget {
         // * textField and description
 
         RoundTextFieldWidget(
-          title: 'Enter Your Phone Number',
+          title: 'Enter Your Phone Number'.tr,
           keyBoardType: TextInputType.number,
           hintText: '+981234567890',
           controller: TextEditingController(),
@@ -30,7 +30,7 @@ class BeforeVerificationLoginWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           child: RoundedSubmitButtonWidget(
-            text: 'Send SMS',
+            text: 'Send SMS'.tr,
             onPressed: () {
               Get.find<VerificationController>().isPressed.value = true;
             },
@@ -38,7 +38,7 @@ class BeforeVerificationLoginWidget extends StatelessWidget {
         ),
         // * Sign up text:
         LinkedStringWidget(
-          firstText: 'Don\'t have an account? ',
+          firstText: 'Don\'t have an account? '.tr,
           linkedText: kSignUpTitle,
           onTap: () => Get.toNamed(kSignUpScreenRoute),
         ),
