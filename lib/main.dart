@@ -13,12 +13,13 @@ import 'model/user.dart';
 
 void main() async {
   await Hive.initFlutter();
+  // * opening hive boxes
   Hive.registerAdapter(UserAdapter());
-  Hive.openBox<User>('userBox');
+  await Hive.openBox<User>(kUserBoxName);
   Hive.registerAdapter(EntryAdapter());
-  Hive.openBox<Entry>('entryBox');
+  await Hive.openBox<Entry>(kEntryBoxName);
   Hive.registerAdapter(BookAdapter());
-  Hive.openBox<Book>('bookBox');
+  await Hive.openBox<Book>(kBookBoxName);
   await GetStorage.init();
 
   runApp(const MyApp());
@@ -26,13 +27,13 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
+      // * translation
       translations: Translate(),
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running

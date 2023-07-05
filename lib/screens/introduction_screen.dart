@@ -7,6 +7,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import '../methods/introduction_page_method.dart';
+import '../methods/is_logged_in_method.dart';
 
 class IntroductionSliderScreen extends StatelessWidget {
   const IntroductionSliderScreen({super.key});
@@ -42,7 +43,7 @@ class IntroductionSliderScreen extends StatelessWidget {
       onDone: () {
         // * Only show this page once
         GetStorage().write('isFirstRun', 'false');
-        GetStorage().read('loggedIn') == 'true'
+        isLoggedIn()
             ? Get.toNamed(kHomeScreenRoute)
             : Get.toNamed(kSignUpScreenRoute);
       },

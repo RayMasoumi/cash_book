@@ -34,3 +34,9 @@ const String kUsernameHint = 'Type In a Username';
 const String kPhoneNumberTitle = 'Phone Number';
 const String kEmailTitle = 'E-mail';
 const String kCreateAccountText = 'Create Account';
+
+// * hive box names:
+const String kUserBoxName = 'userBox';
+const String kCurrentUserBoxName = 'CurrentUserBox';
+const String kEntryBoxName = 'entryBox';
+const String kBookBoxName = 'bookBox';
