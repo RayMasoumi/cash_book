@@ -6,5 +6,5 @@ import 'package:get/get.dart';
 // * gets current user info and adds them to controller
 
 void newCurrentUser({required User user}) {
-  Get.find<CurrentUserController>().currentUser = user;
+  Get.find<CurrentUserController>().currentUser.value = user;
 }

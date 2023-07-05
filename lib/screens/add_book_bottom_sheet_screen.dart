@@ -1,6 +1,8 @@
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/controllers/text_field_controller.dart';
+import 'package:cash_book/methods/add_new_book_method.dart';
 import 'package:cash_book/widgets/custom_radio_button_widget.dart';
 import 'package:cash_book/widgets/bold_big_title_widget.dart';
 import 'package:cash_book/widgets/center_hint_text_field_widget.dart';
@@ -45,7 +47,7 @@ class AddBookBottomSheet extends StatelessWidget {
                 // * TextField
                 CenterHintTextFieldWidget(
                   hintText: kBookNameHint.tr,
-                  controller: TextEditingController(),
+                  controller: Get.find<TextFieldController>().addBookName,
                 ),
                 // * Private or Public radio button
                 CustomRadioButtonWidget(
@@ -57,7 +59,7 @@ class AddBookBottomSheet extends StatelessWidget {
                 StretchedButtonWidget(
                   buttonText: kAddButtonText.tr,
                   onPressed: () {
-                    Get.toNamed(kBookScreenRoute);
+                    addNewBookMethod();
                   },
                 ),
               ],

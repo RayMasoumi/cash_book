@@ -10,7 +10,7 @@ class CenterHintTextFieldWidget extends StatelessWidget {
   });
 
   final String hintText;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
