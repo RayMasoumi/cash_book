@@ -2,8 +2,6 @@ import 'package:cash_book/widgets/after_verification_login_widget.dart';
 import 'package:cash_book/widgets/login_before_verification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../constants/strings.dart';
 import '../controllers/verification_controller.dart';
 import '../widgets/app_bar_title_widget.dart';

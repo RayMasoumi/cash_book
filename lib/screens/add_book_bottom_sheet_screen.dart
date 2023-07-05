@@ -38,18 +38,22 @@ class AddBookBottomSheet extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                // * Title
                 BoldBigTitleWidget(
                   title: kNewBookTitle.tr,
                 ),
+                // * TextField
                 CenterHintTextFieldWidget(
                   hintText: kBookNameHint.tr,
                   controller: TextEditingController(),
                 ),
+                // * Private or Public radio button
                 CustomRadioButtonWidget(
                   buttonLabels: [kPrivateText.tr, kPublicText.tr],
                   buttonValues: const [0, 1],
                   controller: Get.find<RadioButtonController>().selectedValue,
                 ),
+                // * add button
                 StretchedButtonWidget(
                   buttonText: kAddButtonText.tr,
                   onPressed: () {

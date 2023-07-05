@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // * add book floating action button
       floatingActionButton: SizedFABWidget(
         buttonColor: kPrimaryColor,
         buttonHeight: kFABHeight,
@@ -31,7 +32,9 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
+      // * location of fab
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // * Navigation bar
       bottomNavigationBar: Obx(() {
         return AnimatedBottomNavigationBar(
             height: 50,
@@ -47,6 +50,8 @@ class HomeScreen extends StatelessWidget {
               Get.find<NavigationBarController>().index.value = index;
             });
       }),
+      // * app bar
+      // ? couldn't extract
       appBar: AppBar(
         leading: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -73,6 +78,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      // * screens of navigation bar
       body: Obx(() {
         final int currentIndex =
             Get.find<NavigationBarController>().index.value;

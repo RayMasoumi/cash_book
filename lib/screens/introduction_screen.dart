@@ -42,7 +42,9 @@ class IntroductionSliderScreen extends StatelessWidget {
       onDone: () {
         // * Only show this page once
         GetStorage().write('isFirstRun', 'false');
-        Get.toNamed(kHomeScreenRoute);
+        GetStorage().read('loggedIn') == 'true'
+            ? Get.toNamed(kHomeScreenRoute)
+            : Get.toNamed(kSignUpScreenRoute);
       },
       dotsDecorator: const DotsDecorator(
         activeColor: kPrimaryColor,
