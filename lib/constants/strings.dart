@@ -37,6 +37,6 @@ const String kCreateAccountText = 'Create Account';
 
 // * hive box names:
 const String kUserBoxName = 'userBox';
-const String kCurrentUserBoxName = 'CurrentUserBox';
+const String kMemberBoxName = 'memberBox';
 const String kEntryBoxName = 'entryBox';
 const String kBookBoxName = 'bookBox';
