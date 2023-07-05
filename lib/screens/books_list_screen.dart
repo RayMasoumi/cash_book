@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,10 @@ class BooksListScreen extends StatelessWidget {
           itemCount: 8,
           itemBuilder: (context, index) {
             return LeftIconListTileWidget(
-              lastModified: 'yesterday',
+              subtitle: 'yesterday',
               title: 'Business',
               onTap: () {},
+              backgroundColor: kPrimaryColor,
             );
           },
         ),

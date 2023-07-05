@@ -5,14 +5,18 @@ import 'package:flutter/material.dart';
 
 class LeftIconListTileWidget extends StatelessWidget {
   final String title;
-  final String lastModified;
+  final String subtitle;
   final Function() onTap;
+  final IconData icon;
+  final Color backgroundColor;
 
   const LeftIconListTileWidget({
     super.key,
     required this.title,
-    required this.lastModified,
+    required this.subtitle,
     required this.onTap,
+    this.icon = Icons.downloading,
+    required this.backgroundColor,
   });
 
   @override
@@ -42,9 +46,9 @@ class LeftIconListTileWidget extends StatelessWidget {
             height: kIconContainerSide,
             child: Row(
               children: <Widget>[
-                const IconWithBackGroundWidget(
-                  icon: Icons.downloading,
-                  backgroundColor: kPrimaryColor,
+                IconWithBackGroundWidget(
+                  icon: icon,
+                  backgroundColor: backgroundColor,
                 ),
                 const SizedBox(width: 10),
                 Expanded(
@@ -52,8 +56,13 @@ class LeftIconListTileWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(title),
-                      Text(lastModified, style: kDescriptionStyle)
+                      Text(
+                        title,
+                        style: const TextStyle(
+                            // fontSize: kWidth * 0.035,
+                            ),
+                      ),
+                      Text(subtitle, style: kDescriptionStyle)
                     ],
                   ),
                 ),
