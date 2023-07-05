@@ -1,5 +1,5 @@
 import 'package:cash_book/constants/strings.dart';
-import 'package:cash_book/interntionalisation/translate.dart';
+import 'package:cash_book/internationalization/translate.dart';
 import 'package:cash_book/methods/user_route_method.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +26,12 @@ void main() async {
   await Hive.openBox<Member>(kMemberBoxName);
   await GetStorage.init();
 
+  MyBindings().dependencies();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

@@ -5,5 +5,9 @@ import '../constants/strings.dart';
 import '../model/user.dart';
 
 User? getCurrentUser() {
-  return Hive.box<User>(kUserBoxName).getAt(0);
+  if (Hive.box<User>(kUserBoxName).isNotEmpty) {
+    return Hive.box<User>(kUserBoxName).getAt(0);
+  } else {
+    return null;
+  }
 }

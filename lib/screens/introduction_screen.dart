@@ -3,7 +3,6 @@ import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import '../methods/introduction_page_method.dart';
@@ -42,7 +41,6 @@ class IntroductionSliderScreen extends StatelessWidget {
       ),
       onDone: () {
         // * Only show this page once
-        GetStorage().write('isFirstRun', 'false');
         isLoggedIn()
             ? Get.toNamed(kHomeScreenRoute)
             : Get.toNamed(kSignUpScreenRoute);

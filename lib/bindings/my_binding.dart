@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 class MyBindings implements Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.lazyPut(() => TranslateController());
     Get.lazyPut(() => NavigationBarController());
     Get.put(VerificationController());

@@ -1,3 +1,5 @@
+import 'package:cash_book/methods/get_user_to_home_screen_method.dart';
+import 'package:cash_book/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +33,17 @@ class AfterVerificationLoginWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           child: RoundedSubmitButtonWidget(
             text: 'Submit'.tr,
-            onPressed: () {},
+            onPressed: () {
+              User currentUser = User(
+                userId: 'admin0',
+                userName: 'admin',
+                userPhoneNumber: '09123456789',
+                userEmail: 'admin',
+                lastSyncDate: DateTime.now().toString(),
+                userCreationDate: DateTime.now().toString(),
+              );
+              getUserToHomeScreen(currentUser);
+            },
           ),
         ),
         // * log in text:

@@ -40,3 +40,4 @@ const String kUserBoxName = 'userBox';
 const String kMemberBoxName = 'memberBox';
 const String kEntryBoxName = 'entryBox';
 const String kBookBoxName = 'bookBox';
+const String kIsLoggedIn = 'loggedIn';
