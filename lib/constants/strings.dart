@@ -41,3 +41,4 @@ const String kMemberBoxName = 'memberBox';
 const String kEntryBoxName = 'entryBox';
 const String kBookBoxName = 'bookBox';
 const String kIsLoggedIn = 'loggedIn';
+const String kCurrentUserIDKey = 'currentUserID';
