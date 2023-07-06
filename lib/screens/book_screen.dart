@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:animated_icon/animated_icon.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
@@ -34,7 +37,7 @@ class BookScreen extends StatelessWidget {
           children: [
             Container(
               width: kWidth,
-              height: kHeight * 0.7,
+              height: kHeight * 0.65,
               color: Colors.white60,
               padding: const EdgeInsets.only(bottom: 20.0),
               child: ListView.builder(
@@ -50,59 +53,81 @@ class BookScreen extends StatelessWidget {
                 },
               ),
             ),
+            // * bottom container(add entry):
             Container(
               color: Colors.white,
-              child: Expanded(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const Text(
-                                'Record ',
-                              ),
-                              Text(
-                                'Income',
-                                style: TextStyle(color: Colors.green.shade800),
-                              ),
-                            ],
-                          ),
-                          SizedFABWidget(
-                            buttonHeight: kHeight * 0.07,
-                            buttonWidth: kWidth * 0.4,
-                            onPressed: () {},
-                            buttonIcon: Icons.add,
-                            buttonText: 'Cash In',
-                            buttonColor: Colors.green,
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              const Text(
-                                'Record ',
-                              ),
-                              Text(
-                                'Expense',
-                                style: TextStyle(color: Colors.red.shade900),
-                              ),
-                            ],
-                          ),
-                          SizedFABWidget(
-                            buttonHeight: kHeight * 0.07,
-                            buttonWidth: kWidth * 0.4,
-                            onPressed: () {},
-                            buttonIcon: Icons.remove,
-                            buttonText: 'Cash Out',
-                            buttonColor: Colors.red,
-                          ),
-                        ],
-                      ),
-                    ]),
+              child: Column(
+                children: [
+                  Text(
+                    'Add an Entry',
+                    style: kSmallTitlesStyle,
+                  ),
+                  // *  animated icon:
+                  AnimateIcon(
+                    key: UniqueKey(),
+                    onTap: () {},
+                    iconType: IconType.continueAnimation,
+                    height: kIconButtonSize,
+                    width: kIconButtonSize,
+                    color: kPrimaryColor,
+                    animateIcon: AnimateIcons.downArrow,
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const Text(
+                                  'Record ',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  'Income',
+                                  style: TextStyle(
+                                      color: Colors.green.shade800,
+                                      fontSize: 18),
+                                ),
+                              ],
+                            ),
+                            SizedFABWidget(
+                              buttonHeight: kHeight * 0.07,
+                              buttonWidth: kWidth * 0.4,
+                              onPressed: () {},
+                              buttonIcon: Icons.add,
+                              buttonText: 'Cash In',
+                              buttonColor: Colors.green,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                const Text(
+                                  'Record ',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  'Expense',
+                                  style: TextStyle(
+                                      color: Colors.red.shade900, fontSize: 18),
+                                ),
+                              ],
+                            ),
+                            SizedFABWidget(
+                              buttonHeight: kHeight * 0.07,
+                              buttonWidth: kWidth * 0.4,
+                              onPressed: () {},
+                              buttonIcon: Icons.remove,
+                              buttonText: 'Cash Out',
+                              buttonColor: Colors.red,
+                            ),
+                          ],
+                        ),
+                      ]),
+                ],
               ),
             ),
           ],
