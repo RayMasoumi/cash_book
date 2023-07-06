@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/controllers/text_field_controller.dart';
 import 'package:cash_book/screens/add_book_bottom_sheet_screen.dart';
 import 'package:cash_book/screens/books_list_screen.dart';
 import 'package:cash_book/screens/settings_screen.dart';
@@ -9,6 +10,7 @@ import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/current_user_controller.dart';
 import '../controllers/navigation_bar_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,6 +27,7 @@ class HomeScreen extends StatelessWidget {
         buttonIcon: Icons.add,
         buttonText: kAddBookText.tr,
         onPressed: () {
+          Get.find<TextFieldController>().addBookName?.clear();
           showModalBottomSheet(
             isScrollControlled: true,
             context: context,
@@ -63,10 +66,9 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text(
-          'name',
-          //Get.find<CurrentUserController>().currentUser.value!.userName,
-          style: TextStyle(color: kMainSubtitle),
+        title: Text(
+          Get.find<CurrentUserController>().currentUser.value!.userName,
+          style: const TextStyle(color: kMainSubtitle),
         ),
         actions: const [
           Padding(

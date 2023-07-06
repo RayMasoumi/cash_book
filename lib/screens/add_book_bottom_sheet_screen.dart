@@ -60,6 +60,7 @@ class AddBookBottomSheet extends StatelessWidget {
                   buttonText: kAddButtonText.tr,
                   onPressed: () {
                     addNewBookMethod();
+                    Get.back();
                   },
                 ),
               ],

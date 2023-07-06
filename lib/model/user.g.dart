@@ -23,7 +23,7 @@ class UserAdapter extends TypeAdapter<User> {
       userEmail: fields[4] as String,
       lastSyncDate: fields[9] as String,
       userCreationDate: fields[10] as String,
-      userBooks: (fields[5] as List).cast<Book>(),
+      userBooks: (fields[5] as List?)?.cast<Book>(),
       isDisabled: fields[11] as bool,
     )
       ..userCompany = fields[6] as String?

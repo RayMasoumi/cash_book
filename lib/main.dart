@@ -7,6 +7,7 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'bindings/my_binding.dart';
+import 'methods/user_route_method.dart';
 import 'model/book.dart';
 import 'model/entry.dart';
 import 'model/member.dart';
@@ -41,8 +42,8 @@ class MyApp extends StatelessWidget {
       translations: Translate(),
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
-      // initialRoute: userRoute(),
-      initialRoute: kBookScreenRoute,
+      initialRoute: userRoute(),
+      // initialRoute: kBookScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         fontFamily: 'Nunito',

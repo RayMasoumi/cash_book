@@ -1,6 +1,9 @@
-import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../constants/colors.dart';
+import '../controllers/current_user_controller.dart';
 
 class BooksListScreen extends StatelessWidget {
   const BooksListScreen({
@@ -12,17 +15,38 @@ class BooksListScreen extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
-        child: ListView.builder(
-          itemCount: 8,
-          itemBuilder: (context, index) {
-            return LeftIconListTileWidget(
-              subtitle: 'yesterday',
-              title: 'Business',
-              onTap: () {},
-              backgroundColor: kPrimaryColor,
-            );
-          },
-        ),
+        child: Obx(() {
+          return ListView.builder(
+            itemCount: Get.find<CurrentUserController>()
+                .currentUser
+                .value!
+                .userBooks
+                .length,
+            itemBuilder: (context, index) {
+              return LeftIconListTileWidget(
+                subtitle: Get.find<CurrentUserController>()
+                    .currentUser
+                    .value!
+                    .userBooks[index]
+                    .bookLastModified,
+                title: Get.find<CurrentUserController>()
+                    .currentUser
+                    .value!
+                    .userBooks[index]
+                    .bookName,
+                onTap: () {},
+                backgroundColor: kPrimaryColor,
+                icon: Get.find<CurrentUserController>()
+                        .currentUser
+                        .value!
+                        .userBooks[index]
+                        .privateBook
+                    ? Icons.lock_outline
+                    : Icons.people_alt_outlined,
+              );
+            },
+          );
+        }),
       ),
     );
   }
