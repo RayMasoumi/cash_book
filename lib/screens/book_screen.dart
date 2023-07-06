@@ -53,24 +53,56 @@ class BookScreen extends StatelessWidget {
             Container(
               color: Colors.white,
               child: Expanded(
-                child: Row(children: [
-                  SizedFABWidget(
-                    buttonHeight: kHeight * 0.02,
-                    buttonWidth: kWidth * 0.3,
-                    onPressed: () {},
-                    buttonIcon: Icons.add,
-                    buttonText: 'Cash In',
-                    buttonColor: Colors.green,
-                  ),
-                  SizedFABWidget(
-                    buttonHeight: kHeight * 0.02,
-                    buttonWidth: kWidth * 0.3,
-                    onPressed: () {},
-                    buttonIcon: Icons.remove,
-                    buttonText: 'Cash Out',
-                    buttonColor: Colors.red,
-                  ),
-                ]),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Record ',
+                              ),
+                              Text(
+                                'Income',
+                                style: TextStyle(color: Colors.green.shade800),
+                              ),
+                            ],
+                          ),
+                          SizedFABWidget(
+                            buttonHeight: kHeight * 0.07,
+                            buttonWidth: kWidth * 0.4,
+                            onPressed: () {},
+                            buttonIcon: Icons.add,
+                            buttonText: 'Cash In',
+                            buttonColor: Colors.green,
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Record ',
+                              ),
+                              Text(
+                                'Expense',
+                                style: TextStyle(color: Colors.red.shade900),
+                              ),
+                            ],
+                          ),
+                          SizedFABWidget(
+                            buttonHeight: kHeight * 0.07,
+                            buttonWidth: kWidth * 0.4,
+                            onPressed: () {},
+                            buttonIcon: Icons.remove,
+                            buttonText: 'Cash Out',
+                            buttonColor: Colors.red,
+                          ),
+                        ],
+                      ),
+                    ]),
               ),
             ),
           ],
