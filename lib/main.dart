@@ -10,7 +10,6 @@ import 'bindings/my_binding.dart';
 import 'methods/user_route_method.dart';
 import 'model/book.dart';
 import 'model/entry.dart';
-import 'model/member.dart';
 import 'model/user.dart';
 
 void main() async {
@@ -22,8 +21,6 @@ void main() async {
   await Hive.openBox<Entry>(kEntryBoxName);
   Hive.registerAdapter(BookAdapter());
   await Hive.openBox<Book>(kBookBoxName);
-  Hive.registerAdapter<Member>(MemberAdapter());
-  await Hive.openBox<Member>(kMemberBoxName);
   await GetStorage.init();
 
   MyBindings().dependencies();

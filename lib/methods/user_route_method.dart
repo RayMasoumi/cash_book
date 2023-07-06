@@ -1,6 +1,5 @@
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/methods/get_current_user_method.dart';
-import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hive/hive.dart';
 import '../model/user.dart';
@@ -22,7 +21,7 @@ String userRoute() {
     }
   } else {
     // * if there was no info about the use in the db and it was null, log them out and send them back to intro screen
-    GetStorage().read('loggedIn') == 'false';
+    GetStorage().write(kIsLoggedIn, 'false');
     Hive.box<User>(kUserBoxName).clear();
     return kIntroductionScreenRoute;
   }

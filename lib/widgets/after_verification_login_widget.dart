@@ -35,6 +35,8 @@ class AfterVerificationLoginWidget extends StatelessWidget {
             text: 'Submit'.tr,
             onPressed: () {
               User currentUser = User(
+                //TODO is here to sign up >>> must get the user info from TextField controllers and send it to server
+                //TODO is here to log in >>> must get the user info from the server using phone number
                 userId: 'admin0',
                 userName: 'admin',
                 userPhoneNumber: '09123456789',

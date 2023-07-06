@@ -11,6 +11,8 @@ void getUserToHomeScreen(User currentUser) {
   // * add user to hive
   Hive.box<User>(kUserBoxName).clear();
   Hive.box<User>(kUserBoxName).add(currentUser);
+  // * sets the currentUserID in storage
+  GetStorage().write(kCurrentUserIDKey, currentUser.userId);
   // * set logged in to true
   GetStorage().write(kIsLoggedIn, 'true');
   // * go to home screen
