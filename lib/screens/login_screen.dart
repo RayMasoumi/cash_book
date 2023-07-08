@@ -17,10 +17,10 @@ class LoginScreen extends StatelessWidget {
         child: Flex(
           direction: Axis.vertical,
           children: [
-            const Column(
+            Column(
               children: [
                 AppBarTitleWidget(
-                  title: kTitleLogin,
+                  title: kTitleLogin.tr,
                 ),
               ],
             ),

@@ -33,26 +33,26 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     // * textField and description
                     RoundTextFieldWidget(
-                      title: kUsernameTitle,
+                      title: kUsernameTitle.tr,
                       keyBoardType: TextInputType.text,
-                      hintText: kUsernameHint,
+                      hintText: kUsernameHint.tr,
                       controller: TextEditingController(),
                     ),
                     RoundTextFieldWidget(
-                      title: kPhoneNumberTitle,
+                      title: kPhoneNumberTitle.tr,
                       keyBoardType: TextInputType.number,
-                      hintText: '+981234567890',
+                      hintText: kPhoneNumberHint.tr,
                       controller: TextEditingController(),
                     ),
                     RoundTextFieldWidget(
                       keyBoardType: TextInputType.emailAddress,
-                      title: 'E-mail'.tr,
-                      hintText: 'cashBook@mail.com',
+                      title: kEmailTitle.tr,
+                      hintText: kEmailHint,
                       controller: TextEditingController(),
                     ),
                     // * submit button:
                     RoundedSubmitButtonWidget(
-                      text: kCreateAccountText,
+                      text: kCreateAccountText.tr,
                       onPressed: () {
                         // * must go to verification:
                         Get.find<VerificationController>().isPressed.value =
@@ -62,10 +62,8 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     // * log in text:
                     LinkedStringWidget(
-                        firstText: 'Already have an account? '.tr,
-                        linkedText: ''
-                                'Log In'
-                            .tr,
+                        firstText: kHaveAnAccountText.tr,
+                        linkedText: kLogInText.tr,
                         onTap: () {
                           Get.find<VerificationController>().isPressed.value =
                               false;

@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/controllers/current_user_controller.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,13 @@ class SettingsScreen extends GetView<CurrentUserController> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // * title
-            const Text('language'),
+            Text(kLanguageTitle.tr),
             // * choose language
             DropDown(
               items: const ['English', 'فارسی'],
-              initialValue:
-                  GetStorage().read('language') == 'fa' ? 'فارسی' : 'English',
+              initialValue: GetStorage().read(kLanguageTitle.tr) == 'fa'
+                  ? 'فارسی'
+                  : 'English',
               onChanged: (value) {
                 switch (value) {
                   case 'English':

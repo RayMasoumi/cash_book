@@ -36,6 +36,9 @@ class Translate implements Translations {
           'Enter Your Phone Number': 'Enter Your Phone Number',
           'Send SMS': 'Send SMS',
           'Don\'t have an account? ': 'Don\'t have an account? ',
+          '+981234567890': '+981234567890',
+          'Create Account': 'Create Account',
+          'language': 'language',
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -71,6 +74,9 @@ class Translate implements Translations {
           'Enter Your Phone Number': 'شماره تلفن همراه خود را وارد کنید',
           'Send SMS': 'ارسال پیامک',
           'Don\'t have an account? ': 'حساب کاربری ندارید؟  ',
+          '+981234567890': '+۹۸۱۲۳۴۵۶۷۸۹۰',
+          'Create Account': 'ایجاد حساب جدید',
+          'language': 'زبان',
         },
       };
 }

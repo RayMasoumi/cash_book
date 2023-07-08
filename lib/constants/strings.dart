@@ -26,6 +26,9 @@ const String kBookScreenRoute = '/book_screen';
 const String kLoginScreenRoute = '/login_screen';
 const String kAddNewEntryScreen = '/add_new_entry_screen';
 
+// * Setting screen strings:
+const String kLanguageTitle = 'language';
+
 // * login screen strings:
 const String kTitleLogin = 'Login To Your Account';
 // *sign up screen strings:
@@ -35,6 +38,10 @@ const String kUsernameHint = 'Type In a Username';
 const String kPhoneNumberTitle = 'Phone Number';
 const String kEmailTitle = 'E-mail';
 const String kCreateAccountText = 'Create Account';
+const String kPhoneNumberHint = '+981234567890';
+const String kEmailHint = 'cashBook@mail.com';
+const String kHaveAnAccountText = 'Already have an account? ';
+const String kLogInText = 'Log In';
 
 // * hive box names:
 const String kUserBoxName = 'userBox';
