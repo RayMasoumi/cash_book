@@ -12,21 +12,21 @@ class BooksListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bookController = Get.find<BookController>();
+    final userBooks = bookController.userBooks;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
         child: Obx(() {
           return ListView.builder(
-            itemCount: Get.find<BookController>().userBooks.length,
+            itemCount: userBooks.length,
             itemBuilder: (context, index) {
               return LeftIconListTileWidget(
-                subtitle: Get.find<BookController>()
-                    .userBooks[index]
-                    .bookLastModified,
-                title: Get.find<BookController>().userBooks[index].bookName,
+                subtitle: userBooks[index].bookLastModified,
+                title: userBooks[index].bookName,
                 onTap: () {},
                 backgroundColor: kPrimaryColor,
-                icon: Get.find<BookController>().userBooks[index].privateBook
+                icon: userBooks[index].privateBook
                     ? Icons.lock_outline
                     : Icons.people_alt_outlined,
               );

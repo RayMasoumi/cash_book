@@ -8,9 +8,11 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
 void getHiveData() {
-  Get.find<CurrentUserController>().currentUser.value =
-      Hive.box<User>(kUserBoxName).getAt(getCurrentUserIndex());
+  if (getCurrentUserIndex() != -1) {
+    Get.find<CurrentUserController>().currentUser.value =
+        Hive.box<User>(kUserBoxName).getAt(getCurrentUserIndex());
+  }
 
-  Get.find<BookController>().userBooks =
-      Hive.box<Book>(kBookBoxName).values.toList();
+  List<Book> books = Hive.box<Book>(kBookBoxName).values.toList();
+  Get.find<BookController>().userBooks.assignAll(books);
 }

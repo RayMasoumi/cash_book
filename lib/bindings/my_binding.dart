@@ -20,6 +20,6 @@ class MyBindings implements Bindings {
     Get.lazyPut(() => TextFieldController());
     Get.put(AddEntryTextFieldController());
     Get.put(RadioButtonController());
-    Get.lazyPut(() => BookController());
+    Get.put(BookController());
   }
 }

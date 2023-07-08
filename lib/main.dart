@@ -1,5 +1,6 @@
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/internationalization/translate.dart';
+import 'package:cash_book/methods/get_hive_data.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -25,6 +26,7 @@ void main() async {
   await Hive.openBox<Book>(kBookBoxName);
 
   MyBindings().dependencies();
+  getHiveData();
   runApp(const MyApp());
 }
 
