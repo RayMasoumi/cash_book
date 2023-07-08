@@ -24,6 +24,7 @@ class BookAdapter extends TypeAdapter<Book> {
       bookOwnerUserId: fields[4] as String,
       bookMembers: (fields[3] as List).cast<User>(),
       activeBook: fields[6] as bool,
+      bookRecords: (fields[10] as List).cast<Entry>(),
     )
       ..bookBalance = fields[7] as double
       ..bookCreationDate = fields[8] as DateTime;
@@ -32,7 +33,7 @@ class BookAdapter extends TypeAdapter<Book> {
   @override
   void write(BinaryWriter writer, Book obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(1)
       ..write(obj.bookId)
       ..writeByte(2)
@@ -50,7 +51,9 @@ class BookAdapter extends TypeAdapter<Book> {
       ..writeByte(8)
       ..write(obj.bookCreationDate)
       ..writeByte(9)
-      ..write(obj.bookLastModified);
+      ..write(obj.bookLastModified)
+      ..writeByte(10)
+      ..write(obj.bookRecords);
   }
 
   @override

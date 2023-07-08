@@ -1,3 +1,5 @@
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+
 import 'book.dart';
 import 'package:hive/hive.dart';
 
@@ -25,6 +27,8 @@ class User {
   String lastSyncDate;
   @HiveField(10)
   String userCreationDate;
+  @HiveField(11)
+  RxList<Book> userBooks;
   // ? a list of user's all entries
 
   User({
@@ -35,5 +39,6 @@ class User {
     required this.lastSyncDate,
     required this.userCreationDate,
     this.isDisabled = false,
-  });
+    List<Book>? userBooks,
+  }) : userBooks = (userBooks ?? []).obs;
 }

@@ -24,6 +24,7 @@ class UserAdapter extends TypeAdapter<User> {
       lastSyncDate: fields[9] as String,
       userCreationDate: fields[10] as String,
       isDisabled: fields[5] as bool,
+      userBooks: (fields[11] as List?)?.cast<Book>(),
     )
       ..userCompany = fields[6] as String?
       ..userCompanyAddress = fields[7] as String?
@@ -33,7 +34,7 @@ class UserAdapter extends TypeAdapter<User> {
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(1)
       ..write(obj.userId)
       ..writeByte(2)
@@ -53,7 +54,9 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(9)
       ..write(obj.lastSyncDate)
       ..writeByte(10)
-      ..write(obj.userCreationDate);
+      ..write(obj.userCreationDate)
+      ..writeByte(11)
+      ..write(obj.userBooks);
   }
 
   @override

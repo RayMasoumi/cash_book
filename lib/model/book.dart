@@ -25,6 +25,8 @@ class Book {
       .now(); // ! just a default, should be modified later into jalali and ...
   @HiveField(9)
   String bookLastModified;
+  @HiveField(10)
+  List<Entry> bookRecords;
 
   Book({
     required this.bookId,
@@ -34,5 +36,6 @@ class Book {
     required this.bookOwnerUserId,
     this.bookMembers = const [],
     this.activeBook = true,
+    this.bookRecords = const [],
   });
 }
