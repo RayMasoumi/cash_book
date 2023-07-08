@@ -9,9 +9,11 @@ import 'package:cash_book/screens/settings_screen.dart';
 import 'package:cash_book/widgets/sized_floating_action_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 import '../controllers/current_user_controller.dart';
 import '../controllers/navigation_bar_controller.dart';
+import '../model/user.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

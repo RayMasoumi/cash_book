@@ -14,14 +14,15 @@ import 'model/user.dart';
 
 void main() async {
   await Hive.initFlutter();
+  await GetStorage.init();
   // * opening hive boxes
   Hive.registerAdapter(UserAdapter());
+
   await Hive.openBox<User>(kUserBoxName);
   Hive.registerAdapter(EntryAdapter());
   await Hive.openBox<Entry>(kEntryBoxName);
   Hive.registerAdapter(BookAdapter());
   await Hive.openBox<Book>(kBookBoxName);
-  await GetStorage.init();
 
   MyBindings().dependencies();
   runApp(const MyApp());
