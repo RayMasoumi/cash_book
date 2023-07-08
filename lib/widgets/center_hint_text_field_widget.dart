@@ -6,15 +6,18 @@ class CenterHintTextFieldWidget extends StatelessWidget {
   const CenterHintTextFieldWidget({
     required this.hintText,
     required this.controller,
+    this.keyBoardType = TextInputType.text,
     super.key,
   });
 
   final String hintText;
   final TextEditingController? controller;
+  final TextInputType keyBoardType;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      keyboardType: keyBoardType,
       textAlign: TextAlign.center,
       controller: controller,
       decoration: InputDecoration(

@@ -3,7 +3,7 @@ import 'package:cash_book/model/entry.dart';
 import 'package:hive/hive.dart';
 part 'book.g.dart';
 
-@HiveType(typeId: 2)
+@HiveType(typeId: 1)
 class Book {
   @HiveField(1)
   String bookId;

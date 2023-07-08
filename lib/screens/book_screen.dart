@@ -1,10 +1,16 @@
 import 'package:animated_icon/animated_icon.dart';
+import 'package:cash_book/constants/enums.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/controllers/add_entry_text_field_conrtoller.dart';
+import 'package:cash_book/controllers/book_controller.dart';
+import 'package:cash_book/methods/get_current_book_entries_method.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../constants/colors.dart';
+import '../controllers/entry_controller.dart';
+import '../widgets/back_icon_button_widget.dart';
 import '../widgets/left_icon_list_tile_widget.dart';
 import '../widgets/sized_floating_action_button_widget.dart';
 
@@ -13,23 +19,26 @@ class BookScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    getCurrentBookEntries();
     return Scaffold(
       // * app bar
       appBar: AppBar(
-        leading: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0),
-          child: Icon(
-            Icons.book_outlined,
-            color: kPrimaryColor,
-            size: 40.0,
+        leading: const BackIconButtonWidget(),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Icon(
+              Icons.book_outlined,
+              color: kPrimaryColor,
+              size: 40.0,
+            ),
           ),
-        ),
+        ],
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text(
-          'name',
-          //Get.find<CurrentUserController>().currentUser.value!.userName,
-          style: TextStyle(color: kMainSubtitle),
+        title: Text(
+          Get.find<BookController>().currentBook.value!.bookName,
+          style: const TextStyle(color: kMainSubtitle),
         ),
       ),
 
@@ -42,18 +51,31 @@ class BookScreen extends StatelessWidget {
               height: kHeight * 0.65,
               color: Colors.white60,
               padding: const EdgeInsets.only(bottom: 20.0),
-              child: ListView.builder(
-                itemCount: 8,
-                itemBuilder: (context, index) {
-                  return LeftIconListTileWidget(
-                    subtitle: 'created by You on Sunday',
-                    title: '10000',
-                    onTap: () {},
-                    icon: index % 2 == 0 ? Icons.add : Icons.remove,
-                    backgroundColor: index % 2 == 0 ? Colors.green : Colors.red,
-                  );
-                },
-              ),
+              child: Obx(() {
+                return ListView.builder(
+                  itemCount:
+                      Get.find<EntryController>().currentBookEntries.length,
+                  itemBuilder: (context, index) {
+                    return LeftIconListTileWidget(
+                      subtitle: Get.find<EntryController>()
+                          .currentBookEntries[index]
+                          .entryLastModified,
+                      title: Get.find<EntryController>()
+                          .currentBookEntries[index]
+                          .entryAmount
+                          .toString(),
+                      onTap: () {},
+                      icon: Get.find<EntryController>()
+                                  .currentBookEntries[index]
+                                  .entryType ==
+                              EntryType.cashIn
+                          ? Icons.add
+                          : Icons.remove,
+                      backgroundColor: kSecondaryColor,
+                    );
+                  },
+                );
+              }),
             ),
             // * bottom container(add entry):
             Container(
@@ -99,6 +121,14 @@ class BookScreen extends StatelessWidget {
                               buttonHeight: kHeight * 0.07,
                               buttonWidth: kWidth * 0.4,
                               onPressed: () {
+                                Get.find<EntryController>().isCashIn.value =
+                                    true;
+                                Get.find<AddEntryTextFieldController>()
+                                    .addEntryDescription
+                                    ?.clear();
+                                Get.find<AddEntryTextFieldController>()
+                                    .addEntryAmount
+                                    ?.clear();
                                 Get.toNamed(kAddNewEntryScreen);
                               },
                               buttonIcon: Icons.add,
@@ -128,6 +158,14 @@ class BookScreen extends StatelessWidget {
                               buttonHeight: kHeight * 0.07,
                               buttonWidth: kWidth * 0.4,
                               onPressed: () {
+                                Get.find<EntryController>().isCashIn.value =
+                                    false;
+                                Get.find<AddEntryTextFieldController>()
+                                    .addEntryDescription
+                                    ?.clear();
+                                Get.find<AddEntryTextFieldController>()
+                                    .addEntryAmount
+                                    ?.clear();
                                 Get.toNamed(kAddNewEntryScreen);
                               },
                               buttonIcon: Icons.remove,

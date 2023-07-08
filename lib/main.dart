@@ -19,19 +19,20 @@ import 'model/user.dart';
 void main() async {
   await Hive.initFlutter();
   await GetStorage.init();
-  // * opening hive boxes
+  // * registering adapters:
   Hive.registerAdapter(UserAdapter());
-
-  await Hive.openBox<User>(kUserBoxName);
-  Hive.registerAdapter(EntryAdapter());
-  await Hive.openBox<Entry>(kEntryBoxName);
   Hive.registerAdapter(BookAdapter());
-  await Hive.openBox<Book>(kBookBoxName);
+  Hive.registerAdapter(EntryAdapter());
   Hive.registerAdapter(EntryTypeAdapter());
-  await Hive.openBox('entryTypeBox');
-  Hive.registerAdapter(CategoryAdapter());
-  await Hive.openBox('categoryBox');
   Hive.registerAdapter(PaymentMethodAdapter());
+  Hive.registerAdapter(CategoryAdapter());
+
+  // * opening hive boxes:
+  await Hive.openBox<User>(kUserBoxName);
+  await Hive.openBox<Entry>(kEntryBoxName);
+  await Hive.openBox<Book>(kBookBoxName);
+  await Hive.openBox('entryTypeBox');
+  await Hive.openBox('categoryBox');
   await Hive.openBox('paymentMethodBox');
 
   MyBindings().dependencies();

@@ -53,6 +53,7 @@ class AddBookBottomSheet extends StatelessWidget {
                 CustomRadioButtonWidget(
                   buttonLabels: [kPrivateText.tr, kPublicText.tr],
                   buttonValues: const [0, 1],
+                  defaultValue: 0,
                   controller: Get.find<RadioButtonController>().selectedValue,
                 ),
                 // * add button

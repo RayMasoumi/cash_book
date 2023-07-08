@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/widgets/left_icon_list_tile_widget.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,11 @@ class BooksListScreen extends StatelessWidget {
               return LeftIconListTileWidget(
                 subtitle: userBooks[index].bookLastModified,
                 title: userBooks[index].bookName,
-                onTap: () {},
+                onTap: () {
+                  Get.find<BookController>().currentBook.value =
+                      userBooks[index];
+                  Get.toNamed(kBookScreenRoute);
+                },
                 backgroundColor: kPrimaryColor,
                 icon: userBooks[index].privateBook
                     ? Icons.lock_outline

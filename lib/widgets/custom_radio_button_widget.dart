@@ -7,11 +7,13 @@ class CustomRadioButtonWidget extends StatelessWidget {
     required this.buttonLabels,
     required this.buttonValues,
     required this.controller,
+    required this.defaultValue,
     super.key,
   });
 
   final List<String> buttonLabels;
-  final List<int> buttonValues;
+  final List<dynamic> buttonValues;
+  final defaultValue;
   final controller;
 
   @override
@@ -27,7 +29,7 @@ class CustomRadioButtonWidget extends StatelessWidget {
         buttonLables: buttonLabels,
         buttonValues: buttonValues,
         margin: const EdgeInsets.symmetric(horizontal: 10.0),
-        defaultSelected: 0,
+        defaultSelected: defaultValue,
         buttonTextStyle: const ButtonTextStyle(
             selectedColor: Colors.white,
             unSelectedColor: kPrimaryColor,

@@ -16,7 +16,7 @@ class User {
   @HiveField(4)
   String userEmail;
   @HiveField(5)
-  bool isDisabled;
+  RxList<Book> userBooks;
   @HiveField(6)
   String? userCompany;
   @HiveField(7)
@@ -28,7 +28,7 @@ class User {
   @HiveField(10)
   String userCreationDate;
   @HiveField(11)
-  RxList<Book> userBooks;
+  bool isDisabled;
   // ? a list of user's all entries
 
   User({

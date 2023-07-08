@@ -1,6 +1,8 @@
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/controllers/drop_down_controller.dart';
 import 'package:cash_book/controllers/radio_button_controller.dart';
+import 'package:cash_book/methods/add_new_entry_method.dart';
+import 'package:cash_book/widgets/back_icon_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
 import 'package:get/get.dart';
@@ -8,6 +10,7 @@ import 'package:get/get.dart';
 import '../constants/colors.dart';
 import '../constants/enums.dart';
 import '../controllers/add_entry_text_field_conrtoller.dart';
+import '../controllers/entry_controller.dart';
 import '../widgets/center_hint_text_field_widget.dart';
 import '../widgets/custom_radio_button_widget.dart';
 import '../widgets/rounded_stretched_button_widget.dart';
@@ -21,25 +24,15 @@ class AddNewEntryScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: kPrimaryColor,
-              size: 30.0,
-            ),
-          ),
-        ),
+        leading: const BackIconButtonWidget(),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text(
-          'Add Entry',
+        title: Text(
+          Get.find<EntryController>().isCashIn.value
+              ? 'Add Cash In Entry'
+              : 'Add Cash Out Entry',
           //TODO cash in/cash out entry
-          style: TextStyle(color: kMainSubtitle),
+          style: const TextStyle(color: kMainSubtitle),
         ),
       ),
       body: SafeArea(
@@ -52,6 +45,7 @@ class AddNewEntryScreen extends StatelessWidget {
               //TODO date and time picker
               // * amount field
               CenterHintTextFieldWidget(
+                keyBoardType: TextInputType.number,
                 hintText: 'Enter the amount money',
                 controller:
                     Get.find<AddEntryTextFieldController>().addEntryAmount,
@@ -95,22 +89,33 @@ class AddNewEntryScreen extends StatelessWidget {
                     'Select Payment Method',
                     style: kIntroSubtitleStyle,
                   ),
-                  CustomRadioButtonWidget(
-                    // ? should we use the enum here instead? doesn't work
-                    buttonLabels: const ['Cash', 'Online', 'Bank'],
-                    buttonValues: const [0, 1, 2],
-                    controller:
-                        Get.find<RadioButtonController>().selectedPaymentMethod,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: CustomRadioButtonWidget(
+                      // ? should we use the enum here instead? doesn't work
+                      buttonLabels: const ['Other', 'Cash', 'Online', 'Bank'],
+                      buttonValues: const [
+                        PaymentMethod.other,
+                        PaymentMethod.cash,
+                        PaymentMethod.online,
+                        PaymentMethod.bank,
+                      ],
+                      defaultValue: PaymentMethod.other,
+                      controller: Get.find<RadioButtonController>()
+                          .selectedPaymentMethod,
+                    ),
                   ),
                   SizedBox(
                     height: kHeight * 0.1,
                   ),
+                  // * submit button
                   Container(
                     alignment: Alignment.bottomCenter,
                     child: StretchedButtonWidget(
                       buttonText: 'ADD ENTRY',
                       onPressed: () {
-                        //TODO
+                        addNewEntry();
+                        Get.back();
                       },
                     ),
                   ),
