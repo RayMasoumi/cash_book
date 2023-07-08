@@ -1,3 +1,4 @@
+import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/controllers/current_user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
@@ -90,7 +91,7 @@ class SettingsScreen extends GetView<CurrentUserController> {
           children: [
             // * title
             const Text('books'),
-            Text(controller.currentUser.value!.userBooks.toString()),
+            Text(Get.find<BookController>().userBooks.toString()),
           ],
         ),
         Row(
