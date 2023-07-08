@@ -8,9 +8,11 @@ class SizedFABWidget extends StatelessWidget {
   final IconData buttonIcon;
   final String buttonText;
   final Color buttonColor;
+  var heroTag;
 
-  const SizedFABWidget(
+  SizedFABWidget(
       {super.key,
+      this.heroTag,
       required this.buttonHeight,
       required this.buttonWidth,
       required this.onPressed,
@@ -24,6 +26,7 @@ class SizedFABWidget extends StatelessWidget {
       width: buttonWidth,
       height: buttonHeight,
       child: FloatingActionButton(
+        heroTag: heroTag,
         shape: RoundedRectangleBorder(
           borderRadius: kBorderRadius45,
         ),

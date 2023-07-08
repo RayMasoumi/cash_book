@@ -1,8 +1,9 @@
-import 'dart:math';
-
 import 'package:animated_icon/animated_icon.dart';
 import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/constants/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../constants/colors.dart';
 import '../widgets/left_icon_list_tile_widget.dart';
 import '../widgets/sized_floating_action_button_widget.dart';
@@ -31,11 +32,12 @@ class BookScreen extends StatelessWidget {
           style: TextStyle(color: kMainSubtitle),
         ),
       ),
-      // * List view:
+
       body: SafeArea(
         child: Column(
           children: [
             Container(
+              // * List view:
               width: kWidth,
               height: kHeight * 0.65,
               color: Colors.white60,
@@ -91,10 +93,14 @@ class BookScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            // * cash in button
                             SizedFABWidget(
+                              heroTag: 'cashInBtn',
                               buttonHeight: kHeight * 0.07,
                               buttonWidth: kWidth * 0.4,
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(kAddNewEntryScreen);
+                              },
                               buttonIcon: Icons.add,
                               buttonText: 'Cash In',
                               buttonColor: Colors.green,
@@ -116,10 +122,14 @@ class BookScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            // * cash out button:
                             SizedFABWidget(
+                              heroTag: 'cashOutBtn',
                               buttonHeight: kHeight * 0.07,
                               buttonWidth: kWidth * 0.4,
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(kAddNewEntryScreen);
+                              },
                               buttonIcon: Icons.remove,
                               buttonText: 'Cash Out',
                               buttonColor: Colors.red,

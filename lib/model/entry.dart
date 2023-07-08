@@ -43,6 +43,7 @@ class Entry {
     required this.entryUserId,
     this.paymentMethod,
     this.category,
+    this.entryDescription,
     this.activeEntry = true,
   });
 //TODO image

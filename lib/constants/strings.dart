@@ -24,6 +24,7 @@ const String kIntroductionScreenRoute = '/introduction_screen';
 const String kSignUpScreenRoute = '/sign_up_screen';
 const String kBookScreenRoute = '/book_screen';
 const String kLoginScreenRoute = '/login_screen';
+const String kAddNewEntryScreen = '/add_new_entry_screen';
 
 // * login screen strings:
 const String kTitleLogin = 'Login To Your Account';
