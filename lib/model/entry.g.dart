@@ -27,10 +27,9 @@ class EntryAdapter extends TypeAdapter<Entry> {
       entryUserId: fields[11] as String,
       paymentMethod: fields[9] as PaymentMethod?,
       category: fields[10] as Category?,
+      entryDescription: fields[4] as String?,
       activeEntry: fields[13] as bool,
-    )
-      ..entryDescription = fields[4] as String?
-      ..entryImagePath = fields[12] as String?;
+    )..entryImagePath = fields[12] as String?;
   }
 
   @override

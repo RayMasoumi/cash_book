@@ -12,7 +12,7 @@ class Book {
   @HiveField(3)
   List<User> bookMembers;
   @HiveField(4)
-  List<Entry> bookRecords;
+  String bookOwnerUserId;
   @HiveField(5)
   bool privateBook;
   @HiveField(6)
@@ -25,8 +25,6 @@ class Book {
       .now(); // ! just a default, should be modified later into jalali and ...
   @HiveField(9)
   String bookLastModified;
-  @HiveField(10)
-  String bookOwnerUserId;
 
   Book({
     required this.bookId,
@@ -35,7 +33,6 @@ class Book {
     required this.bookLastModified,
     required this.bookOwnerUserId,
     this.bookMembers = const [],
-    this.bookRecords = const [],
     this.activeBook = true,
   });
 }
