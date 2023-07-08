@@ -10,8 +10,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'bindings/my_binding.dart';
 import 'methods/user_route_method.dart';
 import 'model/book.dart';
+import 'model/category_adapter.dart';
 import 'model/entry.dart';
 import 'model/entry_type_adapter.dart';
+import 'model/payment_method_adapter.dart';
 import 'model/user.dart';
 
 void main() async {
@@ -27,6 +29,10 @@ void main() async {
   await Hive.openBox<Book>(kBookBoxName);
   Hive.registerAdapter(EntryTypeAdapter());
   await Hive.openBox('entryTypeBox');
+  Hive.registerAdapter(CategoryAdapter());
+  await Hive.openBox('categoryBox');
+  Hive.registerAdapter(PaymentMethodAdapter());
+  await Hive.openBox('paymentMethodBox');
 
   MyBindings().dependencies();
   getHiveData();
