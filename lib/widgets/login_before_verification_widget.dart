@@ -1,3 +1,5 @@
+import 'package:cash_book/controllers/log_in_text_field_controller.dart';
+import 'package:cash_book/waiting%20code/api_log_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,6 +34,7 @@ class BeforeVerificationLoginWidget extends StatelessWidget {
           child: RoundedSubmitButtonWidget(
             text: 'Send SMS'.tr,
             onPressed: () {
+              // $ await apiLoginUser(Get.find<LoginTextFieldController>().loginPhoneNumber!.text) ? Get.find<VerificationController>().isPressed.value = true : const SnackBar(content: Text('info not correct'));
               Get.find<VerificationController>().isPressed.value = true;
             },
           ),

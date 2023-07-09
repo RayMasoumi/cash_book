@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:cash_book/constants/strings.dart';
 import 'package:http/http.dart' as http;
 
-Future<bool> verifyCode(String phoneNumber, String verificationCode) async {
+Future<bool> apiVerifyCode(String phoneNumber, String verificationCode) async {
   final url = Uri.parse(
       kVerifyCodeUrl); // Replace with your server's verification endpoint URL
 
@@ -19,6 +19,7 @@ Future<bool> verifyCode(String phoneNumber, String verificationCode) async {
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
       final isVerified = responseData['isVerified'];
+      print('200');
       return isVerified;
     } else {
       throw Exception(
