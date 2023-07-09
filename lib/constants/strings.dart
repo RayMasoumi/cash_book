@@ -53,3 +53,5 @@ const String kCurrentUserIDKey = 'currentUserID';
 
 // * URLs
 const String kVerifyCodeUrl = 'http://your-server-url.com/verify';
+const String kCreateAccountUrl =
+    'http://cashbookapi.etokco.ir/Account/CreateAccount';

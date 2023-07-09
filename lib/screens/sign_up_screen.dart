@@ -1,4 +1,7 @@
 import 'package:cash_book/constants/strings.dart';
+import 'package:cash_book/controllers/sign_up_controller.dart';
+import 'package:cash_book/methods/create_temp_user_method.dart';
+import 'package:cash_book/methods/sign_up_method.dart';
 import 'package:cash_book/widgets/app_bar_title_widget.dart';
 import 'package:cash_book/widgets/linked_string_widget.dart';
 import 'package:cash_book/widgets/submit_button_widget.dart';
@@ -36,28 +39,37 @@ class SignUpScreen extends StatelessWidget {
                       title: kUsernameTitle.tr,
                       keyBoardType: TextInputType.text,
                       hintText: kUsernameHint.tr,
-                      controller: TextEditingController(),
+                      controller: Get.find<SignUpController>().username!,
                     ),
                     RoundTextFieldWidget(
                       title: kPhoneNumberTitle.tr,
                       keyBoardType: TextInputType.number,
                       hintText: kPhoneNumberHint.tr,
-                      controller: TextEditingController(),
+                      controller: Get.find<SignUpController>().phoneNumber!,
                     ),
                     RoundTextFieldWidget(
                       keyBoardType: TextInputType.emailAddress,
                       title: kEmailTitle.tr,
                       hintText: kEmailHint,
-                      controller: TextEditingController(),
+                      controller: Get.find<SignUpController>().email!,
                     ),
                     // * submit button:
                     RoundedSubmitButtonWidget(
                       text: kCreateAccountText.tr,
-                      onPressed: () {
-                        // * must go to verification:
-                        Get.find<VerificationController>().isPressed.value =
-                            true;
-                        Get.toNamed(kLoginScreenRoute);
+                      onPressed: () async {
+                        // * creates a temp user:
+                        createTempUser();
+                        if (await signUp()) {
+                          // * if the entered data was accepted:
+                          // * must go to verification:
+                          Get.find<VerificationController>().isPressed.value =
+                              true;
+                          // * goes to before-verification mode:
+                          Get.toNamed(kLoginScreenRoute);
+                        } else {
+                          // * data was not accepted
+                          //TODO snack bar/alert Dialog error
+                        }
                       },
                     ),
                     // * log in text:
