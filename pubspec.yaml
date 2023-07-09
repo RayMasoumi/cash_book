@@ -27,6 +27,7 @@ dependencies:
   custom_radio_grouped_button: ^2.2.0
   flutter_dropdown: ^1.0.1+hotfix.1
   animated_icon: ^0.0.5
+  http: ^1.1.0
 
 
 
