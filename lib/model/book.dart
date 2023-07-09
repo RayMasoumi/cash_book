@@ -40,12 +40,13 @@ class Book {
     this.bookRecords = const [],
   });
 
-  double cashInBalance(){
+  double cashInBalance() {
     double cashInAmount = 0;
-    for (Entry entry in bookRecords){
+    for (Entry entry in bookRecords) {
       if (entry.entryType == EntryType.cashIn) {
-        cashInAmount +=
+        cashInAmount += entry.entryAmount;
       }
     }
+    return cashInAmount;
   }
 }
