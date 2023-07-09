@@ -48,4 +48,15 @@ class Book {
       }
     }
   }
+
+
+  double cashOutBalance(){
+    double cashOutAmount = 0;
+    for (Entry entry in bookRecords){
+      if (entry.entryType == EntryType.cashOut) {
+        cashOutAmount += entry.entryAmount;
+      }
+    }
+    return cashOutAmount;
+  }
 }
