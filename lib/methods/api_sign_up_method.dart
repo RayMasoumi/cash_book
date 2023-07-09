@@ -25,7 +25,7 @@ Future<bool> signUp() async {
     if (response.statusCode == 200) {
       // Successful sign-up, handle the response data if needed
       final responseData = json.decode(response.body);
-      print(responseData);
+      print('successful response data: $responseData');
       // * data accepted
       return true;
 

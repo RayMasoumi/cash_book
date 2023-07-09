@@ -7,7 +7,7 @@ import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/methods/get_current_book_entries_method.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:pie_chart/pie_chart.dart';
 import '../constants/colors.dart';
 import '../controllers/entry_controller.dart';
 import '../widgets/back_icon_button_widget.dart';
@@ -21,6 +21,7 @@ class BookScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     getCurrentBookEntries();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       // * app bar
       appBar: AppBar(
         leading: const BackIconButtonWidget(),
@@ -45,37 +46,77 @@ class BookScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              // * List view:
-              width: kWidth,
-              height: kHeight * 0.65,
-              color: Colors.white60,
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: Obx(() {
-                return ListView.builder(
-                  itemCount:
-                      Get.find<EntryController>().currentBookEntries.length,
-                  itemBuilder: (context, index) {
-                    return LeftIconListTileWidget(
-                      subtitle: Get.find<EntryController>()
-                          .currentBookEntries[index]
-                          .entryLastModified,
-                      title: Get.find<EntryController>()
-                          .currentBookEntries[index]
-                          .entryAmount
-                          .toString(),
-                      onTap: () {},
-                      icon: Get.find<EntryController>()
-                                  .currentBookEntries[index]
-                                  .entryType ==
-                              EntryType.cashIn
-                          ? Icons.add
-                          : Icons.remove,
-                      backgroundColor: kSecondaryColor,
-                    );
+            // * balance container:
+            Expanded(
+              flex: 2,
+              child: Container(
+                child: PieChart(
+                  dataMap: const <String, double>{
+                    "Cash in": 5,
+                    "Cash out": 5,
                   },
-                );
-              }),
+                  animationDuration: const Duration(milliseconds: 800),
+                  chartLegendSpacing: 32,
+                  chartRadius: MediaQuery.of(context).size.width / 3.2,
+                  colorList: const [Colors.red, Colors.green],
+                  initialAngleInDegree: 0,
+                  chartType: ChartType.ring,
+                  ringStrokeWidth: 32,
+                  centerText: "HYBRID",
+                  legendOptions: const LegendOptions(
+                    showLegendsInRow: false,
+                    legendPosition: LegendPosition.right,
+                    showLegends: true,
+                    legendTextStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  chartValuesOptions: const ChartValuesOptions(
+                    showChartValueBackground: true,
+                    showChartValues: true,
+                    showChartValuesInPercentage: false,
+                    showChartValuesOutside: false,
+                    decimalPlaces: 1,
+                  ),
+                  // gradientList: ---To add gradient colors---
+                  // emptyColorGradient: ---Empty Color gradient---
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                // * List view:
+                width: kWidth,
+                height: kHeight * 0.65,
+                color: Colors.white60,
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: Obx(() {
+                  return ListView.builder(
+                    itemCount:
+                        Get.find<EntryController>().currentBookEntries.length,
+                    itemBuilder: (context, index) {
+                      return LeftIconListTileWidget(
+                        subtitle: Get.find<EntryController>()
+                            .currentBookEntries[index]
+                            .entryLastModified,
+                        title: Get.find<EntryController>()
+                            .currentBookEntries[index]
+                            .entryAmount
+                            .toString(),
+                        onTap: () {},
+                        icon: Get.find<EntryController>()
+                                    .currentBookEntries[index]
+                                    .entryType ==
+                                EntryType.cashIn
+                            ? Icons.add
+                            : Icons.remove,
+                        backgroundColor: kSecondaryColor,
+                      );
+                    },
+                  );
+                }),
+              ),
             ),
             // * bottom container(add entry):
             Container(

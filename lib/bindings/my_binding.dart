@@ -5,6 +5,7 @@ import 'package:cash_book/controllers/entry_controller.dart';
 import 'package:cash_book/controllers/log_in_text_field_controller.dart';
 import 'package:cash_book/controllers/navigation_bar_controller.dart';
 import 'package:cash_book/controllers/radio_button_controller.dart';
+import 'package:cash_book/controllers/sign_up_controller.dart';
 import 'package:cash_book/controllers/temp_user_controller.dart';
 import 'package:cash_book/controllers/add_book_text_field_controller.dart';
 import 'package:cash_book/controllers/translate_controller.dart';
@@ -30,5 +31,6 @@ class MyBindings implements Bindings {
     Get.put(EntryController());
     Get.put(DropDownController());
     Get.lazyPut(() => TempUserController());
+    Get.lazyPut(() => SignUpController());
   }
 }

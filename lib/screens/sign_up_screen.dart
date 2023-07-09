@@ -1,7 +1,7 @@
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/controllers/sign_up_controller.dart';
 import 'package:cash_book/methods/create_temp_user_method.dart';
-import 'package:cash_book/methods/sign_up_method.dart';
+import 'package:cash_book/methods/api_sign_up_method.dart';
 import 'package:cash_book/widgets/app_bar_title_widget.dart';
 import 'package:cash_book/widgets/linked_string_widget.dart';
 import 'package:cash_book/widgets/submit_button_widget.dart';
