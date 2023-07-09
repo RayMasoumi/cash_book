@@ -120,7 +120,11 @@ class BookScreen extends StatelessWidget {
             ),
             // * bottom container(add entry):
             Container(
-              color: Colors.white,
+              decoration: BoxDecoration(
+                borderRadius: kBorderRadius45,
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.only(bottom: 15),
               child: Column(
                 children: [
                   Text(

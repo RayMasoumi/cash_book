@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/enums.dart';
 import 'package:cash_book/model/user.dart';
 import 'package:cash_book/model/entry.dart';
 import 'package:hive/hive.dart';
@@ -38,4 +39,13 @@ class Book {
     this.activeBook = true,
     this.bookRecords = const [],
   });
+
+  double cashInBalance(){
+    double cashInAmount = 0;
+    for (Entry entry in bookRecords){
+      if (entry.entryType == EntryType.cashIn) {
+        cashInAmount +=
+      }
+    }
+  }
 }
