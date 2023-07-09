@@ -1,5 +1,8 @@
+import 'package:cash_book/controllers/temp_user_controller.dart';
+import 'package:cash_book/controllers/verification_code_text_field_controller.dart';
 import 'package:cash_book/methods/get_user_to_home_screen_method.dart';
 import 'package:cash_book/model/user.dart';
+import 'package:cash_book/waiting%20code/verify_code.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,6 +47,9 @@ class AfterVerificationLoginWidget extends StatelessWidget {
                 lastSyncDate: DateTime.now().toString(),
                 userCreationDate: DateTime.now().toString(),
               );
+
+              // $ await verifyCode(Get.find<TempUserController>().tempUser.value!.userPhoneNumber, Get.find<VerificationCodeTextFieldController>().verificationCode!.text) ? getUserToHomeScreen(currentUser) : const SnackBar(content: Text('wrong code'));
+
               getUserToHomeScreen(currentUser);
             },
           ),

@@ -50,3 +50,6 @@ const String kEntryBoxName = 'entryBox';
 const String kBookBoxName = 'bookBox';
 const String kIsLoggedIn = 'loggedIn';
 const String kCurrentUserIDKey = 'currentUserID';
+
+// * URLs
+const String kVerifyCodeUrl = 'http://your-server-url.com/verify';

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class TextFieldController extends GetxController {
+class AddBookTextFieldController extends GetxController {
   TextEditingController? addBookName;
 
   @override
