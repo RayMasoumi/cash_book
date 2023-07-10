@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'colors.dart';
 
 // * heights and widths:
-final kWidth = Get.width; // * 411.42857142857144
-final kHeight = Get.height; // * 707.4285714285714
+final kWidth = Get.width; // * 392.72727272727275 = 393
+final kHeight = Get.height; // * 826.9090909090909 = 827
 final kFABHeight = kHeight * 0.09;
 final kFABWidth = kWidth * 0.45;
 final kIconButtonSize = kWidth * 0.1;

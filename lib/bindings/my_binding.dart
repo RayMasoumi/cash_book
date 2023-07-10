@@ -1,4 +1,4 @@
-import 'package:cash_book/controllers/add_entry_text_field_conrtoller.dart';
+import 'package:cash_book/controllers/add_entry_text_field_controller.dart';
 import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/controllers/current_user_controller.dart';
 import 'package:cash_book/controllers/entry_controller.dart';

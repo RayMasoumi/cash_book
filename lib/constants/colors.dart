@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF7B36D2);
+const kPrimaryColor = Color(0xFF6768FF);
 const kSecondaryColor = Color(0xFFE6C4C4);
 const kPastel5Color = Color(0xFFE7FBBE);
 const kPastel1Color = Color(0xFFECC5FB);

@@ -2,7 +2,7 @@ import 'package:animated_icon/animated_icon.dart';
 import 'package:cash_book/constants/enums.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
-import 'package:cash_book/controllers/add_entry_text_field_conrtoller.dart';
+import 'package:cash_book/controllers/add_entry_text_field_controller.dart';
 import 'package:cash_book/controllers/book_controller.dart';
 import 'package:cash_book/methods/get_current_book_entries_method.dart';
 import 'package:flutter/material.dart';
@@ -49,39 +49,58 @@ class BookScreen extends StatelessWidget {
             // * balance container:
             Expanded(
               flex: 2,
-              child: Container(
-                child: PieChart(
-                  dataMap: const <String, double>{
-                    "Cash in": 5,
-                    "Cash out": 5,
-                  },
-                  animationDuration: const Duration(milliseconds: 800),
-                  chartLegendSpacing: 32,
-                  chartRadius: MediaQuery.of(context).size.width / 3.2,
-                  colorList: const [Colors.red, Colors.green],
-                  initialAngleInDegree: 0,
-                  chartType: ChartType.ring,
-                  ringStrokeWidth: 32,
-                  centerText: "HYBRID",
-                  legendOptions: const LegendOptions(
-                    showLegendsInRow: false,
-                    legendPosition: LegendPosition.right,
-                    showLegends: true,
-                    legendTextStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  chartValuesOptions: const ChartValuesOptions(
-                    showChartValueBackground: true,
-                    showChartValues: true,
-                    showChartValuesInPercentage: false,
-                    showChartValuesOutside: false,
-                    decimalPlaces: 1,
-                  ),
-                  // gradientList: ---To add gradient colors---
-                  // emptyColorGradient: ---Empty Color gradient---
+              child: Column(children: [
+                Text(
+                  'Total Balance: ${Get.find<BookController>().currentBook.value!.overAllBalance()}',
+                  style: const TextStyle(fontSize: 25),
                 ),
-              ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Obx(() {
+                  double cashIn = Get.find<BookController>()
+                      .currentBook
+                      .value!
+                      .cashInBalance();
+                  double cashOut = Get.find<BookController>()
+                      .currentBook
+                      .value!
+                      .cashOutBalance();
+                  print('*********$cashOut');
+                  print('*********$cashIn');
+                  return PieChart(
+                    dataMap: <String, double>{
+                      "Cash in": cashIn,
+                      "Cash out": cashOut,
+                    },
+                    animationDuration: const Duration(milliseconds: 800),
+                    chartLegendSpacing: 32,
+                    chartRadius: MediaQuery.of(context).size.width / 3.2,
+                    colorList: const [Colors.red, Colors.green],
+                    initialAngleInDegree: 0,
+                    chartType: ChartType.ring,
+                    ringStrokeWidth: 32,
+                    centerText: "HYBRID",
+                    legendOptions: const LegendOptions(
+                      showLegendsInRow: false,
+                      legendPosition: LegendPosition.right,
+                      showLegends: true,
+                      legendTextStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    chartValuesOptions: const ChartValuesOptions(
+                      showChartValueBackground: true,
+                      showChartValues: true,
+                      showChartValuesInPercentage: false,
+                      showChartValuesOutside: false,
+                      decimalPlaces: 1,
+                    ),
+                    // gradientList: ---To add gradient colors---
+                    // emptyColorGradient: ---Empty Color gradient---
+                  );
+                }),
+              ]),
             ),
             Expanded(
               flex: 3,

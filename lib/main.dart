@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/internationalization/translate.dart';
 import 'package:cash_book/methods/get_hive_data.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'bindings/my_binding.dart';
 import 'methods/user_route_method.dart';
@@ -44,6 +46,8 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    print(kHeight);
+    print(kWidth);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
@@ -52,11 +56,11 @@ class MyApp extends StatelessWidget {
       translations: Translate(),
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
-      initialRoute: userRoute(),
-      // initialRoute: kBookScreenRoute,
+      // initialRoute: userRoute(),
+      initialRoute: kSignUpScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
-        fontFamily: 'Nunito',
+        textTheme: GoogleFonts.outfitTextTheme(),
       ),
     );
   }

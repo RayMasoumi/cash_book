@@ -6,8 +6,7 @@ import 'package:cash_book/methods/get_current_book_entries_method.dart';
 import 'package:get/get.dart';
 import 'package:cash_book/model/entry.dart';
 import 'package:hive/hive.dart';
-
-import '../controllers/add_entry_text_field_conrtoller.dart';
+import '../controllers/add_entry_text_field_controller.dart';
 import '../controllers/book_controller.dart';
 import '../controllers/entry_controller.dart';
 
@@ -34,6 +33,12 @@ void addNewEntry() {
     category: Get.find<DropDownController>().pickedCategory.value,
   );
   Get.find<EntryController>().bookEntries.add(newEntry);
+  Get.find<BookController>()
+      .currentBook
+      .value!
+      .bookRecords
+      .toList()
+      .add(newEntry);
   // * update current book entry:
   getCurrentBookEntries();
   // * adding the entry to hive:

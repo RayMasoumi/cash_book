@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/enums.dart';
-import '../controllers/add_entry_text_field_conrtoller.dart';
+import '../controllers/add_entry_text_field_controller.dart';
 import '../controllers/entry_controller.dart';
 import '../widgets/center_hint_text_field_widget.dart';
 import '../widgets/custom_radio_button_widget.dart';
