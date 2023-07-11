@@ -17,8 +17,8 @@ PageViewModel introductionPageViewModel({
     ),
     decoration: PageDecoration(
       bodyAlignment: Alignment.bottomCenter,
-      titleTextStyle: kIntroTitleStyle,
-      bodyTextStyle: kIntroSubtitleStyle,
+      titleTextStyle: kIntroTitleStyleOld,
+      bodyTextStyle: kIntroSubtitleStyleOld,
       imageFlex: 2,
       imagePadding: EdgeInsets.only(top: kTopMargin),
     ),

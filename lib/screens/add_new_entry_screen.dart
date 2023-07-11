@@ -64,7 +64,7 @@ class AddNewEntryScreen extends StatelessWidget {
               DropDown(
                 hint: Text(
                   'Pick the Category',
-                  style: kIntroSubtitleStyle,
+                  style: kIntroSubtitleStyleOld,
                 ),
                 // ? how to fix the String
                 items: Category.values,
@@ -87,7 +87,7 @@ class AddNewEntryScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Select Payment Method',
-                    style: kIntroSubtitleStyle,
+                    style: kIntroSubtitleStyleOld,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
