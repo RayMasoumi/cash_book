@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/strings.dart';
 import 'package:get/get.dart';
 
 class Translate implements Translations {
@@ -22,8 +23,8 @@ class Translate implements Translations {
           'Public': 'Public',
           'Login To Your Account': 'Login To Your Account',
           'Welcome To CashBook': 'Welcome To CashBook',
-          'Username': 'Username',
-          'Type In a Username': 'Type In a Username',
+          kUsernameTitle: kUsernameTitle,
+          kUsernameHint: kUsernameHint,
           'Phone Number': 'Phone Number',
           'E-mail': 'E-mail',
           'Already have an account? ': 'Already have an account? ',
@@ -39,6 +40,7 @@ class Translate implements Translations {
           '+981234567890': '+981234567890',
           'Create Account': 'Create Account',
           'language': 'language',
+          kSignUpSubtitle: kSignUpSubtitle,
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -60,8 +62,8 @@ class Translate implements Translations {
           'Public': 'عمومی',
           'Login To Your Account': 'وارد حساب کاربری خود شوید',
           'Welcome To CashBook': 'به کشبوک خوش آمدید',
-          'Username': 'نام کاربری',
-          'Type In a Username': 'نام کاربری',
+          kUsernameTitle: 'نام کاربری:',
+          kUsernameHint: 'نام کاربری خود را وارد کنید',
           'Phone Number': 'شماره تلفن',
           'E-mail': 'ایمیل',
           'Already have an account? ': 'حساب کاربری دارم ',
@@ -77,6 +79,7 @@ class Translate implements Translations {
           '+981234567890': '+۹۸۱۲۳۴۵۶۷۸۹۰',
           'Create Account': 'ایجاد حساب جدید',
           'language': 'زبان',
+          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید'
         },
       };
 }

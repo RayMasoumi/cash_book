@@ -21,7 +21,7 @@ class AddBookBottomSheet extends StatelessWidget {
       duration: const Duration(seconds: 10),
       child: Container(
         padding: MediaQuery.of(context).viewInsets,
-        color: kTransparentBottomSheetBackground,
+        color: kTransparentBottomSheetBackgroundColor,
         child: Container(
           decoration: const BoxDecoration(
             color: Colors.white,

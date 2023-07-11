@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0.0,
         title: Text(
           Get.find<CurrentUserController>().currentUser.value!.userName,
-          style: const TextStyle(color: kMainSubtitle),
+          style: const TextStyle(color: kMainSubtitleColor),
         ),
         actions: const [
           Padding(

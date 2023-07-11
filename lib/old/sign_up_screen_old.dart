@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/verification_controller.dart';
-import '../widgets/round_text_field_widget.dart';
+import 'round_text_field_widget_old.dart';
 
 class SignUpScreenOld extends StatelessWidget {
   const SignUpScreenOld({super.key});
@@ -39,7 +39,7 @@ class SignUpScreenOld extends StatelessWidget {
                       title: kUsernameTitle.tr,
                       keyBoardType: TextInputType.text,
                       hintText: kUsernameHint.tr,
-                      controller: Get.find<SignUpController>().username!,
+                      controller: TextEditingController(),
                     ),
                     RoundTextFieldWidget(
                       title: kPhoneNumberTitle.tr,
