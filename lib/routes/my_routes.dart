@@ -5,9 +5,8 @@ import 'package:cash_book/screens/home_screen.dart';
 import 'package:cash_book/screens/introduction_screen.dart';
 import 'package:cash_book/old/introduction_screen_old.dart';
 import 'package:cash_book/screens/login_screen.dart';
+import 'package:cash_book/screens/sign_up_screen.dart';
 import 'package:get/get.dart';
-
-import '../screens/sign_up_screen.dart';
 
 class MyRoutes {
   static List<GetPage> get pages => [

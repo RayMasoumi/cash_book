@@ -31,8 +31,9 @@ const String kLanguageTitle = 'language';
 
 // * login screen strings:
 const String kTitleLogin = 'Login To Your Account';
+
 // *sign up screen strings:
-const String kSignUpTitle = 'Sign up';
+const String kSignUpTitle = 'Welcome To CashBook';
 const String kUsernameTitle = 'Username';
 const String kUsernameHint = 'Type In a Username';
 const String kPhoneNumberTitle = 'Phone Number';

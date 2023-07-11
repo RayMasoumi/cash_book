@@ -1,10 +1,12 @@
 import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen_azin/intro_screen_on_boarding.dart';
 import 'package:introduction_screen_azin/introduction.dart';
 import 'package:pelaicons/pelaicons.dart';
 
 import '../constants/strings.dart';
+import '../methods/is_logged_in_method.dart';
 
 class CustomIntroductionScreen extends StatelessWidget {
   CustomIntroductionScreen({super.key});
@@ -12,22 +14,22 @@ class CustomIntroductionScreen extends StatelessWidget {
   final List<Introduction> pages = [
     Introduction(
       imageUrl: kIntroImagePath1,
-      title: kIntroTitle1,
-      subTitle: kIntroSubtitle1,
+      title: kIntroTitle1.tr,
+      subTitle: kIntroSubtitle1.tr,
       titleTextStyle: kIntroTitleStyle,
       subTitleTextStyle: kIntroSubtitleStyle,
     ),
     Introduction(
       imageUrl: kIntroImagePath2,
-      title: kIntroTitle2,
-      subTitle: kIntroSubtitle2,
+      title: kIntroTitle2.tr,
+      subTitle: kIntroSubtitle2.tr,
       titleTextStyle: kIntroTitleStyle,
       subTitleTextStyle: kIntroSubtitleStyle,
     ),
     Introduction(
       imageUrl: kIntroImagePath3,
-      title: kIntroTitle3,
-      subTitle: kIntroSubtitle3,
+      title: kIntroTitle3.tr,
+      subTitle: kIntroSubtitle3.tr,
       titleTextStyle: kIntroTitleStyle,
       subTitleTextStyle: kIntroSubtitleStyle,
     ),
@@ -39,6 +41,12 @@ class CustomIntroductionScreen extends StatelessWidget {
       introductionList: pages,
       backgroudColor: Colors.white,
       skipTextStyle: kIntroSkipStyle,
+      onTapFinishedButton: () {
+        // * Only show this page once
+        isLoggedIn()
+            ? Get.toNamed(kHomeScreenRoute)
+            : Get.toNamed(kSignUpScreenRoute);
+      },
       topIconButton: IconButton(
         icon: const Icon(Pelaicons.sun_light_outline),
         color: Colors.white,
