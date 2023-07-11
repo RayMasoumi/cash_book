@@ -15,6 +15,7 @@ final k3Width = widthCalculator(3);
 final k10Width = widthCalculator(10);
 final k30Width = widthCalculator(30);
 // * height
+final k3Height = heightCalculator(3);
 final k40Height = heightCalculator(40);
 
 // * border radius:

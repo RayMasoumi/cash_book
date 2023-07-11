@@ -1,11 +1,7 @@
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
-import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/methods/size_calculator_method.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../controllers/sign_up_controller.dart';
 
 class SignUpScreenTextFieldWidget extends StatelessWidget {
   const SignUpScreenTextFieldWidget({
@@ -30,15 +26,15 @@ class SignUpScreenTextFieldWidget extends StatelessWidget {
           title,
           style: kTextFieldTitleStyle,
         ),
-        const SizedBox(
-          height: 3,
+        SizedBox(
+          height: k3Height,
         ),
         TextField(
           textAlign: TextAlign.start,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
-            fontSize: 15.0,
+            fontSize: widthCalculator(15),
           ),
           controller: controller,
           cursorColor: Colors.black54,
