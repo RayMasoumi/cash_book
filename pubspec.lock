@@ -424,6 +424,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.9"
+  introduction_screen_azin:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "774e2c5b77c9f8d181f27e06bbb4e8c7a51eac5d"
+      url: "https://github.com/azinmapar/introduction_screen_azin_package.git"
+    source: git
+    version: "1.0.0"
   io:
     dependency: transitive
     description:
@@ -568,6 +577,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.7"
+  pelaicons:
+    dependency: "direct main"
+    description:
+      name: pelaicons
+      sha256: fc1c1e972e4ad64bc2de3cea4d5b059327e2c2f92b68f74c18ab46ba8f65fa40
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   pie_chart:
     dependency: "direct main"
     description:
@@ -653,6 +670,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_page_indicator:
+    dependency: transitive
+    description:
+      name: smooth_page_indicator
+      sha256: "725bc638d5e79df0c84658e1291449996943f93bacbc2cec49963dbbab48d8ae"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   source_gen:
     dependency: transitive
     description:

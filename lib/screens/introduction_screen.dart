@@ -1,51 +1,28 @@
-import 'package:cash_book/constants/colors.dart';
-import 'package:cash_book/constants/sizes.dart';
-import 'package:cash_book/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:introduction_screen/introduction_screen.dart';
-import '../methods/introduction_page_method.dart';
-import '../methods/is_logged_in_method.dart';
+import 'package:introduction_screen_azin/intro_screen_on_boarding.dart';
+import 'package:introduction_screen_azin/introduction.dart';
+import 'package:pelaicons/pelaicons.dart';
 
-class IntroductionSliderScreen extends StatelessWidget {
-  const IntroductionSliderScreen({super.key});
+class CustomIntroductionScreen extends StatelessWidget {
+  CustomIntroductionScreen({super.key});
+
+  final List<Introduction> pages = [
+    Introduction(
+      imageUrl: 'assets/images/introduction_page_1.png',
+      title: 'title',
+      subTitle: 'subTitle',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      // * introduction screen pages
-      pages: [
-        introductionPageViewModel(
-          title: kIntroTitle1.tr,
-          subtitle: kIntroSubtitle1.tr,
-          imagePath: kIntroImagePath1,
-        ),
-        introductionPageViewModel(
-          title: kIntroTitle2.tr,
-          subtitle: kIntroSubtitle2.tr,
-          imagePath: kIntroImagePath2,
-        ),
-        introductionPageViewModel(
-          title: kIntroTitle3.tr,
-          subtitle: kIntroSubtitle3.tr,
-          imagePath: kIntroImagePath3,
-        ),
-      ],
-      showSkipButton: true,
-      showNextButton: false,
-      skip: Text(kSkipButtonText.tr, style: kIntroButtonTextStyle),
-      done: Text(
-        kDoneButtonText.tr,
-        style: kIntroButtonTextStyle,
-      ),
-      onDone: () {
-        // * Only show this page once
-        isLoggedIn()
-            ? Get.toNamed(kHomeScreenRoute)
-            : Get.toNamed(kSignUpScreenRoute);
-      },
-      dotsDecorator: const DotsDecorator(
-        activeColor: kPrimaryColor,
+    return IntroScreenOnBoarding(
+      introductionList: pages,
+      topIconButton: IconButton(
+        icon: const Icon(Pelaicons.sun_light_outline),
+        color: Colors.white,
+        iconSize: 25.0,
+        onPressed: () {},
       ),
     );
   }

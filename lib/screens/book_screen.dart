@@ -174,7 +174,7 @@ class BookScreen extends StatelessWidget {
                                 Get.find<AddEntryTextFieldController>()
                                     .addEntryAmount
                                     ?.clear();
-                                Get.toNamed(kAddNewEntryScreen);
+                                Get.toNamed(kAddNewEntryScreenRoute);
                               },
                               buttonIcon: Icons.add,
                               buttonText: 'Cash In',
@@ -211,7 +211,7 @@ class BookScreen extends StatelessWidget {
                                 Get.find<AddEntryTextFieldController>()
                                     .addEntryAmount
                                     ?.clear();
-                                Get.toNamed(kAddNewEntryScreen);
+                                Get.toNamed(kAddNewEntryScreenRoute);
                               },
                               buttonIcon: Icons.remove,
                               buttonText: 'Cash Out',

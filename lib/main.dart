@@ -52,8 +52,9 @@ class MyApp extends StatelessWidget {
       translations: Translate(),
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
-      initialRoute: userRoute(),
+      // initialRoute: userRoute(),
       // initialRoute: kBookScreenRoute,
+      initialRoute: kIntroductionScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         fontFamily: 'Nunito',
