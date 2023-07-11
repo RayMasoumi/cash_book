@@ -3,6 +3,8 @@ import 'package:cash_book/internationalization/translate.dart';
 import 'package:cash_book/methods/get_hive_data.dart';
 import 'package:cash_book/routes/my_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:get_storage/get_storage.dart';
@@ -46,6 +48,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.downToUp,
       initialBinding: MyBindings(),
@@ -54,8 +57,8 @@ class MyApp extends StatelessWidget {
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
       // initialRoute: userRoute(),
-      // initialRoute: kBookScreenRoute,
-      initialRoute: kSignUpScreenRoute,
+      initialRoute: kIntroductionScreenRoute,
+      // initialRoute: kSignUpScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),

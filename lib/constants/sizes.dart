@@ -1,9 +1,12 @@
+import 'package:cash_book/methods/size_calculator_method.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'colors.dart';
 
 // * heights and widths:
+const kScreenWidth = 393;
+const kScreenHeight = 827;
 final kWidth = Get.width; // * 393
 final kHeight = Get.height; // * 827
 final kFABHeight = kHeight * 0.09;
@@ -25,15 +28,15 @@ final kBorderRadius15 = BorderRadius.circular(15);
 
 // * new styles
 final kIntroTitleStyle = TextStyle(
-  fontSize: kWidth * 0.05,
+  fontSize: widthCalculator(20),
   color: Colors.black,
 );
 final kIntroSubtitleStyle = TextStyle(
-  fontSize: kWidth * 0.035,
+  fontSize: widthCalculator(14),
   color: Colors.black,
 );
 final kIntroSkipStyle = TextStyle(
-  fontSize: kWidth * 0.03,
+  fontSize: widthCalculator(12),
   color: Colors.black,
 );
 
