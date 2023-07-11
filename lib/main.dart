@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'bindings/my_binding.dart';
 import 'methods/user_route_method.dart';
@@ -57,7 +58,8 @@ class MyApp extends StatelessWidget {
       initialRoute: kIntroductionScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
-        fontFamily: 'Nunito',
+        textTheme: GoogleFonts.outfitTextTheme(),
+        // fontFamily: 'Nunito',
       ),
     );
   }
