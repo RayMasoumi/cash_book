@@ -1,12 +1,11 @@
 import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen_azin/intro_screen_on_boarding.dart';
 import 'package:introduction_screen_azin/introduction.dart';
 import 'package:pelaicons/pelaicons.dart';
-
 import '../constants/strings.dart';
-import '../methods/is_logged_in_method.dart';
 
 class CustomIntroductionScreen extends StatelessWidget {
   CustomIntroductionScreen({super.key});
@@ -38,21 +37,22 @@ class CustomIntroductionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IntroScreenOnBoarding(
+      onTapFinishedButton: () {
+        Get.toNamed(kSignUpScreenRoute);
+      },
       introductionList: pages,
       backgroudColor: Colors.white,
       skipTextStyle: kIntroSkipStyle,
-      onTapFinishedButton: () {
-        // * Only show this page once
-        isLoggedIn()
-            ? Get.toNamed(kHomeScreenRoute)
-            : Get.toNamed(kSignUpScreenRoute);
-      },
-      topIconButton: IconButton(
-        icon: const Icon(Pelaicons.sun_light_outline),
-        color: Colors.white,
-        iconSize: 35.0,
-        onPressed: () {},
-      ),
+      topIconButton: Obx(() {
+        return IconButton(
+          icon: Get.find<ThemeController>().isDark.value
+              ? const Icon(Pelaicons.sun_light_outline)
+              : const Icon(Pelaicons.moon_1_light_outline),
+          color: Colors.white,
+          iconSize: 35.0,
+          onPressed: () {},
+        );
+      }),
     );
   }
 }
