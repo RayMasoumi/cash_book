@@ -1,7 +1,10 @@
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
+import 'package:cash_book/controllers/theme_controller.dart';
 import 'package:cash_book/methods/size_calculator_method.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SignUpScreenTextFieldWidget extends StatelessWidget {
   const SignUpScreenTextFieldWidget({
@@ -24,7 +27,9 @@ class SignUpScreenTextFieldWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: kTextFieldTitleStyle,
+          style: Get.find<ThemeController>().isDark.value
+              ? kTextFieldTitleStyle.copyWith(color: Colors.white)
+              : kTextFieldTitleStyle,
         ),
         SizedBox(
           height: k3Height,
@@ -40,6 +45,8 @@ class SignUpScreenTextFieldWidget extends StatelessWidget {
           cursorColor: Colors.black54,
           keyboardType: keyboardType,
           decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
             border: OutlineInputBorder(
               borderRadius: kBorderRadius12,
               borderSide: BorderSide(color: kTextFieldBorderColor),

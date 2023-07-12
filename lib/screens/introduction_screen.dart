@@ -48,7 +48,7 @@ class CustomIntroductionScreen extends StatelessWidget {
           // * Only show this page once
           isLoggedIn()
               ? Get.toNamed(kHomeScreenRoute)
-              : Get.toNamed(kSignUpScreenRoute);
+              : Get.toNamed(kLoginScreenRoute);
         },
         topIconButton: IconButton(
           icon: changeThemeIcon(Get.find<ThemeController>().isDark.value),

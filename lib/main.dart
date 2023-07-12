@@ -55,8 +55,8 @@ class MyApp extends StatelessWidget {
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
       // initialRoute: userRoute(),
-      // initialRoute: kIntroductionScreenRoute,
-      initialRoute: kSignUpScreenRoute,
+      initialRoute: kIntroductionScreenRoute,
+      // initialRoute: kSignUpScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),
@@ -73,6 +73,11 @@ class MyApp extends StatelessWidget {
           displayMedium: const TextStyle(color: Colors.white),
           displaySmall: const TextStyle(color: Colors.white),
         ),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.resolveWith((_) => Colors.white),
+          fillColor: MaterialStateProperty.resolveWith((_) => Colors.red),
+          side: AlwaysActiveBorderSide(),
+        ),
       ),
     );
   }
@@ -80,5 +85,5 @@ class MyApp extends StatelessWidget {
 
 class AlwaysActiveBorderSide extends MaterialStateBorderSide {
   @override
-  BorderSide? resolve(_) => const BorderSide(color: kGreyBorderColor);
+  BorderSide? resolve(states) => const BorderSide(color: kGreyBorderColor);
 }
