@@ -40,8 +40,6 @@ class Translate implements Translations {
           'Create Account': 'Create Account',
           'language': 'language',
           kSignUpSubtitle: kSignUpSubtitle,
-          kEmailTitle: kEmailTitle,
-          kEmailHint: kEmailHint,
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -79,9 +77,7 @@ class Translate implements Translations {
           '+981234567890': '+۹۸۱۲۳۴۵۶۷۸۹۰',
           'Create Account': 'ایجاد حساب جدید',
           'language': 'زبان',
-          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید',
-          kEmailTitle: 'ایمیل:',
-          kEmailHint: 'ایمیل خود را وارد کنید',
+          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید'
         },
       };
 }

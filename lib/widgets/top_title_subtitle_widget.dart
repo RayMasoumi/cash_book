@@ -19,6 +19,7 @@ class TopTitleSubtitleWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // * title
         Text(
           title,
           style: kSignUpTitleStyle,
@@ -26,6 +27,7 @@ class TopTitleSubtitleWidget extends StatelessWidget {
         SizedBox(
           height: heightCalculator(20.0),
         ),
+        // *subtitle
         Text(
           subtitle,
           style: kIntroSubtitleStyle,
