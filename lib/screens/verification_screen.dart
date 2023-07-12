@@ -15,6 +15,7 @@ class VerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: DefaultPadding(
           child:
@@ -48,6 +49,15 @@ class VerificationScreen extends StatelessWidget {
               backgroundColor: kDisabledColor,
               textStyle: kBorder12ButtonTextStyle,
               width: widthCalculator(224),
+            ),
+            SizedBox(
+              height: heightCalculator(176),
+            ),
+            BorderRadius12Button(
+              onPressed: () {},
+              text: 'Log In',
+              backgroundColor: kPrimaryColor,
+              textStyle: kBorder12ButtonTextStyle,
             ),
           ]),
         ),
