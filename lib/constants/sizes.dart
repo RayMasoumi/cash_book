@@ -37,6 +37,7 @@ final kIntroSubtitleStyle = TextStyle(
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),
   color: Colors.black,
+  // * also used for terms and conditions
 );
 final kSignUpTitleStyle = TextStyle(
   fontSize: widthCalculator(24),
