@@ -1,10 +1,4 @@
-import 'package:cash_book/constants/sizes.dart';
-import 'package:cash_book/constants/strings.dart';
-import 'package:cash_book/widgets/sign_up_screen_text_field_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../controllers/sign_up_controller.dart';
 
 class DefaultPadding extends StatelessWidget {
   const DefaultPadding({

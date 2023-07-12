@@ -1,8 +1,8 @@
+import 'package:cash_book/widgets/top_title_subtitle_widget.dart';
 import 'package:cash_book/widgets/default_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../constants/sizes.dart';
 import '../constants/strings.dart';
 import '../controllers/sign_up_controller.dart';
 import '../widgets/sign_up_screen_text_field_widget.dart';
@@ -21,19 +21,9 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                kSignUpTitle,
-                style: kSignUpTitleStyle,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                kSignUpSubtitle,
-                style: kIntroSubtitleStyle,
-              ),
-              const SizedBox(
-                height: 26.0,
+              const TopTitleSubtitleWidget(
+                title: kSignUpTitle,
+                subtitle: kSignUpSubtitle,
               ),
               SignUpScreenTextFieldWidget(
                 title: kUsernameTitle.tr,

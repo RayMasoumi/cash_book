@@ -7,26 +7,26 @@ class VerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: DefaultPadding(
-          child: crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          Text(
-          kSignUpTitle,
-          style: kSignUpTitleStyle,
-        ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Text(
-            kSignUpSubtitle,
-            style: kIntroSubtitleStyle,
-          ),
-          const SizedBox(
-            height: 26.0,
-          ),
-       ] ),
-      ),
-    );
+        // body: SafeArea(
+        //   child: DefaultPadding(
+        //     //child: crossAxisAlignment: CrossAxisAlignment.start,
+        //     children: [
+        //     Text(
+        //     kSignUpTitle,
+        //     style: kSignUpTitleStyle,
+        //   ),
+        //     const SizedBox(
+        //       height: 20.0,
+        //     ),
+        //     Text(
+        //       kSignUpSubtitle,
+        //       style: kIntroSubtitleStyle,
+        //     ),
+        //     const SizedBox(
+        //       height: 26.0,
+        //     ),
+        //  ] ),
+        // ),
+        );
   }
 }

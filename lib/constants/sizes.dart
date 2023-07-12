@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../controllers/theme_controller.dart';
 import 'colors.dart';
 
 // * heights and widths:
@@ -35,7 +36,7 @@ final kIntroSubtitleStyle = TextStyle(
 );
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),
-  // color: Colors.black,
+  color: Get.find<ThemeController>().isDark.value ? Colors.white : Colors.black,
 );
 final kSignUpTitleStyle = TextStyle(
   fontSize: widthCalculator(24),

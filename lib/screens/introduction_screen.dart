@@ -37,26 +37,26 @@ class CustomIntroductionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntroScreenOnBoarding(
-      introductionList: pages,
-      backgroudColor: Theme.of(context).canvasColor,
-      skipTextStyle: kIntroSkipStyle,
-      onTapFinishedButton: () {
-        // * Only show this page once
-        isLoggedIn()
-            ? Get.toNamed(kHomeScreenRoute)
-            : Get.toNamed(kSignUpScreenRoute);
-      },
-      topIconButton: Obx(() {
-        return IconButton(
+    return Obx(() {
+      return IntroScreenOnBoarding(
+        introductionList: pages,
+        backgroudColor: Theme.of(context).canvasColor,
+        skipTextStyle: kIntroSkipStyle,
+        onTapFinishedButton: () {
+          // * Only show this page once
+          isLoggedIn()
+              ? Get.toNamed(kHomeScreenRoute)
+              : Get.toNamed(kSignUpScreenRoute);
+        },
+        topIconButton: IconButton(
           icon: changeThemeIcon(Get.find<ThemeController>().isDark.value),
           color: Colors.white,
           iconSize: 35.0,
           onPressed: () {
             changeTheme(Get.find<ThemeController>().isDark.value);
           },
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 }
