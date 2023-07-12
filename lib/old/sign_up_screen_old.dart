@@ -45,13 +45,13 @@ class SignUpScreenOld extends StatelessWidget {
                       title: kPhoneNumberTitle.tr,
                       keyBoardType: TextInputType.number,
                       hintText: kPhoneNumberHint.tr,
-                      controller: Get.find<SignUpController>().phoneNumber!,
+                      controller: TextEditingController(),
                     ),
                     RoundTextFieldWidget(
                       keyBoardType: TextInputType.emailAddress,
                       title: kEmailTitle.tr,
                       hintText: kEmailHint,
-                      controller: Get.find<SignUpController>().email!,
+                      controller: TextEditingController(),
                     ),
                     // * submit button:
                     RoundedSubmitButtonWidget(

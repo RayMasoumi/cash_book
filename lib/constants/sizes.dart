@@ -18,6 +18,7 @@ final k3Height = heightCalculator(3);
 final k40Height = heightCalculator(40);
 
 // * border radius:
+final kBorderRadius6 = BorderRadius.circular(6);
 final kBorderRadius12 = BorderRadius.circular(12);
 final kBorderRadius15 = BorderRadius.circular(15);
 final kBorderRadius45 = BorderRadius.circular(45);
@@ -29,7 +30,7 @@ final kIntroTitleStyle = TextStyle(
 );
 final kIntroSubtitleStyle = TextStyle(
   fontSize: widthCalculator(14),
-  //also used for signup subtitle
+  // * also used for signup subtitle and 'already have an account' text
 );
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),

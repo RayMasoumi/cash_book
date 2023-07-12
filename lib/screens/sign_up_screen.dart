@@ -1,6 +1,8 @@
+import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/methods/size_calculator_method.dart';
 import 'package:cash_book/screens/custom_check_box.dart';
+import 'package:cash_book/widgets/border_radius12_button.dart';
 import 'package:cash_book/widgets/default_padding.dart';
 import 'package:cash_book/widgets/top_title_subtitle_widget.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +21,12 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: DefaultPadding(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,9 +48,19 @@ class SignUpScreen extends StatelessWidget {
                   // * email
                   SignUpScreenTextFieldWidget(
                     title: kEmailTitle.tr,
-                    keyboardType: TextInputType.text,
-                    controller: Get.find<SignUpController>().username!,
+                    keyboardType: TextInputType.emailAddress,
+                    controller: Get.find<SignUpController>().email!,
                     hintText: kEmailHint.tr,
+                  ),
+                  SizedBox(
+                    height: heightCalculator(19),
+                  ),
+                  // * phone number
+                  SignUpScreenTextFieldWidget(
+                    title: kPhoneNumberTitle.tr,
+                    keyboardType: TextInputType.number,
+                    controller: Get.find<SignUpController>().phoneNumber!,
+                    hintText: kPhoneNumberHint.tr,
                   ),
                   SizedBox(
                     height: heightCalculator(35),
@@ -58,7 +71,7 @@ class SignUpScreen extends StatelessWidget {
                         onPressed: () {},
                       ),
                       Text(
-                        'I Agree To Terms And Conditions',
+                        kConditionsText.tr,
                         style: Get.find<ThemeController>().isDark.value
                             ? kIntroSkipStyle.copyWith(color: Colors.white)
                             : kIntroSkipStyle,
@@ -67,6 +80,40 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              Column(
+                children: [
+                  BorderRadius12Button(
+                    onPressed: () {},
+                    text: kCreateAccountText,
+                    backgroundColor: kPrimaryColor,
+                    textStyle: kBorder12ButtonTextStyle,
+                  ),
+                  SizedBox(
+                    height: heightCalculator(10),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        kHaveAnAccountText,
+                        style: kIntroSubtitleStyle,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.toNamed(kLoginScreenRoute);
+                        },
+                        child: Text(
+                          kLogInText,
+                          style: kIntroSubtitleStyle.copyWith(
+                            color: kPrimaryColor,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )
             ],
           ),
         ),

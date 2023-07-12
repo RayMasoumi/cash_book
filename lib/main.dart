@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system, // Define the light theme
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.fadeIn,
-      transitionDuration: const Duration(seconds: 5),
+      transitionDuration: const Duration(milliseconds: 300),
       initialBinding: MyBindings(),
       // * translation
       translations: Translate(),
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
       // * checking if it is the first time the app is running
       // initialRoute: userRoute(),
       // initialRoute: kIntroductionScreenRoute,
-      initialRoute: kVerificationScreenRoute,
+      initialRoute: kSignUpScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),

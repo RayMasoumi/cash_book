@@ -22,19 +22,20 @@ const String kLanguageTitle = 'language';
 
 // * login screen strings:
 const String kTitleLogin = 'Login To Your Account';
+const String kLogInText = 'Log In';
 
 // *sign up screen strings:
 const String kSignUpTitle = 'Welcome To CashBook';
 const String kSignUpSubtitle = 'Please Fill In The Fields Below To Enter';
 const String kUsernameTitle = 'Username:';
 const String kUsernameHint = 'Enter Your Username';
-const String kPhoneNumberTitle = 'Phone Number';
+const String kPhoneNumberTitle = 'Phone Number:';
 const String kEmailTitle = 'E-mail:';
-const String kCreateAccountText = 'Create Account';
-const String kPhoneNumberHint = '+981234567890';
+const String kCreateAccountText = 'Sign Up';
+const String kPhoneNumberHint = 'Enter Your Phone Number';
 const String kEmailHint = 'Enter Your E-mail';
-const String kHaveAnAccountText = 'Already have an account? ';
-const String kLogInText = 'Log In';
+const String kHaveAnAccountText = 'Already Have An Account? ';
+const String kConditionsText = 'I Agree To Terms And Conditions';
 
 // * verification screen:
 const kVerificationTitle = 'Verification code';
