@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen_azin/intro_screen_on_boarding.dart';
 import 'package:introduction_screen_azin/introduction.dart';
-
 import '../constants/strings.dart';
 import '../methods/is_logged_in_method.dart';
 
@@ -48,14 +47,16 @@ class CustomIntroductionScreen extends StatelessWidget {
             ? Get.toNamed(kHomeScreenRoute)
             : Get.toNamed(kSignUpScreenRoute);
       },
-      topIconButton: IconButton(
-        icon: changeThemeIcon(Get.find<ThemeController>().isDark.value),
-        color: Colors.white,
-        iconSize: 35.0,
-        onPressed: () {
-          changeTheme(Get.find<ThemeController>().isDark.value);
-        },
-      ),
+      topIconButton: Obx(() {
+        return IconButton(
+          icon: changeThemeIcon(Get.find<ThemeController>().isDark.value),
+          color: Colors.white,
+          iconSize: 35.0,
+          onPressed: () {
+            changeTheme(Get.find<ThemeController>().isDark.value);
+          },
+        );
+      }),
     );
   }
 }
