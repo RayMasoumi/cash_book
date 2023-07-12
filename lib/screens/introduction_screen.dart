@@ -39,7 +39,7 @@ class CustomIntroductionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntroScreenOnBoarding(
       introductionList: pages,
-      backgroudColor: Colors.white,
+      backgroudColor: Theme.of(context).canvasColor,
       skipTextStyle: kIntroSkipStyle,
       onTapFinishedButton: () {
         // * Only show this page once
