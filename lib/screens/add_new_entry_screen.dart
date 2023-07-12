@@ -32,7 +32,7 @@ class AddNewEntryScreen extends StatelessWidget {
               ? 'Add Cash In Entry'
               : 'Add Cash Out Entry',
           //TODO cash in/cash out entry
-          style: const TextStyle(color: kMainSubtitle),
+          style: const TextStyle(color: kMainSubtitleColor),
         ),
       ),
       body: SafeArea(

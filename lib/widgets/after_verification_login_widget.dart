@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '../constants/strings.dart';
 import '../controllers/verification_controller.dart';
 import '../widgets/linked_string_widget.dart';
-import '../widgets/round_text_field_widget.dart';
+import '../old/round_text_field_widget_old.dart';
 import '../widgets/submit_button_widget.dart';
 
 class AfterVerificationLoginWidget extends StatelessWidget {

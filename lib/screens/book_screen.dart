@@ -39,7 +39,7 @@ class BookScreen extends StatelessWidget {
         elevation: 0.0,
         title: Text(
           Get.find<BookController>().currentBook.value!.bookName,
-          style: const TextStyle(color: kMainSubtitle),
+          style: const TextStyle(color: kMainSubtitleColor),
         ),
       ),
 
