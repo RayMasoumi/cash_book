@@ -16,15 +16,6 @@ const String kPrivateText = 'Private';
 const String kPublicText = 'Public';
 const String kEnglishTranslate = 'en';
 const String kPersianTranslate = 'fa';
-const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';
-const String kIntroImagePath2 = 'assets/images/introduction_page_2.png';
-const String kIntroImagePath3 = 'assets/images/introduction_page_3.png';
-const String kHomeScreenRoute = '/home_screen';
-const String kIntroductionScreenRoute = '/introduction_screen';
-const String kSignUpScreenRoute = '/sign_up_screen';
-const String kBookScreenRoute = '/book_screen';
-const String kLoginScreenRoute = '/login_screen';
-const String kAddNewEntryScreenRoute = '/add_new_entry_screen';
 
 // * Setting screen strings:
 const String kLanguageTitle = 'language';
@@ -46,6 +37,11 @@ const String kEmailHint = 'cashBook@mail.com';
 const String kHaveAnAccountText = 'Already have an account? ';
 const String kLogInText = 'Log In';
 
+// * verification screen:
+const kVerificationTitle = 'Verification code';
+const kVerificationSubtitle =
+    'A text massage with a four digit verification code has been sent to your phone number ending in ********98';
+
 // * hive box names:
 const String kUserBoxName = 'userBox';
 const String kMemberBoxName = 'memberBox';
@@ -59,3 +55,17 @@ const String kVerifyCodeUrl = 'http://your-server-url.com/verify';
 const String kLoginUrl = 'https://example.com/login';
 const String kCreateAccountUrl =
     'http://cashbookapi.etokco.ir/Account/CreateAccount';
+
+// * routes
+const String kHomeScreenRoute = '/home_screen';
+const String kIntroductionScreenRoute = '/introduction_screen';
+const String kSignUpScreenRoute = '/sign_up_screen';
+const String kBookScreenRoute = '/book_screen';
+const String kLoginScreenRoute = '/login_screen';
+const String kAddNewEntryScreenRoute = '/add_new_entry_screen';
+const kVerificationScreenRoute = '/verification_screen';
+
+// * path
+const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';
+const String kIntroImagePath2 = 'assets/images/introduction_page_2.png';
+const String kIntroImagePath3 = 'assets/images/introduction_page_3.png';

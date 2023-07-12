@@ -16,3 +16,4 @@ const kBorderColor = Colors.black12;
 final kTextFieldBorderColor = const Color(0xFF000000).withOpacity(0.28);
 const kTransparentBottomSheetBackgroundColor = Color(0xFF757575);
 const kTextFieldHintColor = Color(0xFFAEAEAE);
+const kDisabledColor = Color(0xFFD9D9D9);

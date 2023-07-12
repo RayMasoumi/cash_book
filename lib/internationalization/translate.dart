@@ -41,6 +41,8 @@ class Translate implements Translations {
           'Create Account': 'Create Account',
           'language': 'language',
           kSignUpSubtitle: kSignUpSubtitle,
+          kVerificationTitle: kVerificationTitle,
+          kVerificationSubtitle: kVerificationSubtitle,
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -79,7 +81,10 @@ class Translate implements Translations {
           '+981234567890': '+۹۸۱۲۳۴۵۶۷۸۹۰',
           'Create Account': 'ایجاد حساب جدید',
           'language': 'زبان',
-          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید'
+          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید',
+          kVerificationTitle: 'کد تایید',
+          kVerificationSubtitle:
+              '.کد تایید 4 رقمی شما به شماره *********98 ارسال شده است',
         },
       };
 }

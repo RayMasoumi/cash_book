@@ -6,6 +6,7 @@ import 'package:cash_book/screens/introduction_screen.dart';
 import 'package:cash_book/old/introduction_screen_old.dart';
 import 'package:cash_book/screens/login_screen.dart';
 import 'package:cash_book/screens/sign_up_screen.dart';
+import 'package:cash_book/screens/verification_screen.dart';
 import 'package:get/get.dart';
 
 class MyRoutes {
@@ -20,5 +21,8 @@ class MyRoutes {
         GetPage(
             name: kAddNewEntryScreenRoute,
             page: () => const AddNewEntryScreen()),
+        GetPage(
+            name: kVerificationScreenRoute,
+            page: () => const VerificationScreen()),
       ];
 }

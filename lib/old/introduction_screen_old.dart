@@ -33,10 +33,10 @@ class IntroductionSliderScreen extends StatelessWidget {
       ],
       showSkipButton: true,
       showNextButton: false,
-      skip: Text(kSkipButtonText.tr, style: kIntroButtonTextStyle),
+      skip: Text(kSkipButtonText.tr, style: kBorder12ButtonTextStyle),
       done: Text(
         kDoneButtonText.tr,
-        style: kIntroButtonTextStyle,
+        style: kBorder12ButtonTextStyle,
       ),
       onDone: () {
         // * Only show this page once

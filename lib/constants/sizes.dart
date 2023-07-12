@@ -1,9 +1,7 @@
 import 'package:cash_book/methods/size_calculator_method.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../controllers/theme_controller.dart';
+import 'package:pinput/pinput.dart';
 import 'colors.dart';
 
 // * heights and widths:
@@ -27,12 +25,10 @@ final kBorderRadius45 = BorderRadius.circular(45);
 // * new styles
 final kIntroTitleStyle = TextStyle(
   fontSize: widthCalculator(20),
-  // color: Colors.black,
 );
 final kIntroSubtitleStyle = TextStyle(
   fontSize: widthCalculator(14),
-  // color: Colors.black,
-  // * also used for signup subtitle
+  //also used for signup subtitle
 );
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),
@@ -40,11 +36,31 @@ final kIntroSkipStyle = TextStyle(
 );
 final kSignUpTitleStyle = TextStyle(
   fontSize: widthCalculator(24),
-  // color: Colors.black,
 );
 final kTextFieldTitleStyle = TextStyle(
   fontSize: widthCalculator(14),
   color: kTextFieldTitleColor,
+);
+final kBorder12ButtonTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: widthCalculator(20.0),
+);
+
+// * pin style:
+final kDefaultPinTheme = PinTheme(
+  width: widthCalculator(68),
+  height: heightCalculator(94),
+  textStyle: TextStyle(
+      fontSize: widthCalculator(20),
+      color: Colors.black,
+      fontWeight: FontWeight.w600),
+  decoration: BoxDecoration(
+    color: kDisabledColor,
+    border: Border.all(
+      color: kDisabledColor,
+    ),
+    borderRadius: BorderRadius.circular(17),
+  ),
 );
 
 // *******************old section**************************
@@ -82,9 +98,7 @@ final kIntroSubtitleStyleOld = TextStyle(
   color: kMainSubtitleColor,
   fontSize: kWidth * 0.055,
 );
-const kIntroButtonTextStyle = TextStyle(
-  color: kPrimaryColor,
-);
+
 const kDescriptionStyle = TextStyle(
   color: Colors.grey,
 );
