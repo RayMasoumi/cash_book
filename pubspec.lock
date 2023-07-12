@@ -437,7 +437,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "1dd8b2a1e1798126327d14feaf6d455c23d5837d"
+      resolved-ref: "5fe23ac9e7fd487bd90034ca3b01ee81974aadee"
       url: "https://github.com/azinmapar/introduction_screen_azin_package.git"
     source: git
     version: "1.0.0"

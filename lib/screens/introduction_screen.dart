@@ -1,5 +1,6 @@
 import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/controllers/theme_controller.dart';
+import 'package:cash_book/methods/change_theme_method.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen_azin/intro_screen_on_boarding.dart';
@@ -41,16 +42,16 @@ class CustomIntroductionScreen extends StatelessWidget {
         Get.toNamed(kSignUpScreenRoute);
       },
       introductionList: pages,
-      backgroudColor: Colors.white,
+      backgroudColor: Theme.of(context).scaffoldBackgroundColor,
       skipTextStyle: kIntroSkipStyle,
       topIconButton: Obx(() {
         return IconButton(
-          icon: Get.find<ThemeController>().isDark.value
-              ? const Icon(Pelaicons.sun_light_outline)
-              : const Icon(Pelaicons.moon_1_light_outline),
+          icon: changeThemeIcon(Get.find<ThemeController>().isDark.value),
           color: Colors.white,
           iconSize: 35.0,
-          onPressed: () {},
+          onPressed: () {
+            changeTheme(Get.find<ThemeController>().isDark.value);
+          },
         );
       }),
     );

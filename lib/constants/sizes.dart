@@ -25,20 +25,20 @@ final kBorderRadius45 = BorderRadius.circular(45);
 // * new styles
 final kIntroTitleStyle = TextStyle(
   fontSize: widthCalculator(20),
-  color: Colors.black,
+  // color: Colors.black,
 );
 final kIntroSubtitleStyle = TextStyle(
   fontSize: widthCalculator(14),
-  color: Colors.black,
+  // color: Colors.black,
   // * also used for signup subtitle
 );
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),
-  color: Colors.black,
+  // color: Colors.black,
 );
 final kSignUpTitleStyle = TextStyle(
   fontSize: widthCalculator(24),
-  color: Colors.black,
+  // color: Colors.black,
 );
 final kTextFieldTitleStyle = TextStyle(
   fontSize: widthCalculator(14),
