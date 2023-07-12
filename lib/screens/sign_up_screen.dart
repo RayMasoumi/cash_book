@@ -32,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TopTitleSubtitleWidget(
-                    title: kSignUpTitle,
+                    title: kWelcomeTitle,
                     subtitle: kSignUpSubtitle,
                   ),
                   // * username
@@ -82,38 +82,31 @@ class SignUpScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  BorderRadius12Button(
-                    onPressed: () {},
-                    text: kCreateAccountText,
-                    backgroundColor: kPrimaryColor,
-                    textStyle: kBorder12ButtonTextStyle,
+                  Hero(
+                    tag: kLoginToVerificationTag,
+                    child: BorderRadius12Button(
+                      onPressed: () {
+                        Get.toNamed(kVerificationScreenRoute);
+                      },
+                      text: kCreateAccountText,
+                      backgroundColor: kPrimaryColor,
+                      textStyle: kBorder12ButtonTextStyle,
+                    ),
                   ),
                   SizedBox(
-                    height: heightCalculator(10),
+                    height: heightCalculator(17.0),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        kHaveAnAccountText,
-                        style: kIntroSubtitleStyle,
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Get.toNamed(kLoginScreenRoute);
-                        },
-                        child: Text(
-                          kLogInText,
-                          style: kIntroSubtitleStyle.copyWith(
-                            color: kPrimaryColor,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  BorderRadius12Button(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      text: kBackButtonText,
+                      backgroundColor:
+                          Theme.of(context).scaffoldBackgroundColor,
+                      textStyle: kBackButtonTextStyle,
+                      borderColor: kGreyBorderColor),
                 ],
-              )
+              ),
             ],
           ),
         ),

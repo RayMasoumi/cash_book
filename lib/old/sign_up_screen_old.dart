@@ -25,7 +25,7 @@ class SignUpScreenOld extends StatelessWidget {
             const Column(
               children: [
                 AppBarTitleWidget(
-                  title: kSignUpTitle,
+                  title: kWelcomeTitle,
                 ),
               ],
             ),
@@ -74,7 +74,7 @@ class SignUpScreenOld extends StatelessWidget {
                     ),
                     // * log in text:
                     LinkedStringWidget(
-                        firstText: kHaveAnAccountText.tr,
+                        firstText: kDontHaveAnAccountText.tr,
                         linkedText: kLogInText.tr,
                         onTap: () {
                           Get.find<VerificationController>().isPressed.value =

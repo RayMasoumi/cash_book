@@ -46,13 +46,16 @@ class VerificationScreen extends StatelessWidget {
                       height: heightCalculator(33.0),
                     ),
                     //TODO the color of resend button must become blue after 60s
-                    BorderRadius12Button(
-                      onPressed: () {},
-                      text: 'Resend Code',
-                      //TODO the color of resend button must become blue after 60s
-                      backgroundColor: kDisabledColor,
-                      textStyle: kBorder12ButtonTextStyle,
-                      width: widthCalculator(224),
+                    Hero(
+                      tag: kLoginToVerificationTag,
+                      child: BorderRadius12Button(
+                        onPressed: () {},
+                        text: kResendCodeText,
+                        //TODO the color of resend button must become blue after 60s
+                        backgroundColor: kDisabledColor,
+                        textStyle: kBorder12ButtonTextStyle,
+                        width: widthCalculator(224),
+                      ),
                     ),
                   ],
                 ),
@@ -61,7 +64,7 @@ class VerificationScreen extends StatelessWidget {
                   children: [
                     BorderRadius12Button(
                       onPressed: () {},
-                      text: 'Log In',
+                      text: kLogInText,
                       backgroundColor: kPrimaryColor,
                       textStyle: kBorder12ButtonTextStyle,
                     ),
@@ -69,8 +72,10 @@ class VerificationScreen extends StatelessWidget {
                       height: heightCalculator(17.0),
                     ),
                     BorderRadius12Button(
-                        onPressed: () {},
-                        text: 'Back',
+                        onPressed: () {
+                          Get.back();
+                        },
+                        text: kBackButtonText,
                         backgroundColor: Colors.white,
                         textStyle: kBackButtonTextStyle,
                         borderColor: kGreyBorderColor),

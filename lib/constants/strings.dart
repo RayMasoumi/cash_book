@@ -17,15 +17,21 @@ const String kPublicText = 'Public';
 const String kEnglishTranslate = 'en';
 const String kPersianTranslate = 'fa';
 
+// * Hero Tags
+const String kLoginToVerificationTag = 'Login to Verification';
+
 // * Setting screen strings:
 const String kLanguageTitle = 'language';
 
 // * login screen strings:
 const String kTitleLogin = 'Login To Your Account';
 const String kLogInText = 'Log In';
+const String kLoginSubtitle =
+    'Please Fill In The Fields Below To Enter And Log In';
+const String kContinueText = 'Continue';
 
 // *sign up screen strings:
-const String kSignUpTitle = 'Welcome To CashBook';
+const String kWelcomeTitle = 'Welcome To CashBook';
 const String kSignUpSubtitle = 'Please Fill In The Fields Below To Enter';
 const String kUsernameTitle = 'Username:';
 const String kUsernameHint = 'Enter Your Username';
@@ -34,13 +40,15 @@ const String kEmailTitle = 'E-mail:';
 const String kCreateAccountText = 'Sign Up';
 const String kPhoneNumberHint = 'Enter Your Phone Number';
 const String kEmailHint = 'Enter Your E-mail';
-const String kHaveAnAccountText = 'Already Have An Account? ';
+const String kDontHaveAnAccountText = 'Don\'t Have An Account? ';
 const String kConditionsText = 'I Agree To Terms And Conditions';
+const String kBackButtonText = 'Back';
 
 // * verification screen:
 const kVerificationTitle = 'Verification code';
 const kVerificationSubtitle =
     'A text massage with a four digit verification code has been sent to your phone number ending in ********98';
+const kResendCodeText = 'Resend Code';
 
 // * hive box names:
 const String kUserBoxName = 'userBox';

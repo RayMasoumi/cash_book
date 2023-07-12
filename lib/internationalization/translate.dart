@@ -22,11 +22,11 @@ class Translate implements Translations {
           'Private': 'Private',
           'Public': 'Public',
           'Login To Your Account': 'Login To Your Account',
-          'Welcome To CashBook': 'Welcome To CashBook',
+          kWelcomeTitle: kWelcomeTitle,
           kUsernameTitle: kUsernameTitle,
           kUsernameHint: kUsernameHint,
           kPhoneNumberTitle: kPhoneNumberTitle,
-          kHaveAnAccountText: kHaveAnAccountText,
+          kDontHaveAnAccountText: kDontHaveAnAccountText,
           'Log In': 'Log In',
           'Enter The 4-Digit Code You Received':
               'Enter The 4-Digit Code You Received',
@@ -40,6 +40,9 @@ class Translate implements Translations {
           kSignUpSubtitle: kSignUpSubtitle,
           kConditionsText: kConditionsText,
           kPhoneNumberHint: kPhoneNumberHint,
+          kContinueText: kContinueText,
+          kResendCodeText: kResendCodeText,
+          kBackButtonText: kBackButtonText,
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -60,12 +63,12 @@ class Translate implements Translations {
           'Private': 'خصوصی',
           'Public': 'عمومی',
           'Login To Your Account': 'وارد حساب کاربری خود شوید',
-          'Welcome To CashBook': 'به کشبوک خوش آمدید',
+          kWelcomeTitle: 'به کشبوک خوش آمدید',
           kUsernameTitle: 'نام کاربری:',
           kUsernameHint: 'نام کاربری خود را وارد کنید',
           kPhoneNumberTitle: 'شماره تلفن:',
           kPhoneNumberHint: 'شماره تلفن خود را وارد کنید',
-          kHaveAnAccountText: 'حساب کاربری دارم ',
+          kDontHaveAnAccountText: 'حساب کاربری ندارم ',
           'Log In': 'ورود به حساب',
           'Enter The 4-Digit Code You Received':
               'کد 4 رقمی ارسال شده را وارد کنید',
@@ -79,6 +82,9 @@ class Translate implements Translations {
           'language': 'زبان',
           kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید',
           kConditionsText: 'با شرایط و مقررات موافقم',
+          kContinueText: 'ادامه',
+          kResendCodeText: 'ارسال مجدد',
+          kBackButtonText: 'برگشت',
         },
       };
 }
