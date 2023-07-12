@@ -59,6 +59,9 @@ class VerificationScreen extends StatelessWidget {
               backgroundColor: kPrimaryColor,
               textStyle: kBorder12ButtonTextStyle,
             ),
+            SizedBox(
+              height: heightCalculator(17.0),
+            ),
           ]),
         ),
       ),
