@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       themeMode: ThemeMode.system, // Define the light theme
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.downToUp,
+      defaultTransition: Transition.fadeIn,
+      transitionDuration: const Duration(seconds: 5),
       initialBinding: MyBindings(),
       // * translation
       translations: Translate(),
@@ -79,5 +80,5 @@ class MyApp extends StatelessWidget {
 
 class AlwaysActiveBorderSide extends MaterialStateBorderSide {
   @override
-  BorderSide? resolve(_) => const BorderSide(color: kCheckBoxBorderColor);
+  BorderSide? resolve(_) => const BorderSide(color: kGreyBorderColor);
 }

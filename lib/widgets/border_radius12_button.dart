@@ -11,13 +11,16 @@ class BorderRadius12Button extends StatelessWidget {
     required this.backgroundColor,
     required this.textStyle,
     double? width,
-  }) : width = width ?? widthCalculator(322);
+    Color? borderColor,
+  })  : width = width ?? widthCalculator(322),
+        borderColor = borderColor ?? backgroundColor;
 
   final Function() onPressed;
   final String text;
   final Color backgroundColor;
   final TextStyle textStyle;
   final double width;
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class BorderRadius12Button extends StatelessWidget {
           backgroundColor: MaterialStatePropertyAll(backgroundColor),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
+              side: BorderSide(width: 1.0, color: borderColor),
               borderRadius: kBorderRadius12,
             ),
           ),

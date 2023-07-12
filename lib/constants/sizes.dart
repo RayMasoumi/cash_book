@@ -21,6 +21,7 @@ final k40Height = heightCalculator(40);
 final kBorderRadius12 = BorderRadius.circular(12);
 final kBorderRadius15 = BorderRadius.circular(15);
 final kBorderRadius45 = BorderRadius.circular(45);
+const kGreyButtonBorder = BorderSide(width: 1.0, color: Color(0xFF8B8B8B));
 
 // * new styles
 final kIntroTitleStyle = TextStyle(
@@ -44,6 +45,10 @@ final kTextFieldTitleStyle = TextStyle(
 );
 final kBorder12ButtonTextStyle = TextStyle(
   color: Colors.white,
+  fontSize: widthCalculator(20.0),
+);
+final kBackButtonTextStyle = TextStyle(
+  color: const Color(0xFF8B8B8B),
   fontSize: widthCalculator(20.0),
 );
 

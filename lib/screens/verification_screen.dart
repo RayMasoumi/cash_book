@@ -18,51 +18,65 @@ class VerificationScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: DefaultPadding(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            TopTitleSubtitleWidget(
-                title: kVerificationTitle.tr,
-                subtitle: kVerificationSubtitle.tr),
-            Pinput(
-              defaultPinTheme: kDefaultPinTheme,
-              androidSmsAutofillMethod: AndroidSmsAutofillMethod.none,
-              // controller: pinController,
-              onCompleted: (pin) {
-                //TODO controller
-              },
-            ),
-            SizedBox(
-              height: heightCalculator(33.0),
-            ),
-            Text(
-              'After 60 Seconds You Can Receive a New Code',
-              style: kIntroSubtitleStyle,
-            ),
-            SizedBox(
-              height: heightCalculator(33.0),
-            ),
-            //TODO the color of resend button must become blue after 60s
-            BorderRadius12Button(
-              onPressed: () {},
-              text: 'Resend Code',
-              //TODO the color of resend button must become blue after 60s
-              backgroundColor: kDisabledColor,
-              textStyle: kBorder12ButtonTextStyle,
-              width: widthCalculator(224),
-            ),
-            SizedBox(
-              height: heightCalculator(176),
-            ),
-            BorderRadius12Button(
-              onPressed: () {},
-              text: 'Log In',
-              backgroundColor: kPrimaryColor,
-              textStyle: kBorder12ButtonTextStyle,
-            ),
-            SizedBox(
-              height: heightCalculator(17.0),
-            ),
-          ]),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    TopTitleSubtitleWidget(
+                        title: kVerificationTitle.tr,
+                        subtitle: kVerificationSubtitle.tr),
+                    Pinput(
+                      defaultPinTheme: kDefaultPinTheme,
+                      androidSmsAutofillMethod: AndroidSmsAutofillMethod.none,
+                      // controller: pinController,
+                      onCompleted: (pin) {
+                        //TODO controller
+                      },
+                    ),
+                    SizedBox(
+                      height: heightCalculator(33.0),
+                    ),
+                    Text(
+                      'After 60 Seconds You Can Receive a New Code',
+                      style: kIntroSubtitleStyle,
+                    ),
+                    SizedBox(
+                      height: heightCalculator(33.0),
+                    ),
+                    //TODO the color of resend button must become blue after 60s
+                    BorderRadius12Button(
+                      onPressed: () {},
+                      text: 'Resend Code',
+                      //TODO the color of resend button must become blue after 60s
+                      backgroundColor: kDisabledColor,
+                      textStyle: kBorder12ButtonTextStyle,
+                      width: widthCalculator(224),
+                    ),
+                  ],
+                ),
+                // * bottom buttons:
+                Column(
+                  children: [
+                    BorderRadius12Button(
+                      onPressed: () {},
+                      text: 'Log In',
+                      backgroundColor: kPrimaryColor,
+                      textStyle: kBorder12ButtonTextStyle,
+                    ),
+                    SizedBox(
+                      height: heightCalculator(17.0),
+                    ),
+                    BorderRadius12Button(
+                        onPressed: () {},
+                        text: 'Back',
+                        backgroundColor: Colors.white,
+                        textStyle: kBackButtonTextStyle,
+                        borderColor: kGreyBorderColor),
+                  ],
+                )
+              ]),
         ),
       ),
     );
