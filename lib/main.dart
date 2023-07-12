@@ -1,3 +1,4 @@
+import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/internationalization/translate.dart';
 import 'package:cash_book/methods/get_hive_data.dart';
@@ -58,6 +59,12 @@ class MyApp extends StatelessWidget {
       getPages: MyRoutes.pages,
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.resolveWith((_) => Colors.black),
+          fillColor:
+              MaterialStateProperty.resolveWith((_) => Colors.transparent),
+          side: AlwaysActiveBorderSide(),
+        ),
       ),
       darkTheme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme().copyWith(
@@ -68,4 +75,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class AlwaysActiveBorderSide extends MaterialStateBorderSide {
+  @override
+  BorderSide? resolve(_) => const BorderSide(color: kCheckBoxBorderColor);
 }

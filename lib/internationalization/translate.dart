@@ -26,7 +26,6 @@ class Translate implements Translations {
           kUsernameTitle: kUsernameTitle,
           kUsernameHint: kUsernameHint,
           'Phone Number': 'Phone Number',
-          'E-mail': 'E-mail',
           'Already have an account? ': 'Already have an account? ',
           'Log In': 'Log In',
           'Enter The 4-Digit Code You Received':
@@ -41,8 +40,6 @@ class Translate implements Translations {
           'Create Account': 'Create Account',
           'language': 'language',
           kSignUpSubtitle: kSignUpSubtitle,
-          kVerificationTitle: kVerificationTitle,
-          kVerificationSubtitle: kVerificationSubtitle,
         },
         'fa': {
           "Track Income & Expenses": "پیگیری درآمد و هزینه ها",
@@ -67,7 +64,6 @@ class Translate implements Translations {
           kUsernameTitle: 'نام کاربری:',
           kUsernameHint: 'نام کاربری خود را وارد کنید',
           'Phone Number': 'شماره تلفن',
-          'E-mail': 'ایمیل',
           'Already have an account? ': 'حساب کاربری دارم ',
           'Log In': 'ورود به حساب',
           'Enter The 4-Digit Code You Received':
@@ -81,10 +77,7 @@ class Translate implements Translations {
           '+981234567890': '+۹۸۱۲۳۴۵۶۷۸۹۰',
           'Create Account': 'ایجاد حساب جدید',
           'language': 'زبان',
-          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید',
-          kVerificationTitle: 'کد تایید',
-          kVerificationSubtitle:
-              '.کد تایید 4 رقمی شما به شماره *********98 ارسال شده است',
+          kSignUpSubtitle: 'برای ثبت نام فیلد‌های خواسته شده را پر کنید'
         },
       };
 }

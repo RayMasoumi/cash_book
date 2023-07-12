@@ -25,15 +25,14 @@ const String kTitleLogin = 'Login To Your Account';
 
 // *sign up screen strings:
 const String kSignUpTitle = 'Welcome To CashBook';
-const String kSignUpSubtitle =
-    'Please Fill In The Fields Below To Enter And Sign Up';
+const String kSignUpSubtitle = 'Please Fill In The Fields Below To Enter';
 const String kUsernameTitle = 'Username:';
 const String kUsernameHint = 'Enter Your Username';
 const String kPhoneNumberTitle = 'Phone Number';
-const String kEmailTitle = 'E-mail';
+const String kEmailTitle = 'E-mail:';
 const String kCreateAccountText = 'Create Account';
 const String kPhoneNumberHint = '+981234567890';
-const String kEmailHint = 'cashBook@mail.com';
+const String kEmailHint = 'Enter Your E-mail';
 const String kHaveAnAccountText = 'Already have an account? ';
 const String kLogInText = 'Log In';
 
