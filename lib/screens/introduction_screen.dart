@@ -41,7 +41,9 @@ class CustomIntroductionScreen extends StatelessWidget {
       return IntroScreenOnBoarding(
         introductionList: pages,
         backgroudColor: Theme.of(context).canvasColor,
-        skipTextStyle: kIntroSkipStyle,
+        skipTextStyle: Get.find<ThemeController>().isDark.value
+            ? kIntroSkipStyle.copyWith(color: Colors.white)
+            : kIntroSkipStyle,
         onTapFinishedButton: () {
           // * Only show this page once
           isLoggedIn()

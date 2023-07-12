@@ -36,7 +36,7 @@ final kIntroSubtitleStyle = TextStyle(
 );
 final kIntroSkipStyle = TextStyle(
   fontSize: widthCalculator(12),
-  color: Get.find<ThemeController>().isDark.value ? Colors.white : Colors.black,
+  color: Colors.black,
 );
 final kSignUpTitleStyle = TextStyle(
   fontSize: widthCalculator(24),
