@@ -1,8 +1,6 @@
 import 'package:cash_book/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../methods/get_color_method.dart';
-
 class AlignWidget extends StatelessWidget {
   final int index;
   final List list;
@@ -21,7 +19,6 @@ class AlignWidget extends StatelessWidget {
             side: const BorderSide(color: Colors.black12),
             borderRadius: kBorderRadius45,
           ),
-          tileColor: getColor(index),
         ),
       ),
     );

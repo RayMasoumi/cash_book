@@ -52,6 +52,8 @@ final kBackButtonTextStyle = TextStyle(
   color: const Color(0xFF8B8B8B),
   fontSize: widthCalculator(20.0),
 );
+final kSubtitleStyle =
+    TextStyle(fontSize: widthCalculator(12), color: kSubtitleColor);
 
 // * tab style:
 final kTabTextStyle = TextStyle(

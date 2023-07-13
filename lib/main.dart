@@ -1,4 +1,3 @@
-import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/internationalization/translate.dart';
@@ -60,21 +59,14 @@ class MyApp extends StatelessWidget {
       initialRoute: kMainScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
-          textTheme: GoogleFonts.outfitTextTheme(),
-          checkboxTheme: CheckboxThemeData(
-            checkColor: MaterialStateProperty.resolveWith((_) => Colors.black),
-            fillColor:
-                MaterialStateProperty.resolveWith((_) => Colors.transparent),
-            side: AlwaysActiveBorderSide(),
-          ),
-          tabBarTheme: const TabBarTheme(
-            indicator: BubbleTabIndicator(
-              indicatorHeight: 25.0,
-              tabBarIndicatorSize: TabBarIndicatorSize.tab,
-              indicatorColor: kPrimaryColor,
-              indicatorRadius: 9,
-            ),
-          )),
+        textTheme: GoogleFonts.outfitTextTheme(),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.resolveWith((_) => Colors.black),
+          fillColor:
+              MaterialStateProperty.resolveWith((_) => Colors.transparent),
+          side: AlwaysActiveBorderSide(),
+        ),
+      ),
       darkTheme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme().copyWith(
           displayLarge: const TextStyle(color: Colors.white),
