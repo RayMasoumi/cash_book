@@ -72,6 +72,7 @@ const String kBookScreenRoute = '/book_screen';
 const String kLoginScreenRoute = '/login_screen';
 const String kAddNewEntryScreenRoute = '/add_new_entry_screen';
 const kVerificationScreenRoute = '/verification_screen';
+const kMainScreenRoute = '/main_screen';
 
 // * path
 const String kIntroImagePath1 = 'assets/images/introduction_page_1.png';

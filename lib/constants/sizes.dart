@@ -53,6 +53,20 @@ final kBackButtonTextStyle = TextStyle(
   fontSize: widthCalculator(20.0),
 );
 
+// * tab style:
+final kTabTextStyle = TextStyle(
+  // color: Colors.black,
+  fontSize: widthCalculator(12),
+);
+final kSelectedTabTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: widthCalculator(12),
+);
+final kUnSelectedTabTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: widthCalculator(12),
+);
+
 // * pin style:
 final kDefaultPinTheme = PinTheme(
   width: widthCalculator(68),

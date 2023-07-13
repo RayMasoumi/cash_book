@@ -37,6 +37,7 @@ dependencies:
   pelaicons: ^0.0.1
   google_fonts: ^5.1.0
   pinput: ^2.2.31
+  bubble_tab_indicator: ^0.1.6
 
 
 

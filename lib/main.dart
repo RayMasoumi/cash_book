@@ -1,3 +1,4 @@
+import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:cash_book/constants/colors.dart';
 import 'package:cash_book/constants/strings.dart';
 import 'package:cash_book/internationalization/translate.dart';
@@ -55,18 +56,25 @@ class MyApp extends StatelessWidget {
       locale: Locale(GetStorage().read('language') == 'fa' ? 'fa' : 'en'),
       // * checking if it is the first time the app is running
       // initialRoute: userRoute(),
-      initialRoute: kIntroductionScreenRoute,
-      // initialRoute: kSignUpScreenRoute,
+      // initialRoute: kIntroductionScreenRoute,
+      initialRoute: kMainScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
-        textTheme: GoogleFonts.outfitTextTheme(),
-        checkboxTheme: CheckboxThemeData(
-          checkColor: MaterialStateProperty.resolveWith((_) => Colors.black),
-          fillColor:
-              MaterialStateProperty.resolveWith((_) => Colors.transparent),
-          side: AlwaysActiveBorderSide(),
-        ),
-      ),
+          textTheme: GoogleFonts.outfitTextTheme(),
+          checkboxTheme: CheckboxThemeData(
+            checkColor: MaterialStateProperty.resolveWith((_) => Colors.black),
+            fillColor:
+                MaterialStateProperty.resolveWith((_) => Colors.transparent),
+            side: AlwaysActiveBorderSide(),
+          ),
+          tabBarTheme: const TabBarTheme(
+            indicator: BubbleTabIndicator(
+              indicatorHeight: 25.0,
+              tabBarIndicatorSize: TabBarIndicatorSize.tab,
+              indicatorColor: kPrimaryColor,
+              indicatorRadius: 9,
+            ),
+          )),
       darkTheme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme().copyWith(
           displayLarge: const TextStyle(color: Colors.white),
