@@ -57,7 +57,8 @@ class MyApp extends StatelessWidget {
       // * checking if it is the first time the app is running
       // initialRoute: userRoute(),
       // initialRoute: kIntroductionScreenRoute,
-      initialRoute: kMainScreenRoute,
+      // initialRoute: kMainScreenRoute,
+      initialRoute: kBookScreenRoute,
       getPages: MyRoutes.pages,
       theme: ThemeData(
           textTheme: GoogleFonts.outfitTextTheme(),
