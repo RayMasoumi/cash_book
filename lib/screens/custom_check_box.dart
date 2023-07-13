@@ -2,7 +2,6 @@ import 'package:cash_book/constants/sizes.dart';
 import 'package:cash_book/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controllers/theme_controller.dart';
 
 class CustomCheckBox extends StatelessWidget {
