@@ -112,18 +112,52 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
-            body: const TabBarView(
+            body: TabBarView(
               children: [
                 // Replace with the contents of Tab 1
                 Center(
-                  child: Text('Tab 1 Content'),
+                  child: ListView.builder(itemBuilder: (context, index) {
+                    return Container(
+                      height: heightCalculator(70),
+                      margin: EdgeInsets.only(
+                        left: widthCalculator(28),
+                        right: widthCalculator(28),
+                        bottom: heightCalculator(20),
+                      ),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        borderRadius: BorderRadius.circular(13),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset.zero,
+                            blurRadius: 14,
+                            color: Colors.grey.withOpacity(0.20),
+                          ),
+                        ],
+                      ),
+                      child: const ListTile(
+                        leading: Column(
+                          children: [
+                            Text('Shop'),
+                            Text('hi hi hi  hi hi hi hi'),
+                          ],
+                        ),
+                        trailing: Column(
+                          children: [
+                            Icon(Icons.more_horiz_rounded),
+                            Text('0'),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
                 ),
                 // Replace with the contents of Tab 2
-                Center(
+                const Center(
                   child: Text('Tab 2 Content'),
                 ),
                 // Replace with the contents of Tab 3
-                Center(
+                const Center(
                   child: Text('Tab 3 Content'),
                 ),
               ],
